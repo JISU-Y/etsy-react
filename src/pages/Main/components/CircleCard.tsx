@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 export interface CardDefaultProps {
@@ -6,7 +6,7 @@ export interface CardDefaultProps {
   title: string;
 }
 
-const CircleCard = ({ image, title }: CardDefaultProps) => {
+const CircleCard: FC<CardDefaultProps> = ({ image, title }) => {
   return (
     <CardContainer>
       <img src={image} alt="circle-card" />

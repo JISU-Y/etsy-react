@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 
 interface TabMenuProps {
   list: string[];
 }
 
-const TabMenu = (props: TabMenuProps) => {
+const TabMenu: FC<TabMenuProps> = props => {
   const { list } = props;
   return (
     <MenuContainer {...props}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
@@ -10,7 +10,7 @@ export interface ImageCardProps {
   price: number;
 }
 
-const ImageCard = ({ ...props }: ImageCardProps) => {
+const ImageCard: FC<ImageCardProps> = props => {
   const { image, price } = props;
 
   return (

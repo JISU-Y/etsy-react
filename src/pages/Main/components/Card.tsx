@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
@@ -10,9 +10,8 @@ interface CardProps extends ImageCardProps {
   reviewCount: number;
 }
 
-const Card = ({ ...props }: CardProps) => {
+const Card: FC<CardProps> = props => {
   const { title, reviewCount, price, image } = props;
-  console.log(price.toString().split('.')[1].length === 1);
 
   return (
     <CardContainer>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 // import { ReactComponent as Heart } from '../assets/icons/Heart.svg';
 
@@ -6,13 +6,13 @@ interface FavoriteProps {
   size: 'small' | 'large';
 }
 
-function Favorite({ ...props }: FavoriteProps) {
+const Favorite: FC<FavoriteProps> = ({ ...props }) => {
   return (
     <Heart {...props}>
       <i>❤</i>
     </Heart>
   );
-}
+};
 
 const Heart = styled.div<FavoriteProps>`
   width: ${props => (props.size === 'small' ? '30px' : '42px')};
