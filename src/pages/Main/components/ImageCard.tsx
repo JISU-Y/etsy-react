@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
 import { padCentsDigits } from '../../../utils/convertDigit';
-
-interface ImageCardProps {
+export interface ImageCardProps {
   image: string;
   width: number;
   height: number;

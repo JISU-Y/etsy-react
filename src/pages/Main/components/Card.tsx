@@ -3,14 +3,11 @@ import styled from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
 import { padCentsDigits } from '../../../utils/convertDigit';
+import { ImageCardProps } from './ImageCard';
 
-interface CardProps {
-  width: number;
-  height: number;
+interface CardProps extends ImageCardProps {
   title: string;
   reviewCount: number;
-  price: number;
-  image: string;
 }
 
 const Card = ({ ...props }: CardProps) => {
