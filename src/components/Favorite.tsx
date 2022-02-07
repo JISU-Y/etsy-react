@@ -22,11 +22,11 @@ const Heart = styled.div<FavoriteProps>`
   text-align: center;
   line-height: ${props => (props.size === 'small' ? '30px' : '42px')};
   border: 1px solid #c4c4c4;
-  transition: all 0.3s linear;
+  transform: scale(1);
+  transition: all 0.2s linear;
   cursor: pointer;
   &:hover {
-    width: ${props => (props.size === 'small' ? '31px' : '43.5px')};
-    height: ${props => (props.size === 'small' ? '31px' : '43.5px')};
+    transform: scale(1.04);
   }
   i {
     font-size: ${props => (props.size === 'small' ? '18px' : '24px')};
