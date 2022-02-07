@@ -1,22 +1,21 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 interface TabMenuProps {
   list: string[];
 }
 
-const TabMenu: FC<TabMenuProps> = props => {
-  const { list } = props;
+function TabMenu({ list }: TabMenuProps) {
   return (
-    <MenuContainer {...props}>
+    <MenuContainer {...{ list }}>
       {list.map(menu => (
         <button key={menu}>{menu}</button>
       ))}
     </MenuContainer>
   );
-};
+}
 
-const MenuContainer = styled.div<TabMenuProps>`
+const MenuContainer = styled.div<{ list: string[] }>`
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid lightgray;

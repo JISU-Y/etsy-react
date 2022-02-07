@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export interface CardDefaultProps {
@@ -6,14 +6,14 @@ export interface CardDefaultProps {
   title: string;
 }
 
-const CircleCard: FC<CardDefaultProps> = ({ image, title }) => {
+function CircleCard({ image, title }: CardDefaultProps) {
   return (
     <CardContainer>
       <img src={image} alt="circle-card" />
       <p>{title}</p>
     </CardContainer>
   );
-};
+}
 
 const CardContainer = styled.div`
   display: flex;

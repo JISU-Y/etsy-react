@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import styled, { css } from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
 import { padCentsDigits } from '../../../utils/convertDigit';
@@ -10,9 +10,7 @@ export interface ImageCardProps {
   price: number;
 }
 
-const ImageCard: FC<ImageCardProps> = props => {
-  const { image, price } = props;
-
+function ImageCard({ image, price, ...props }: ImageCardProps) {
   return (
     <ImgContainer {...props}>
       <img src={image} alt="item" />
@@ -24,7 +22,7 @@ const ImageCard: FC<ImageCardProps> = props => {
       </PriceTag>
     </ImgContainer>
   );
-};
+}
 
 const FavoriteWrap = styled.div`
   position: absolute;
@@ -35,17 +33,19 @@ const FavoriteWrap = styled.div`
   transition: all 0.2s ease-in-out;
 `;
 
-const ImgContainer = styled.div<ImageCardProps>`
+const ImgContainer = styled.div<{ width: number; height: number }>`
   display: inline-block;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
   cursor: pointer;
   transition: box-shadow 0.2s ease-in-out;
-  img {
-    width: ${props => props.width}px;
-    height: ${props => props.height}px;
-  }
+  ${({ width, height }) => css`
+    img {
+      width: ${width}px;
+      height: ${height}px;
+    }
+  `}
   &:hover {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   }

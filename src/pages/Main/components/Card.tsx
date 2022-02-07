@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
 import { padCentsDigits } from '../../../utils/convertDigit';
@@ -11,9 +11,7 @@ interface CardProps extends ImageCardProps {
   reviewCount: number;
 }
 
-const Card: React.FC<CardProps> = props => {
-  const { title, reviewCount, price, image } = props;
-
+function Card({ title, reviewCount, price, image, ...props }: CardProps) {
   return (
     <CardContainer>
       <CardWrap {...props}>
@@ -36,7 +34,7 @@ const Card: React.FC<CardProps> = props => {
       </FavoriteWrap>
     </CardContainer>
   );
-};
+}
 
 const FavoriteWrap = styled.div`
   position: absolute;
@@ -62,11 +60,13 @@ const CardWrap = styled.div<{ width: number; height: number }>`
   background-color: transparent;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
-  img {
-    border-radius: 5px;
-    width: ${props => props.width}px;
-    height: ${props => props.height}px;
-  }
+  ${({ width, height }) => css`
+    img {
+      border-radius: 5px;
+      width: ${width}px;
+      height: ${height}px;
+    }
+  `}
   &:hover {
     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
     background-color: white;

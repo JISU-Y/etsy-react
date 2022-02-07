@@ -1,35 +1,39 @@
-import React, { FC } from 'react';
-import styled from 'styled-components';
-// import { ReactComponent as Heart } from '../assets/icons/Heart.svg';
+import React from 'react';
+import styled, { css } from 'styled-components';
+import HeartIcon from '../icons/HeartIcon';
 
 interface FavoriteProps {
   size: 'small' | 'large';
 }
 
-const Favorite: FC<FavoriteProps> = ({ ...props }) => {
+function Favorite({ size }: FavoriteProps) {
+  const [width, height] = size === 'small' ? [18, 18] : [24, 24];
+
   return (
-    <Heart {...props}>
-      <i>❤</i>
+    <Heart {...{ size }}>
+      <HeartIcon width={width} height={height} color="black" />
     </Heart>
   );
-};
+}
 
-const Heart = styled.div<FavoriteProps>`
-  width: ${props => (props.size === 'small' ? '30px' : '42px')};
-  height: ${props => (props.size === 'small' ? '30px' : '42px')};
+const Heart = styled.div<{ size: 'small' | 'large' }>`
+  ${({ size }) => css`
+    width: ${size === 'small' ? '30px' : '42px'};
+    height: ${size === 'small' ? '30px' : '42px'};
+  `};
   background-color: white;
   border-radius: 50%;
   text-align: center;
-  line-height: ${props => (props.size === 'small' ? '30px' : '42px')};
   border: 1px solid #c4c4c4;
   transform: scale(1);
   transition: all 0.2s linear;
+  display: flex;
   cursor: pointer;
   &:hover {
     transform: scale(1.04);
   }
-  i {
-    font-size: ${props => (props.size === 'small' ? '18px' : '24px')};
+  svg {
+    margin: auto;
   }
 `;
 
