@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
+import { padCentsDigits } from '../../../utils/convertDigit';
 
 interface ImageCardProps {
   image: string;
   width: number;
   height: number;
-  hasPriceTag: boolean;
-  price: string;
+  price: number;
 }
 
 const ImageCard = ({ ...props }: ImageCardProps) => {
-  const { image, hasPriceTag, price } = props;
+  const { image, price } = props;
 
   return (
     <ImgContainer {...props}>
@@ -20,11 +20,9 @@ const ImageCard = ({ ...props }: ImageCardProps) => {
       <FavoriteWrap>
         <Favorite size="small" />
       </FavoriteWrap>
-      {hasPriceTag && (
-        <PriceTag>
-          {currency} {price}
-        </PriceTag>
-      )}
+      <PriceTag>
+        {currency} {padCentsDigits(price)}
+      </PriceTag>
     </ImgContainer>
   );
 };
