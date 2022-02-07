@@ -1,16 +1,17 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Favorite from '../../../components/Favorite';
 import { currency } from '../../../constants/localeSetting';
 import { padCentsDigits } from '../../../utils/convertDigit';
 import { ImageCardProps } from './ImageCard';
+import StarIcon from '../../../icons/StarIcon';
 
 interface CardProps extends ImageCardProps {
   title: string;
   reviewCount: number;
 }
 
-const Card: FC<CardProps> = props => {
+const Card: React.FC<CardProps> = props => {
   const { title, reviewCount, price, image } = props;
 
   return (
@@ -20,7 +21,10 @@ const Card: FC<CardProps> = props => {
         <ItemInfo>
           <p>{title.length > 60 ? `${title.slice(0, 59)}...` : title}</p>
           <div>
-            ⭐⭐⭐⭐⭐ <span>({reviewCount.toLocaleString()})</span>
+            {[1, 2, 3, 4, 5].map(el => (
+              <StarIcon key={el} width={12} height={12} color="black" />
+            ))}
+            <span>({reviewCount.toLocaleString()})</span>
           </div>
           <p>
             {currency} {padCentsDigits(price)}
@@ -52,7 +56,7 @@ const CardContainer = styled.div`
   }
 `;
 
-const CardWrap = styled.div<CardProps>`
+const CardWrap = styled.div<{ width: number; height: number }>`
   padding: 9px;
   border-radius: 10px;
   background-color: transparent;
@@ -74,11 +78,12 @@ const ItemInfo = styled.div`
   font-weight: bold;
   margin-top: 5px;
   div {
-    margin: 3px 0;
+    margin: 5px 0;
     span {
       font-size: 13px;
       font-weight: normal;
       color: gray;
+      margin-left: 3px;
     }
   }
 `;
