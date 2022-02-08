@@ -2,6 +2,7 @@ import React from 'react';
 import Favorite from '../../components/Favorite';
 import TabMenu from '../../components/TabMenu';
 import Card from './components/Card';
+import CategoryCard from './components/CategoryCard';
 import CircleCard from './components/CircleCard';
 import ImageCard from './components/ImageCard';
 
@@ -15,6 +16,10 @@ function Main() {
           'Health & Wealness',
           'Personalized gift',
         ]}
+      />
+      <CategoryCard
+        image="https://i.etsystatic.com/33988563/r/il/d2f76f/3628013772/il_340x270.3628013772_nqcp.jpg"
+        title="Aniversary gifts sdfsd dgsgd  fsdf g gdsd"
       />
       <Favorite size="large" />
       <ImageCard
