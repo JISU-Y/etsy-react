@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import Favorite from '../../components/Favorite';
 import TabMenu from '../../components/TabMenu';
@@ -6,7 +7,23 @@ import CategoryCard from './components/CategoryCard';
 import CircleCard from './components/CircleCard';
 import ImageCard from './components/ImageCard';
 
+const instance = axios.create({
+  baseURL: 'http://localhost:3000/',
+  headers: {
+    'content-type': 'application/json;charset=UTF-8',
+    accept: 'application/json',
+  },
+});
+
 function Main() {
+  React.useEffect(() => {
+    const fetchingData = async () => {
+      const data = await instance.get('data/searchBubbles.json');
+      console.log(data);
+    };
+    fetchingData();
+  }, []);
+
   return (
     <div>
       <TabMenu
