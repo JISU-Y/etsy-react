@@ -3,79 +3,42 @@
     {
       "imageUrl": "https://i.etsystatic.com/25031203/r/il/bf807c/2514352834/il_300x300.2514352834_t45s.jpg",
       "price": 30.8,
-      "discount": 30,
-      "quickDelivery": false,
-      "viewed": true
+      "discount": 30
     },
     {
       "imageUrl": "https://i.etsystatic.com/10953576/c/1500/1146/0/0/il/353f28/1050514883/il_340x270.1050514883_54k2.jpg",
       "price": 33.6,
-      "discount": 0,
-      "quickDelivery": false,
-      "viewed": true
+      "discount": 0
     },
     {
       "imageUrl": "https://i.etsystatic.com/10204022/c/2479/1970/243/466/il/ebecb4/2981833988/il_340x270.2981833988_6sg5.jpg",
       "price": 27,
-      "discount": 0,
-      "quickDelivery": true,
-      "viewed": true
+      "discount": 0
     },
     {
       "imageUrl": "https://i.etsystatic.com/32094682/c/3000/2384/0/512/il/d47b05/3421788688/il_340x270.3421788688_4qwn.jpg",
       "price": 31.6,
-      "discount": 0,
-      "quickDelivery": false,
-      "viewed": true
+      "discount": 0
     },
     {
       "imageUrl": "https://i.etsystatic.com/10204022/c/979/778/50/334/il/547e38/1043035043/il_340x270.1043035043_nvxb.jpg",
       "price": 26.95,
-      "discount": 30,
-      "quickDelivery": false,
-      "viewed": true
+      "discount": 30
     },
     {
       "imageUrl": "https://i.etsystatic.com/10953576/c/1110/882/199/90/il/d31d4f/1000698526/il_340x270.1000698526_5yqz.jpg",
       "price": 30.8,
-      "discount": 30,
-      "quickDelivery": false,
-      "viewed": true
+      "discount": 30
     },
     {
       "imageUrl": "https://i.etsystatic.com/10953576/c/682/542/0/655/il/38026b/1084745637/il_340x270.1084745637_3kav.jpg",
       "price": 30.8,
-      "discount": 30,
-      "quickDelivery": false,
-      "viewed": true
+      "discount": 30
     },
     {
       "imageUrl": "https://i.etsystatic.com/10953576/c/949/754/296/352/il/5ca3c9/1080321932/il_340x270.1080321932_9290.jpg",
       "price": 23.1,
-      "discount": 30,
-      "quickDelivery": false,
-      "viewed": true
-    },
-    {
-      "imageUrl": "https://i.etsystatic.com/17802147/c/1757/1397/375/1059/il/6b37c9/2275876149/il_340x270.2275876149_i952.jpg",
-      "price": 28.64,
-      "discount": 20,
-      "quickDelivery": false,
-      "viewed": true
-    },
-    {
-      "imageUrl": "https://i.etsystatic.com/8789900/r/il/dd42a0/641793208/il_340x270.641793208_3dg6.jpg",
-      "price": 29.62,
-      "discount": 25,
-      "quickDelivery": false,
-      "viewed": true
-    },
-    {
-      "imageUrl": "https://i.etsystatic.com/10204022/c/2392/1900/251/130/il/ee5230/1234566959/il_340x270.1234566959_mwen.jpg",
-      "price": 31.6,
-      "discount": 0,
-      "quickDelivery": false,
-      "viewed": false
+      "discount": 30
     }
   ]
 }

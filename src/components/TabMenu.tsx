@@ -1,21 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface TabMenuProps {
   list: string[];
+  currentTab: number;
+  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function TabMenu({ list }: TabMenuProps) {
+function TabMenu({ list, currentTab, setCurrentTab }: TabMenuProps) {
   return (
-    <MenuContainer {...{ list }}>
-      {list.map(menu => (
-        <button key={menu}>{menu}</button>
+    <MenuContainer {...{ list, currentTab }}>
+      {list.map((menu, index) => (
+        <button key={menu} onClick={() => setCurrentTab(index)}>
+          {menu}
+        </button>
       ))}
     </MenuContainer>
   );
 }
 
-const MenuContainer = styled.div<{ list: string[] }>`
+const MenuContainer = styled.div<{ list: string[]; currentTab: number }>`
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid lightgray;
@@ -50,13 +54,15 @@ const MenuContainer = styled.div<{ list: string[] }>`
     &:hover::after {
       width: 100%;
     }
-    &:focus {
-      color: black;
-    }
-    &:focus::after {
-      width: 100%;
-      border-bottom: 2px solid black;
-    }
+    ${({ currentTab }) => css`
+      &:nth-child(${currentTab + 1}) {
+        color: black;
+      }
+      &:nth-child(${currentTab + 1})::after {
+        width: 100%;
+        border-bottom: 2px solid black;
+      }
+    `}
   }
 `;
 
