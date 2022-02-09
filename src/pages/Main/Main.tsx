@@ -14,6 +14,7 @@ import {
   getUniqueList,
   getSelectionsCategories,
 } from '../../utils/axios';
+import { useHistory } from 'react-router-dom';
 
 function Main() {
   const { data: circleData } = useSWR('searchBubbles.json', url =>
@@ -38,6 +39,7 @@ function Main() {
     getSelectionsCategories(url)
   );
   const [currentTab, setCurrentTab] = React.useState(0);
+  const history = useHistory();
 
   if (
     !circleData ||
@@ -50,6 +52,8 @@ function Main() {
   ) {
     return <div>...loading</div>;
   }
+
+  const goToDetail = (id: number) => history.push(`/detail/${id}`, { id });
 
   return (
     <Container>
@@ -76,13 +80,15 @@ function Main() {
               price: number;
               quickDelivery: boolean;
               viewed: boolean;
+              id: number;
             }) => (
               <ImageCard
-                key={el.imageUrl}
+                key={el.id}
                 width={250}
                 height={167}
                 price={el.price}
                 image={el.imageUrl}
+                onClick={() => goToDetail(el.id)}
               />
             )
           )}

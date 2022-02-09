@@ -31,3 +31,7 @@ export const getUniqueList = (url: string): Promise<AxiosResponse<any, any>> =>
 export const getSelectionsCategories = (
   url: string
 ): Promise<AxiosResponse<any, any>> => API.get(url);
+
+export const getProductDetails = (
+  url: string
+): Promise<AxiosResponse<any, any>> => API.get(url);
