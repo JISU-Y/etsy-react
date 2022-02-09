@@ -15,6 +15,7 @@ import {
   getSelectionsCategories,
 } from '../../utils/axios';
 import { useHistory } from 'react-router-dom';
+import Header from '../../components/Header';
 
 function Main() {
   const { data: circleData } = useSWR('searchBubbles.json', url =>
@@ -57,6 +58,7 @@ function Main() {
 
   return (
     <Container>
+      <Header />
       <h1>
         Find things you'll love. Support independent sellers. Only on Etsy.
       </h1>
