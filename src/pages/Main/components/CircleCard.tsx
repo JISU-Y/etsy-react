@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-export interface CardDefaultProps {
-  image: string;
-  title: string;
-}
+import { CardDefaultProps } from '../../../types';
 
 function CircleCard({ image, title }: CardDefaultProps) {
   return (

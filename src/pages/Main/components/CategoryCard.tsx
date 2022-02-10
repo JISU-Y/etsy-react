@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CardDefaultProps } from './CircleCard';
+import { CardDefaultProps } from '../../../types';
 
 function CategoryCard({ image, title }: CardDefaultProps) {
   return (

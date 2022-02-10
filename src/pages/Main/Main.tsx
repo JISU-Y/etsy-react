@@ -9,6 +9,11 @@ import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import useMainData from '../../hooks/useMainData';
+import {
+  popularListProps,
+  productListProps,
+  tabProductListProps,
+} from '../../types';
 
 function Main() {
   const {
@@ -21,9 +26,30 @@ function Main() {
     selectionsData,
   } = useMainData();
   const [currentTab, setCurrentTab] = React.useState(0);
+  const [viewedProductList, setViewedProductList] = React.useState<
+    productListProps[]
+  >([]);
+  const [tabProductList, setTabProductList] = React.useState<
+    tabProductListProps[]
+  >([]);
   const history = useHistory();
 
   const goToDetail = (id: number) => history.push(`/detail/${id}`, { id });
+
+  React.useEffect(() => {
+    setViewedProductList(
+      productData?.data.data.filter((el: { viewed: boolean }) => el.viewed)
+    );
+  }, [productData]);
+
+  React.useEffect(() => {
+    setTabProductList(
+      uniqueListData?.data.data.filter(
+        (el: { category: string }) =>
+          el.category === uniqueListData?.data.menu[currentTab]
+      )
+    );
+  }, [uniqueListData, currentTab]);
 
   return (
     <Container>
@@ -44,27 +70,16 @@ function Main() {
           <p>Recently viewed & more</p>
           <span>Show more from the ivoryMR shop</span>
         </RecentTitle>
-        {productData?.data.data
-          .filter((el: { viewed: boolean }) => el.viewed)
-          .map(
-            (el: {
-              discout: number;
-              imageUrl: string;
-              price: number;
-              quickDelivery: boolean;
-              viewed: boolean;
-              id: number;
-            }) => (
-              <ImageCard
-                key={el.id}
-                width={250}
-                height={167}
-                price={el.price}
-                image={el.imageUrl}
-                onClick={() => goToDetail(el.id)}
-              />
-            )
-          )}
+        {viewedProductList?.map((el: productListProps) => (
+          <ImageCard
+            key={el.id}
+            width={250}
+            height={167}
+            price={el.price}
+            image={el.imageUrl}
+            onClick={() => goToDetail(el.id)}
+          />
+        ))}
       </RecentListWrap>
 
       <h1>Our picks for you</h1>
@@ -92,26 +107,17 @@ function Main() {
       <PopularContainer>
         <h2>Popular gifts right now</h2>
         <div>
-          {popularData?.data.data.map(
-            (el: {
-              contentsUrl: string;
-              price: number;
-              discount: number;
-              freeShipping: boolean;
-              title: string;
-              reviews: number;
-            }) => (
-              <Card
-                key={el.title}
-                width={250}
-                height={200}
-                image={el.contentsUrl}
-                price={el.price}
-                reviewCount={el.reviews}
-                title={el.title}
-              />
-            )
-          )}
+          {popularData?.data.data.map((el: popularListProps) => (
+            <Card
+              key={el.title}
+              width={250}
+              height={200}
+              image={el.contentsUrl}
+              price={el.price}
+              reviewCount={el.reviews}
+              title={el.title}
+            />
+          ))}
         </div>
       </PopularContainer>
 
@@ -122,28 +128,15 @@ function Main() {
           setCurrentTab={setCurrentTab}
         />
         <TabContents>
-          {uniqueListData?.data.data
-            .filter(
-              (el: { category: string }) =>
-                el.category === uniqueListData?.data.menu[currentTab]
-            )
-            .map(
-              (el: {
-                category: string;
-                imageUrl: string;
-                price: number;
-                discount: boolean;
-                quickDelivery: boolean;
-              }) => (
-                <ImageCard
-                  key={el.imageUrl}
-                  width={250}
-                  height={167}
-                  price={el.price}
-                  image={el.imageUrl}
-                />
-              )
-            )}
+          {tabProductList.map((el: tabProductListProps) => (
+            <ImageCard
+              key={el.imageUrl}
+              width={250}
+              height={167}
+              price={el.price}
+              image={el.imageUrl}
+            />
+          ))}
         </TabContents>
       </UniqueContainer>
 
