@@ -5,55 +5,23 @@ import CategoryCard from './components/CategoryCard';
 import CircleCard from './components/CircleCard';
 import ImageCard from './components/ImageCard';
 import styled from 'styled-components';
-import useSWR from 'swr';
-import {
-  getPicksCategories,
-  getProductList,
-  getSearchBubbles,
-  getPopularList,
-  getUniqueList,
-  getSelectionsCategories,
-} from '../../utils/axios';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import useMainData from '../../hooks/useMainData';
 
 function Main() {
-  const { data: circleData } = useSWR('searchBubbles.json', url =>
-    getSearchBubbles(url)
-  );
-  const { data: productData } = useSWR('productList.json', url =>
-    getProductList(url)
-  );
-  const { data: pickCategoryData } = useSWR('picksCategories.json', url =>
-    getPicksCategories(url)
-  );
-  const { data: picksListData } = useSWR('picksList.json', url =>
-    getPicksCategories(url)
-  );
-  const { data: popularData } = useSWR('popularList.json', url =>
-    getPopularList(url)
-  );
-  const { data: uniqueListData } = useSWR('uniqueList.json', url =>
-    getUniqueList(url)
-  );
-  const { data: selectionsData } = useSWR('selectionsCategory.json', url =>
-    getSelectionsCategories(url)
-  );
+  const {
+    circleData,
+    productData,
+    pickCategoryData,
+    picksListData,
+    popularData,
+    uniqueListData,
+    selectionsData,
+  } = useMainData();
   const [currentTab, setCurrentTab] = React.useState(0);
   const history = useHistory();
-
-  if (
-    !circleData ||
-    !productData ||
-    !pickCategoryData ||
-    !picksListData ||
-    !popularData ||
-    !uniqueListData ||
-    !selectionsData
-  ) {
-    return <div>...loading</div>;
-  }
 
   const goToDetail = (id: number) => history.push(`/detail/${id}`, { id });
 
@@ -64,9 +32,11 @@ function Main() {
         Find things you'll love. Support independent sellers. Only on Etsy.
       </h1>
       <CircleCategoryWrap>
-        {circleData.data.data.map((el: { imageUrl: string; title: string }) => (
-          <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
-        ))}
+        {circleData?.data.data.map(
+          (el: { imageUrl: string; title: string }) => (
+            <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
+          )
+        )}
       </CircleCategoryWrap>
 
       <RecentListWrap>
@@ -74,7 +44,7 @@ function Main() {
           <p>Recently viewed & more</p>
           <span>Show more from the ivoryMR shop</span>
         </RecentTitle>
-        {productData.data.data
+        {productData?.data.data
           .filter((el: { viewed: boolean }) => el.viewed)
           .map(
             (el: {
@@ -99,14 +69,14 @@ function Main() {
 
       <h1>Our picks for you</h1>
       <CircleCategoryWrap>
-        {pickCategoryData.data.data.map(
+        {pickCategoryData?.data.data.map(
           (el: { imageUrl: string; title: string }) => (
             <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
           )
         )}
       </CircleCategoryWrap>
       <PicksContainer>
-        {picksListData.data.data.map(
+        {picksListData?.data.data.map(
           (el: { discout: number; imageUrl: string; price: number }) => (
             <ImageCard
               key={el.imageUrl}
@@ -122,7 +92,7 @@ function Main() {
       <PopularContainer>
         <h2>Popular gifts right now</h2>
         <div>
-          {popularData.data.data.map(
+          {popularData?.data.data.map(
             (el: {
               contentsUrl: string;
               price: number;
@@ -147,15 +117,15 @@ function Main() {
 
       <UniqueContainer>
         <TabMenu
-          list={uniqueListData.data.menu}
+          list={uniqueListData?.data.menu}
           currentTab={currentTab}
           setCurrentTab={setCurrentTab}
         />
         <TabContents>
-          {uniqueListData.data.data
+          {uniqueListData?.data.data
             .filter(
               (el: { category: string }) =>
-                el.category === uniqueListData.data.menu[currentTab]
+                el.category === uniqueListData?.data.menu[currentTab]
             )
             .map(
               (el: {
@@ -181,7 +151,7 @@ function Main() {
         <h2>Shop our selections</h2>
         <p>Curated collections hand-picked by Etsy editors</p>
         <SelectionsWrap>
-          {selectionsData.data.data.map(
+          {selectionsData?.data.data.map(
             (el: { imageUrl: string; title: string }) => (
               <CategoryCard
                 key={el.imageUrl}

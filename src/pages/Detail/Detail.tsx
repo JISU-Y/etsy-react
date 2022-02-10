@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { useLocation } from 'react-router-dom';
 import useSWR from 'swr';
-import { getProductDetails } from '../../utils/axios';
+import { getData } from '../../utils/axios';
 import ImageSection from './components/ImageSection';
 
 export interface DetailsProps {
@@ -29,7 +29,7 @@ export default function Detail() {
     state: { id },
   } = useLocation<{ id: number }>();
 
-  const { data } = useSWR('productDetails.json', url => getProductDetails(url));
+  const { data } = useSWR('productDetails.json', url => getData(url));
 
   React.useEffect(() => {
     setImages(
