@@ -16,6 +16,7 @@ import {
 } from '../../utils/axios';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 function Main() {
   const { data: circleData } = useSWR('searchBubbles.json', url =>
@@ -191,6 +192,8 @@ function Main() {
           )}
         </SelectionsWrap>
       </SelectionsContainer>
+
+      <Footer />
     </Container>
   );
 }
