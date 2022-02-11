@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { useLocation } from 'react-router-dom';
@@ -23,7 +23,7 @@ export interface DetailsProps {
 }
 
 export default function Detail() {
-  const [images, setImages] = React.useState<string[]>([]);
+  const [images, setImages] = useState<string[]>([]);
 
   const {
     state: { id },
@@ -31,7 +31,7 @@ export default function Detail() {
 
   const { data } = useSWR('productDetails.json', url => getData(url));
 
-  React.useEffect(() => {
+  useEffect(() => {
     setImages(
       data?.data.data.filter((el: { id: number }) => el.id === id)[0].images
     );

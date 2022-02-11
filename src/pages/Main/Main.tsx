@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TabMenu from '../../components/TabMenu';
 import Card from './components/Card';
 import CategoryCard from './components/CategoryCard';
@@ -25,24 +25,24 @@ function Main() {
     uniqueListData,
     selectionsData,
   } = useMainData();
-  const [currentTab, setCurrentTab] = React.useState(0);
-  const [viewedProductList, setViewedProductList] = React.useState<
+  const [currentTab, setCurrentTab] = useState(0);
+  const [viewedProductList, setViewedProductList] = useState<
     productListProps[]
   >([]);
-  const [tabProductList, setTabProductList] = React.useState<
-    tabProductListProps[]
-  >([]);
+  const [tabProductList, setTabProductList] = useState<tabProductListProps[]>(
+    []
+  );
   const history = useHistory();
 
   const goToDetail = (id: number) => history.push(`/detail/${id}`, { id });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setViewedProductList(
       productData?.data.data.filter((el: { viewed: boolean }) => el.viewed)
     );
   }, [productData]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTabProductList(
       uniqueListData?.data.data.filter(
         (el: { category: string }) =>
