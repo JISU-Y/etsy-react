@@ -33,7 +33,8 @@ export default function Detail() {
 
   useEffect(() => {
     setImages(
-      data?.data.data.filter((el: { id: number }) => el.id === id)[0].images
+      data?.data.data.filter(({ id: _id }: { id: number }) => _id === id)[0]
+        .images
     );
   }, [data?.data.data, id]);
 

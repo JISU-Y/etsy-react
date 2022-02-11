@@ -23,7 +23,7 @@ const swiperSettingType = {
   direction: 'vertical',
 } as const;
 
-const ThumbSwiperSettings = {
+const thumbSwiperSettings = {
   spaceBetween: 10,
   slidesPerView: swiperSettingType.slidesPerView,
   watchSlidesProgress: true,
@@ -31,7 +31,7 @@ const ThumbSwiperSettings = {
   direction: swiperSettingType.direction,
 };
 
-const MainSwiperSettings = {
+const mainSwiperSettings = {
   loop: true,
   spaceBetween: 5,
   modules: [FreeMode, Navigation, Thumbs, EffectFade],
@@ -53,7 +53,7 @@ function ImageSection({ images }: Props) {
         <Favorite size="large" />
       </IconWrap>
       <Swiper
-        {...ThumbSwiperSettings}
+        {...thumbSwiperSettings}
         onSwiper={setThumbsSwiper}
         className="mySwiper"
       >
@@ -64,7 +64,7 @@ function ImageSection({ images }: Props) {
         ))}
       </Swiper>
       <Swiper
-        {...MainSwiperSettings}
+        {...mainSwiperSettings}
         thumbs={{
           swiper: thumbsSwiper,
         }}
