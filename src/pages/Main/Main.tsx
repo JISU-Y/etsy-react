@@ -173,7 +173,6 @@ const Container = styled.div`
   h2 {
     font-size: 28px;
     font-weight: bold;
-    padding: 0 9px;
   }
 `;
 
