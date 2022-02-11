@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import HeartIcon from '../icons/HeartIcon';
+import HeartIcon from '../../icons/HeartIcon';
 
 interface IFavorite {
   size: 'small' | 'large';

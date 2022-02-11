@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TabMenu from '../../components/TabMenu';
-import Card from './components/Card';
+import Card from './components/Card/Card';
 import CategoryCard from './components/CategoryCard';
 import CircleCard from './components/CircleCard';
 import ImageCard from './components/ImageCard';
