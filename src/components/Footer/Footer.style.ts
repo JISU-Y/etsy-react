@@ -12,6 +12,11 @@ export const About = styled.div`
   padding: 36px 54px;
 `;
 
+export const AboutTitle = styled.h1`
+  font-size: 44px;
+  line-height: 48px;
+`;
+
 export const AboutLink = styled.p`
   font-size: 14px;
   text-decoration: underline;
@@ -38,6 +43,8 @@ export const AboutListContent = styled.div`
 export const ContentTitle = styled.h2`
   padding: 0;
   margin-bottom: 18px;
+  font-size: 28px;
+  font-weight: 500;
   line-height: 36px;
 `;
 
@@ -207,11 +214,12 @@ export const GuidesBoxTitle = styled.h4`
 
 export const GuidesBoxContents = styled.ul`
   font-size: 13px;
-  li {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  li:hover {
+`;
+
+export const Guide = styled.li`
+  margin-bottom: 10px;
+  cursor: pointer;
+  &:hover {
     text-decoration: underline;
   }
 `;

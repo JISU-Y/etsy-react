@@ -8,12 +8,14 @@ import {
   AboutLink,
   AboutList,
   AboutListContent,
+  AboutTitle,
   ContentParagraph,
   ContentTitle,
   DownloadButton,
   FooterBox,
   FooterContainer,
   FooterWrap,
+  Guide,
   Guides,
   GuidesBox,
   GuidesBoxContents,
@@ -37,7 +39,7 @@ function Footer() {
   return (
     <FooterContainer>
       <About>
-        <h1>What is Etsy?</h1>
+        <AboutTitle>What is Etsy?</AboutTitle>
         <AboutLink>Read our wonderfully weird story</AboutLink>
         <AboutList>
           {aboutList.map(
@@ -86,7 +88,7 @@ function Footer() {
                 <GuidesBoxTitle>{el.title}</GuidesBoxTitle>
                 <GuidesBoxContents>
                   {el.list.map((li: string) => (
-                    <li key={li}>{li}</li>
+                    <Guide key={li}>{li}</Guide>
                   ))}
                 </GuidesBoxContents>
                 {index === guideList.length - 1 && (

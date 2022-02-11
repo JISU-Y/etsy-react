@@ -19,7 +19,6 @@ export const CardContainer = styled.div`
 `;
 
 export const CardWrap = styled.div`
-  padding: 9px;
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;

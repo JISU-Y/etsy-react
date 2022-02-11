@@ -4,7 +4,6 @@ import Card from './components/Card/Card';
 import CategoryCard from './components/CategoryCard';
 import CircleCard from './components/CircleCard';
 import ImageCard from './components/ImageCard';
-import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -14,6 +13,24 @@ import {
   productListProps,
   tabProductListProps,
 } from '../../types';
+import {
+  CircleCategoryWrap,
+  Container,
+  PicksContainer,
+  PopularBox,
+  PopularContainer,
+  RecentLeft,
+  RecentListWrap,
+  RecentRight,
+  RecentTitle,
+  SectionDesc,
+  SectionTitle,
+  SelectionsContainer,
+  SelectionsWrap,
+  TabContents,
+  TopTitle,
+  UniqueContainer,
+} from './Main.style';
 
 function Main() {
   const {
@@ -54,9 +71,9 @@ function Main() {
   return (
     <Container>
       <Header />
-      <h1>
+      <TopTitle>
         Find things you'll love. Support independent sellers. Only on Etsy.
-      </h1>
+      </TopTitle>
       <CircleCategoryWrap>
         {circleData?.data.data.map(
           (el: { imageUrl: string; title: string }) => (
@@ -64,11 +81,10 @@ function Main() {
           )
         )}
       </CircleCategoryWrap>
-
       <RecentListWrap>
         <RecentTitle>
-          <p>Recently viewed & more</p>
-          <span>Show more from the ivoryMR shop</span>
+          <RecentLeft>Recently viewed & more</RecentLeft>
+          <RecentRight>Show more from the ivoryMR shop</RecentRight>
         </RecentTitle>
         {viewedProductList?.map((el: productListProps) => (
           <ImageCard
@@ -81,8 +97,7 @@ function Main() {
           />
         ))}
       </RecentListWrap>
-
-      <h1>Our picks for you</h1>
+      <TopTitle>Our picks for you</TopTitle>
       <CircleCategoryWrap>
         {pickCategoryData?.data.data.map(
           (el: { imageUrl: string; title: string }) => (
@@ -103,10 +118,9 @@ function Main() {
           )
         )}
       </PicksContainer>
-
       <PopularContainer>
-        <h2>Popular gifts right now</h2>
-        <div>
+        <SectionTitle>Popular gifts right now</SectionTitle>
+        <PopularBox>
           {popularData?.data.data.map((el: popularListProps) => (
             <Card
               key={el.title}
@@ -118,10 +132,10 @@ function Main() {
               title={el.title}
             />
           ))}
-        </div>
+        </PopularBox>
       </PopularContainer>
-
       <UniqueContainer>
+        <SectionTitle>Discover unique hand-picked items</SectionTitle>
         <TabMenu
           list={uniqueListData?.data.menu}
           currentTab={currentTab}
@@ -139,10 +153,11 @@ function Main() {
           ))}
         </TabContents>
       </UniqueContainer>
-
       <SelectionsContainer>
-        <h2>Shop our selections</h2>
-        <p>Curated collections hand-picked by Etsy editors</p>
+        <SectionTitle>Shop our selections</SectionTitle>
+        <SectionDesc>
+          Curated collections hand-picked by Etsy editors
+        </SectionDesc>
         <SelectionsWrap>
           {selectionsData?.data.data.map(
             (el: { imageUrl: string; title: string }) => (
@@ -155,110 +170,9 @@ function Main() {
           )}
         </SelectionsWrap>
       </SelectionsContainer>
-
       <Footer />
     </Container>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    font-size: 40px;
-    text-align: center;
-  }
-  h2 {
-    font-size: 28px;
-    font-weight: bold;
-  }
-`;
-
-const CircleCategoryWrap = styled.div`
-  display: flex;
-  gap: 60px;
-  padding: 9px;
-`;
-
-const RecentListWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 1400px;
-  gap: 18px;
-`;
-
-const RecentTitle = styled.div`
-  display: flexbox;
-  justify-content: space-between;
-  width: 100%;
-  p {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  span {
-    font-size: 13px;
-    color: gray;
-  }
-`;
-
-const PicksContainer = styled.div`
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 18px;
-  column-gap: 18px;
-  & div {
-    display: flex;
-    justify-content: center;
-  }
-`;
-
-const PopularContainer = styled.div`
-  padding: 9px;
-
-  & > div {
-    display: flex;
-  }
-`;
-
-const UniqueContainer = styled.div`
-  width: 1000px;
-`;
-
-const TabContents = styled.div`
-  margin-top: 18px;
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-`;
-
-const SelectionsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  h2 {
-    display: inline-block;
-    cursor: pointer;
-  }
-  h2::after {
-    content: '->';
-    margin-left: 10px;
-    transition: all 0.3s ease-in;
-  }
-  h2:hover::after {
-    margin-left: 15px;
-  }
-  & > p {
-    font-size: 16px;
-    color: gray;
-  }
-`;
-
-const SelectionsWrap = styled.div`
-  display: flex;
-  gap: 18px;
-`;
 
 export default Main;
