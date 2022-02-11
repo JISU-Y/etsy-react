@@ -1,16 +1,16 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-interface TabMenuProps {
+interface ITabMenu {
   list: string[];
   currentTab: number;
   setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function TabMenu({ list, currentTab, setCurrentTab }: TabMenuProps) {
+function TabMenu({ list, currentTab, setCurrentTab }: ITabMenu) {
   return (
-    <MenuContainer {...{ list, currentTab }}>
-      {list.map((menu, index) => (
+    <MenuContainer list={list} currentTab={currentTab}>
+      {list?.map((menu, index) => (
         <button key={menu} onClick={() => setCurrentTab(index)}>
           {menu}
         </button>
@@ -24,7 +24,7 @@ const MenuContainer = styled.div<{ list: string[]; currentTab: number }>`
   justify-content: space-between;
   border-bottom: 2px solid lightgray;
   button {
-    width: ${props => 100 / props.list.length ?? 1}%;
+    width: ${props => 100 / props.list?.length ?? 1}%;
     flex: 1;
     text-align: center;
     background: none;

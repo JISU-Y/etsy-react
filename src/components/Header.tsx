@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface Props {}
-
 const menu = [
   'Jewelry & Acessories',
   'Clothing & Shoes',
@@ -14,7 +12,7 @@ const menu = [
   'Vintage',
 ];
 
-function Header({}: Props) {
+function Header() {
   return (
     <HeaderContainer>
       <SearchContainer>
@@ -27,7 +25,7 @@ function Header({}: Props) {
         <button>🛒</button>
       </SearchContainer>
       <MenuContainer>
-        {menu.map((tab: string) => (
+        {menu.map(tab => (
           <li key={tab}>{tab}</li>
         ))}
       </MenuContainer>

@@ -128,7 +128,7 @@ function Main() {
           setCurrentTab={setCurrentTab}
         />
         <TabContents>
-          {tabProductList.map((el: tabProductListProps) => (
+          {tabProductList?.map((el: tabProductListProps) => (
             <ImageCard
               key={el.imageUrl}
               width={250}

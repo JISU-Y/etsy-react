@@ -2,15 +2,15 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import HeartIcon from '../icons/HeartIcon';
 
-interface FavoriteProps {
+interface IFavorite {
   size: 'small' | 'large';
 }
 
-function Favorite({ size }: FavoriteProps) {
+function Favorite({ size }: IFavorite) {
   const [width, height] = size === 'small' ? [18, 18] : [24, 24];
 
   return (
-    <Heart {...{ size }}>
+    <Heart size={size}>
       <HeartIcon width={width} height={height} color="black" />
     </Heart>
   );
