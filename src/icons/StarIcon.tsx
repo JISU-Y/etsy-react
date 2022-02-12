@@ -1,12 +1,7 @@
 import React from 'react';
+import { IconProps } from '../types';
 
-interface Props {
-  width: string | number;
-  height: string | number;
-  color: string;
-}
-
-const HeartIcon: React.FC<Props> = ({
+const HeartIcon: React.FC<IconProps> = ({
   width = 14,
   height = 14,
   color = 'black',

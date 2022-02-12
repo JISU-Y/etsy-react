@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import CartIcon from '../../icons/CartIcon';
+import Logo from '../../icons/Logo';
 import {
   BorderLine,
   CartButton,
@@ -51,13 +53,17 @@ function Header() {
   return (
     <HeaderContainer>
       <SearchContainer>
-        <span>logo</span>
+        <span>
+          <Logo width={80} height={40} color="orange" />
+        </span>
         <SearchForm>
           <Input type="text" placeholder="Search for anything" />
           <SearchButton>검색</SearchButton>
         </SearchForm>
         <SignInButton>Sign in</SignInButton>
-        <CartButton>🛒</CartButton>
+        <CartButton>
+          <CartIcon width={24} height={24} color="black" />
+        </CartButton>
       </SearchContainer>
       <MenuContainer
         onMouseEnter={() => setAlreadyIn(true)}

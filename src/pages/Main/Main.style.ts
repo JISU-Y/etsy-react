@@ -13,11 +13,26 @@ export const TopTitle = styled.h1`
   margin: 30px 0 18px;
 `;
 
-export const CircleCategoryWrap = styled.div`
+export const CircleCategoryContainer = styled.div`
+  width: 100%;
+  background-color: #ddebe3;
   display: flex;
-  gap: 60px;
+  height: 200px;
+  margin-bottom: 150px;
+`;
+
+export const CircleCategoryWrap = styled.div`
   padding: 9px;
+  margin: auto;
   margin-bottom: 60px;
+  width: 1400px;
+`;
+
+export const CircleCardBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
 `;
 
 export const RecentListWrap = styled.div`
@@ -33,7 +48,7 @@ export const RecentTitle = styled.div`
   display: flexbox;
   justify-content: space-between;
   width: 100%;
-  padding: 0 36px;
+  padding: 0 40px;
 `;
 
 export const RecentLeft = styled.p`
@@ -47,16 +62,22 @@ export const RecentRight = styled.span`
 `;
 
 export const PicksContainer = styled.div`
+  margin: -50px auto 60px;
+  max-width: 1400px;
+  width: 100%;
+`;
+
+export const PicksWrapper = styled.div`
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: repeat(6, 100px);
   grid-template-columns: repeat(4, 1fr);
+  justify-items: stretch;
   row-gap: 18px;
   column-gap: 18px;
-  margin: -50px 0 60px;
-  & div {
-    display: flex;
-    justify-content: center;
-  }
+`;
+
+export const ImageCardWrapper = styled.div<{ index: number }>`
+  display: block;
 `;
 
 export const SectionTitle = styled.h2`
@@ -86,23 +107,33 @@ export const TabContents = styled.div`
   flex-wrap: wrap;
 `;
 
+export const SVGWrapper = styled.div`
+  display: inline-block;
+  transform: translateX(10px);
+  transition: all 0.3s ease-in;
+  margin-top: 5px;
+`;
+
+export const TitleWrapper = styled.div`
+  margin-bottom: 18px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  ${SectionTitle} {
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+  &:hover ${SVGWrapper} {
+    transform: translateX(15px);
+  }
+`;
+
 export const SelectionsContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1400px;
   margin-bottom: 90px;
-  ${SectionTitle} {
-    display: inline-block;
-    cursor: pointer;
-  }
-  ${SectionTitle}::after {
-    content: '->';
-    margin-left: 10px;
-    transition: all 0.3s ease-in;
-  }
-  ${SectionTitle}:hover::after {
-    margin-left: 15px;
-  }
 `;
 
 export const SectionDesc = styled.p`
