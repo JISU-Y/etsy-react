@@ -15,27 +15,7 @@ const menu = [
 ];
 
 function Header() {
-  const [alreadyIn, setAlreadyIn] = useState(false);
-  const [listWidth, setListWidth] = useState(0);
-  const [linePosition, setLinePosition] = useState(0);
-
-  const indicatePositionLine = (
-    target: EventTarget & HTMLLIElement,
-    index: number
-  ) => {
-    if (!target.parentNode?.childNodes) return;
-
-    const startPosition = Array.from(
-      target.parentNode?.childNodes as NodeListOf<HTMLLIElement>
-    )
-      .slice(0, index)
-      .reduce(
-        (acc: number, tab: HTMLLIElement): number => (acc += tab.clientWidth),
-        0
-      );
-    setLinePosition(startPosition);
-    setListWidth(target.clientWidth);
-  };
+  const [lineIndex, setLineIndex] = useState(0);
 
   return (
     <S.HeaderContainer>
@@ -52,25 +32,20 @@ function Header() {
           <CartIcon width={24} height={24} color="black" />
         </S.CartButton>
       </S.SearchContainer>
-      <S.MenuContainer
-        onMouseEnter={() => setAlreadyIn(true)}
-        onMouseLeave={() => setAlreadyIn(false)}
-      >
+      <S.MenuContainer>
         <S.MenuList>
           {menu.map((tab, index) => (
             <S.Menu
               key={tab}
-              onMouseEnter={e => indicatePositionLine(e.currentTarget, index)}
+              onMouseEnter={() => setLineIndex(index)}
+              onMouseLeave={() => setLineIndex(index)}
+              index={lineIndex}
             >
               {tab}
             </S.Menu>
           ))}
+          <S.IndicatorLine />
         </S.MenuList>
-        <S.IndicatorLine
-          alreadyIn={alreadyIn}
-          listWidth={listWidth}
-          linePosition={linePosition}
-        />
       </S.MenuContainer>
       <S.BorderLine />
     </S.HeaderContainer>

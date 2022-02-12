@@ -106,6 +106,7 @@ export const SearchButton = styled.button`
 `;
 
 export const MenuContainer = styled.div`
+  width: 100%;
   height: 100%;
   position: relative;
   display: flex;
@@ -115,25 +116,47 @@ export const MenuContainer = styled.div`
   padding: 0 36px;
 `;
 
+export const IndicatorLine = styled.div`
+  width: 0;
+  position: absolute;
+  bottom: -2px;
+  transform: translateX(-50%);
+  border-bottom: 2px solid black;
+  transition: all 0.3s ease-in-out;
+`;
+
 export const MenuList = styled.ul`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   max-width: 1400px;
-  font-size: 14px;
+  position: relative;
 `;
 
-export const Menu = styled.li`
+export const Menu = styled.li<{ index: number }>`
+  width: 100%;
   height: 100%;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   padding: 6px;
   position: relative;
+  text-align: center;
   &:first-child,
   &:last-child {
     margin: 0;
   }
+  ${({ index }) => css`
+    & ~ ${IndicatorLine} {
+      width: 0;
+      left: ${index * 12.5 + 12.5 / 2}%;
+    }
+    &:hover ~ ${IndicatorLine} {
+      width: 12.5%;
+      left: ${index * 12.5 + 12.5 / 2}%;
+    }
+  `}
 `;
 
 export const BorderLine = styled.div`
@@ -142,22 +165,4 @@ export const BorderLine = styled.div`
   bottom: -2px;
   left: 0;
   border-bottom: 2px solid rgba(34, 34, 34, 0.15);
-`;
-
-export const IndicatorLine = styled.div<{
-  alreadyIn: boolean;
-  listWidth: number;
-  linePosition: number;
-}>`
-  transition: all 0.2s ease-in-out;
-  ${({ alreadyIn, listWidth, linePosition }) => css`
-    width: ${alreadyIn ? listWidth : 0}px;
-    margin: 0 36px;
-    position: absolute;
-    bottom: -2px;
-    left: ${linePosition + listWidth / 2}px;
-    transform: translateX(-50%);
-    transition: all 0.2s ease-in-out;
-    border-bottom: 2px solid black;
-  }`}
 `;
