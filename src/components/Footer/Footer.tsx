@@ -10,17 +10,15 @@ function Footer() {
         <S.AboutTitle>What is Etsy?</S.AboutTitle>
         <S.AboutLink>Read our wonderfully weird story</S.AboutLink>
         <S.AboutList>
-          {aboutList.map(
-            (el: { title: string; contents: string; extra?: string }) => (
-              <S.AboutListContent key={el.title}>
-                <S.ContentTitle>{el.title}</S.ContentTitle>
-                <S.ContentParagraph>
-                  {el.contents}
-                  {el.extra && <span> {el.extra}</span>}
-                </S.ContentParagraph>
-              </S.AboutListContent>
-            )
-          )}
+          {aboutList.map(({ title, contents, extra }) => (
+            <S.AboutListContent key={title}>
+              <S.ContentTitle>{title}</S.ContentTitle>
+              <S.ContentParagraph>
+                {contents}
+                {extra && <span> {extra}</span>}
+              </S.ContentParagraph>
+            </S.AboutListContent>
+          ))}
         </S.AboutList>
         <S.AboutFootTitle>
           Have a question? Well, we’ve got some answers.
@@ -44,30 +42,22 @@ function Footer() {
       </S.Subscribe>
       <S.Guides>
         <S.GuidesWrapper>
-          {guideList.map(
-            (
-              el: {
-                title: string;
-                list: string[];
-              },
-              index: number
-            ) => (
-              <S.GuidesBox key={el.title}>
-                <S.GuidesBoxTitle>{el.title}</S.GuidesBoxTitle>
-                <S.GuidesBoxContents>
-                  {el.list.map((li: string) => (
-                    <S.Guide key={li}>{li}</S.Guide>
-                  ))}
-                </S.GuidesBoxContents>
-                {index === guideList.length - 1 && (
-                  <S.HelpBox>
-                    <S.DownloadButton>Download the Etsy App</S.DownloadButton>
-                    <S.IconsBox>icons</S.IconsBox>
-                  </S.HelpBox>
-                )}
-              </S.GuidesBox>
-            )
-          )}
+          {guideList.map(({ title, list }, index) => (
+            <S.GuidesBox key={title}>
+              <S.GuidesBoxTitle>{title}</S.GuidesBoxTitle>
+              <S.GuidesBoxContents>
+                {list.map(li => (
+                  <S.Guide key={li}>{li}</S.Guide>
+                ))}
+              </S.GuidesBoxContents>
+              {index === guideList.length - 1 && (
+                <S.HelpBox>
+                  <S.DownloadButton>Download the Etsy App</S.DownloadButton>
+                  <S.IconsBox>icons</S.IconsBox>
+                </S.HelpBox>
+              )}
+            </S.GuidesBox>
+          ))}
         </S.GuidesWrapper>
       </S.Guides>
       <S.FooterWrap>
@@ -81,7 +71,7 @@ function Footer() {
               {Array.from(
                 ['Terms of use', 'Privacy', 'Interest-based ads'],
                 li => (
-                  <li>{li}</li>
+                  <li key={li}>{li}</li>
                 )
               )}
             </S.PolicyList>

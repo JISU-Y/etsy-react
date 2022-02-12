@@ -57,7 +57,7 @@ function ImageSection({ images }: Props) {
         onSwiper={setThumbsSwiper}
         className="mySwiper"
       >
-        {images?.map((imageUrl: string, index: number) => (
+        {images?.map((imageUrl, index) => (
           <SwiperSlide key={imageUrl}>
             <img src={imageUrl} alt={`preview${index}`} />
           </SwiperSlide>
@@ -70,7 +70,7 @@ function ImageSection({ images }: Props) {
         }}
         className="mySwiper2"
       >
-        {images?.map((imageUrl: string, index: number) => (
+        {images?.map((imageUrl, index) => (
           <SwiperSlide key={imageUrl}>
             <img src={imageUrl} alt={`preview${index}`} />
           </SwiperSlide>
