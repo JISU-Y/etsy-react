@@ -23,6 +23,7 @@ export const CardWrap = styled.div`
   background-color: transparent;
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
+  padding: 9px;
   &:hover {
     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
     background-color: white;

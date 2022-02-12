@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import Favorite from '../../../../components/Favorite';
 import { currency } from '../../../../constants/localeSetting';
 import { padCentsDigits } from '../../../../utils/convertDigit';
@@ -8,7 +8,7 @@ export interface ImageCardProps {
   width: number;
   height: number;
   price: number;
-  onClick?: MouseEventHandler<HTMLDivElement> | undefined; // ? 지우기 다른 곳도 onClick 추가
+  onClick?: () => void;
 }
 
 function ImageCard({ image, price, width, height, onClick }: ImageCardProps) {

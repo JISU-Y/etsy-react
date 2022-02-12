@@ -12,14 +12,14 @@ interface CardProps extends ImageCardProps {
 }
 
 function Card({ title, reviewCount, price, image, ...props }: CardProps) {
+  const infoTitle = title.length > 60 ? `${title.slice(0, 59)}...` : title;
+
   return (
     <S.CardContainer>
       <S.CardWrap>
         <S.ProductImg src={image} alt="item" {...props} />
         <S.ItemInfo>
-          <S.InfoP>
-            {title.length > 60 ? `${title.slice(0, 59)}...` : title}
-          </S.InfoP>
+          <S.InfoP>{infoTitle}</S.InfoP>
           <S.ReviewStars>
             {Array.from([1, 2, 3, 4, 5], el => (
               <StarIcon key={el} width={12} height={12} color="black" />
