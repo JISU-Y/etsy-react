@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import TabMenu from '../../components/TabMenu';
 import Card from './components/Card/Card';
 import CategoryCard from './components/CategoryCard';
@@ -14,6 +14,7 @@ import {
   tabProductListProps,
 } from '../../types';
 import * as S from './Main.style';
+import ArrowRight from '../../icons/ArrowRight';
 
 function Main() {
   const {
@@ -32,6 +33,9 @@ function Main() {
   const [tabProductList, setTabProductList] = useState<tabProductListProps[]>(
     []
   );
+
+  const imgCardWrapRef = useRef<HTMLDivElement>(null);
+
   const history = useHistory();
 
   const goToDetail = (id: number) => history.push(`/detail/${id}`, { id });
@@ -54,16 +58,24 @@ function Main() {
   return (
     <S.Container>
       <Header />
-      <S.TopTitle>
-        Find things you'll love. Support independent sellers. Only on Etsy.
-      </S.TopTitle>
-      <S.CircleCategoryWrap>
-        {circleData?.data.data.map(
-          (el: { imageUrl: string; title: string }) => (
-            <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
-          )
-        )}
-      </S.CircleCategoryWrap>
+      <S.CircleCategoryContainer>
+        <S.CircleCategoryWrap>
+          <S.TopTitle>
+            Find things you'll love. Support independent sellers. Only on Etsy.
+          </S.TopTitle>
+          <S.CircleCardBox>
+            {circleData?.data.data.map(
+              (el: { imageUrl: string; title: string }) => (
+                <CircleCard
+                  key={el.title}
+                  title={el.title}
+                  image={el.imageUrl}
+                />
+              )
+            )}
+          </S.CircleCardBox>
+        </S.CircleCategoryWrap>
+      </S.CircleCategoryContainer>
       <S.RecentListWrap>
         <S.RecentTitle>
           <S.RecentLeft>Recently viewed & more</S.RecentLeft>
@@ -80,26 +92,43 @@ function Main() {
           />
         ))}
       </S.RecentListWrap>
-      <S.TopTitle>Our picks for you</S.TopTitle>
       <S.CircleCategoryWrap>
-        {pickCategoryData?.data.data.map(
-          (el: { imageUrl: string; title: string }) => (
-            <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
-          )
-        )}
+        <S.TopTitle>Our picks for you</S.TopTitle>
+        <S.CircleCardBox>
+          {pickCategoryData?.data.data.map(
+            (el: { imageUrl: string; title: string }) => (
+              <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
+            )
+          )}
+        </S.CircleCardBox>
       </S.CircleCategoryWrap>
       <S.PicksContainer>
-        {picksListData?.data.data.map(
-          (el: { discout: number; imageUrl: string; price: number }) => (
-            <ImageCard
-              key={el.imageUrl}
-              width={250}
-              height={167}
-              price={el.price}
-              image={el.imageUrl}
-            />
-          )
-        )}
+        <S.PicksWrapper>
+          {picksListData?.data.data.map(
+            (
+              el: { discout: number; imageUrl: string; price: number },
+              index: number
+            ) => (
+              <S.ImageCardWrapper
+                key={el.imageUrl}
+                index={index}
+                ref={imgCardWrapRef}
+              >
+                <ImageCard
+                  width={imgCardWrapRef.current?.clientWidth ?? 250}
+                  height={
+                    100 *
+                    (index === 0 || index === 2 || index === 5 || index === 7
+                      ? 2
+                      : 3)
+                  }
+                  price={el.price}
+                  image={el.imageUrl}
+                />
+              </S.ImageCardWrapper>
+            )
+          )}
+        </S.PicksWrapper>
       </S.PicksContainer>
       <S.PopularContainer>
         <S.SectionTitle>Popular gifts right now</S.SectionTitle>
@@ -137,7 +166,12 @@ function Main() {
         </S.TabContents>
       </S.UniqueContainer>
       <S.SelectionsContainer>
-        <S.SectionTitle>Shop our selections</S.SectionTitle>
+        <S.TitleWrapper>
+          <S.SectionTitle>Shop our selections</S.SectionTitle>
+          <S.SVGWrapper>
+            <ArrowRight width={14} height={28} color="black" />
+          </S.SVGWrapper>
+        </S.TitleWrapper>
         <S.SectionDesc>
           Curated collections hand-picked by Etsy editors
         </S.SectionDesc>
