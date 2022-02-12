@@ -12,17 +12,7 @@ function OurPicksList({ list }: Props) {
       <S.PicksWrapper>
         {list?.map(({ imageUrl, price, discount }, index: number) => (
           <S.ImageCardWrapper key={imageUrl} index={index}>
-            <ImageCard
-              width={250}
-              height={
-                100 *
-                (index === 0 || index === 2 || index === 5 || index === 7
-                  ? 2
-                  : 3)
-              }
-              price={price}
-              image={imageUrl}
-            />
+            <ImageCard width={0} height={0} price={price} image={imageUrl} />
           </S.ImageCardWrapper>
         ))}
       </S.PicksWrapper>

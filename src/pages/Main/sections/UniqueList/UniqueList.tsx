@@ -34,14 +34,15 @@ function UniqueList({ tabMenuList, list }: Props) {
         setCurrentTab={setCurrentTab}
       />
       <S.TabContents>
-        {tabProductList?.map(({ imageUrl, price }) => (
-          <ImageCard
-            key={imageUrl}
-            width={250}
-            height={167}
-            price={price}
-            image={imageUrl}
-          />
+        {tabProductList?.map(({ imageUrl, price }, index) => (
+          <S.ImageCardWrapper key={imageUrl} index={index}>
+            <ImageCard
+              width={250}
+              height={167}
+              price={price}
+              image={imageUrl}
+            />
+          </S.ImageCardWrapper>
         ))}
       </S.TabContents>
     </S.UniqueContainer>

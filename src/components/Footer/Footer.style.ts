@@ -1,7 +1,34 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const FooterContainer = styled.div`
+  width: 100%;
+  background-color: #fdebd2;
+  position: relative;
+  svg {
+    width: 100%;
+  }
+`;
+
+export const SVGWrapper = styled.div<{
+  top?: number;
+  left?: number;
+  bottom?: number;
+  right?: number;
+}>`
+  width: 100%;
+  position: absolute;
+  ${({ top, left, bottom, right }) => css`
+    top: ${top}px;
+    left: ${left}px;
+    bottom: ${bottom}px;
+    right: ${right}px;
+  `}
+`;
+
+export const AboutWrapper = styled.div`
   max-width: 1400px;
+  margin: auto;
+  margin-top: 50px;
 `;
 
 export const About = styled.div`
@@ -84,7 +111,10 @@ export const Subscribe = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 0;
+  padding-top: 30px;
+  background-color: #d7e6f5;
+  position: relative;
+  margin-top: 50px;
 `;
 
 export const SubscribeTitle = styled.h4`
@@ -111,7 +141,7 @@ export const SubscribeForm = styled.form`
 `;
 
 export const SubscribeButton = styled.button`
-  background: rgba(34, 34, 34, 0.05);
+  background: #fff;
   width: fit-content;
   padding: 0 15px;
   border: none;
@@ -159,7 +189,7 @@ export const SubscribeButton = styled.button`
 `;
 
 export const Input = styled.input`
-  background: rgba(34, 34, 34, 0.05);
+  background: #fff;
   padding: 10px 0 10px 20px;
   width: 100%;
   border: none;
@@ -176,13 +206,29 @@ export const Input = styled.input`
   }
 `;
 
-export const SubscribeFooter = styled.div``;
+export const SubscribeFooter = styled.div`
+  width: 100%;
+  background-color: #4d6bc6;
+  padding-bottom: 30px;
+`;
 
-export const SubscribeFooterInfo = styled.p`
+export const SubscribeFooterInfo = styled.div`
+  width: fit-content;
+  display: flex;
+  color: #fff;
+  margin: 90px auto 0;
+  svg {
+    width: fit-content;
+  }
+`;
+
+export const SubscribeFooterSpan = styled.span`
+  width: 100%;
   font-size: 16px;
   line-height: 28px;
+  margin-left: 10px;
   cursor: help;
-  border-bottom: 2px dashed black;
+  border-bottom: 2px dashed #fff;
 `;
 
 export const Guides = styled.div`
@@ -218,6 +264,7 @@ export const GuidesBoxContents = styled.ul`
 
 export const Guide = styled.li`
   margin-bottom: 10px;
+  width: fit-content;
   cursor: pointer;
   &:hover {
     text-decoration: underline;
@@ -271,7 +318,6 @@ export const FooterBox = styled.div`
   font-size: 13px;
   color: #fff;
   width: 100%;
-  max-width: 1400px;
 `;
 
 export const LocaleInfo = styled.div`
