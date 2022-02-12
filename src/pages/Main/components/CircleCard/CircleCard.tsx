@@ -1,13 +1,13 @@
 import React from 'react';
 import { CardDefaultProps } from '../../../../types';
-import { CardContainer, CardImg, CardTitle } from './CircleCard.style';
+import * as S from './CircleCard.style';
 
 function CircleCard({ image, title }: CardDefaultProps) {
   return (
-    <CardContainer>
-      <CardImg src={image} alt="circle-card" />
-      <CardTitle>{title}</CardTitle>
-    </CardContainer>
+    <S.CardContainer>
+      <S.CardImg src={image} alt="circle-card" />
+      <S.CardTitle>{title}</S.CardTitle>
+    </S.CardContainer>
   );
 }
 

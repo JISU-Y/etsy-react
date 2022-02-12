@@ -2,12 +2,7 @@ import React, { MouseEventHandler } from 'react';
 import Favorite from '../../../../components/Favorite';
 import { currency } from '../../../../constants/localeSetting';
 import { padCentsDigits } from '../../../../utils/convertDigit';
-import {
-  CardImg,
-  FavoriteWrap,
-  ImgContainer,
-  PriceTag,
-} from './ImageCard.style';
+import * as S from './ImageCard.style';
 export interface ImageCardProps {
   image: string;
   width: number;
@@ -18,15 +13,15 @@ export interface ImageCardProps {
 
 function ImageCard({ image, price, width, height, onClick }: ImageCardProps) {
   return (
-    <ImgContainer onClick={onClick}>
-      <CardImg src={image} alt="item" width={width} height={height} />
-      <FavoriteWrap>
+    <S.ImgContainer onClick={onClick}>
+      <S.CardImg src={image} alt="item" width={width} height={height} />
+      <S.FavoriteWrap>
         <Favorite size="small" />
-      </FavoriteWrap>
-      <PriceTag>
+      </S.FavoriteWrap>
+      <S.PriceTag>
         {currency} {padCentsDigits(price)}
-      </PriceTag>
-    </ImgContainer>
+      </S.PriceTag>
+    </S.ImgContainer>
   );
 }
 

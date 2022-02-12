@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import {
-  BorderLine,
-  CartButton,
-  HeaderContainer,
-  IndicatorLine,
-  Input,
-  Menu,
-  MenuContainer,
-  MenuList,
-  SearchButton,
-  SearchContainer,
-  SearchForm,
-  SignInButton,
-} from './Header.style';
+import * as S from './Header.style';
 
 const menu = [
   'Jewelry & Acessories',
@@ -49,38 +36,38 @@ function Header() {
   };
 
   return (
-    <HeaderContainer>
-      <SearchContainer>
+    <S.HeaderContainer>
+      <S.SearchContainer>
         <span>logo</span>
-        <SearchForm>
-          <Input type="text" placeholder="Search for anything" />
-          <SearchButton>검색</SearchButton>
-        </SearchForm>
-        <SignInButton>Sign in</SignInButton>
-        <CartButton>🛒</CartButton>
-      </SearchContainer>
-      <MenuContainer
+        <S.SearchForm>
+          <S.Input type="text" placeholder="Search for anything" />
+          <S.SearchButton>검색</S.SearchButton>
+        </S.SearchForm>
+        <S.SignInButton>Sign in</S.SignInButton>
+        <S.CartButton>🛒</S.CartButton>
+      </S.SearchContainer>
+      <S.MenuContainer
         onMouseEnter={() => setAlreadyIn(true)}
         onMouseLeave={() => setAlreadyIn(false)}
       >
-        <MenuList>
+        <S.MenuList>
           {menu.map((tab, index) => (
-            <Menu
+            <S.Menu
               key={tab}
               onMouseEnter={e => indicatePositionLine(e.currentTarget, index)}
             >
               {tab}
-            </Menu>
+            </S.Menu>
           ))}
-        </MenuList>
-        <IndicatorLine
+        </S.MenuList>
+        <S.IndicatorLine
           alreadyIn={alreadyIn}
           listWidth={listWidth}
           linePosition={linePosition}
         />
-      </MenuContainer>
-      <BorderLine />
-    </HeaderContainer>
+      </S.MenuContainer>
+      <S.BorderLine />
+    </S.HeaderContainer>
   );
 }
 

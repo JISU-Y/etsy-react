@@ -13,24 +13,7 @@ import {
   productListProps,
   tabProductListProps,
 } from '../../types';
-import {
-  CircleCategoryWrap,
-  Container,
-  PicksContainer,
-  PopularBox,
-  PopularContainer,
-  RecentLeft,
-  RecentListWrap,
-  RecentRight,
-  RecentTitle,
-  SectionDesc,
-  SectionTitle,
-  SelectionsContainer,
-  SelectionsWrap,
-  TabContents,
-  TopTitle,
-  UniqueContainer,
-} from './Main.style';
+import * as S from './Main.style';
 
 function Main() {
   const {
@@ -69,23 +52,23 @@ function Main() {
   }, [uniqueListData, currentTab]);
 
   return (
-    <Container>
+    <S.Container>
       <Header />
-      <TopTitle>
+      <S.TopTitle>
         Find things you'll love. Support independent sellers. Only on Etsy.
-      </TopTitle>
-      <CircleCategoryWrap>
+      </S.TopTitle>
+      <S.CircleCategoryWrap>
         {circleData?.data.data.map(
           (el: { imageUrl: string; title: string }) => (
             <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
           )
         )}
-      </CircleCategoryWrap>
-      <RecentListWrap>
-        <RecentTitle>
-          <RecentLeft>Recently viewed & more</RecentLeft>
-          <RecentRight>Show more from the ivoryMR shop</RecentRight>
-        </RecentTitle>
+      </S.CircleCategoryWrap>
+      <S.RecentListWrap>
+        <S.RecentTitle>
+          <S.RecentLeft>Recently viewed & more</S.RecentLeft>
+          <S.RecentRight>Show more from the ivoryMR shop</S.RecentRight>
+        </S.RecentTitle>
         {viewedProductList?.map((el: productListProps) => (
           <ImageCard
             key={el.id}
@@ -96,16 +79,16 @@ function Main() {
             onClick={() => goToDetail(el.id)}
           />
         ))}
-      </RecentListWrap>
-      <TopTitle>Our picks for you</TopTitle>
-      <CircleCategoryWrap>
+      </S.RecentListWrap>
+      <S.TopTitle>Our picks for you</S.TopTitle>
+      <S.CircleCategoryWrap>
         {pickCategoryData?.data.data.map(
           (el: { imageUrl: string; title: string }) => (
             <CircleCard key={el.title} title={el.title} image={el.imageUrl} />
           )
         )}
-      </CircleCategoryWrap>
-      <PicksContainer>
+      </S.CircleCategoryWrap>
+      <S.PicksContainer>
         {picksListData?.data.data.map(
           (el: { discout: number; imageUrl: string; price: number }) => (
             <ImageCard
@@ -117,10 +100,10 @@ function Main() {
             />
           )
         )}
-      </PicksContainer>
-      <PopularContainer>
-        <SectionTitle>Popular gifts right now</SectionTitle>
-        <PopularBox>
+      </S.PicksContainer>
+      <S.PopularContainer>
+        <S.SectionTitle>Popular gifts right now</S.SectionTitle>
+        <S.PopularBox>
           {popularData?.data.data.map((el: popularListProps) => (
             <Card
               key={el.title}
@@ -132,16 +115,16 @@ function Main() {
               title={el.title}
             />
           ))}
-        </PopularBox>
-      </PopularContainer>
-      <UniqueContainer>
-        <SectionTitle>Discover unique hand-picked items</SectionTitle>
+        </S.PopularBox>
+      </S.PopularContainer>
+      <S.UniqueContainer>
+        <S.SectionTitle>Discover unique hand-picked items</S.SectionTitle>
         <TabMenu
           list={uniqueListData?.data.menu}
           currentTab={currentTab}
           setCurrentTab={setCurrentTab}
         />
-        <TabContents>
+        <S.TabContents>
           {tabProductList?.map((el: tabProductListProps) => (
             <ImageCard
               key={el.imageUrl}
@@ -151,14 +134,14 @@ function Main() {
               image={el.imageUrl}
             />
           ))}
-        </TabContents>
-      </UniqueContainer>
-      <SelectionsContainer>
-        <SectionTitle>Shop our selections</SectionTitle>
-        <SectionDesc>
+        </S.TabContents>
+      </S.UniqueContainer>
+      <S.SelectionsContainer>
+        <S.SectionTitle>Shop our selections</S.SectionTitle>
+        <S.SectionDesc>
           Curated collections hand-picked by Etsy editors
-        </SectionDesc>
-        <SelectionsWrap>
+        </S.SectionDesc>
+        <S.SelectionsWrap>
           {selectionsData?.data.data.map(
             (el: { imageUrl: string; title: string }) => (
               <CategoryCard
@@ -168,10 +151,10 @@ function Main() {
               />
             )
           )}
-        </SelectionsWrap>
-      </SelectionsContainer>
+        </S.SelectionsWrap>
+      </S.SelectionsContainer>
       <Footer />
-    </Container>
+    </S.Container>
   );
 }
 

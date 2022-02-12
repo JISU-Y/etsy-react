@@ -1,81 +1,49 @@
 import React from 'react';
 import { aboutList, guideList } from '../../constants/footerLists';
 import { currency, language, location } from '../../constants/localeSetting';
-import {
-  About,
-  AboutFootButton,
-  AboutFootTitle,
-  AboutLink,
-  AboutList,
-  AboutListContent,
-  AboutTitle,
-  ContentParagraph,
-  ContentTitle,
-  DownloadButton,
-  FooterBox,
-  FooterContainer,
-  FooterWrap,
-  Guide,
-  Guides,
-  GuidesBox,
-  GuidesBoxContents,
-  GuidesBoxTitle,
-  GuidesWrapper,
-  HelpBox,
-  IconsBox,
-  Input,
-  LocaleInfo,
-  Policies,
-  PolicyList,
-  Subscribe,
-  SubscribeButton,
-  SubscribeFooter,
-  SubscribeFooterInfo,
-  SubscribeForm,
-  SubscribeTitle,
-} from './Footer.style';
+import * as S from './Footer.style';
 
 function Footer() {
   return (
-    <FooterContainer>
-      <About>
-        <AboutTitle>What is Etsy?</AboutTitle>
-        <AboutLink>Read our wonderfully weird story</AboutLink>
-        <AboutList>
+    <S.FooterContainer>
+      <S.About>
+        <S.AboutTitle>What is Etsy?</S.AboutTitle>
+        <S.AboutLink>Read our wonderfully weird story</S.AboutLink>
+        <S.AboutList>
           {aboutList.map(
             (el: { title: string; contents: string; extra?: string }) => (
-              <AboutListContent key={el.title}>
-                <ContentTitle>{el.title}</ContentTitle>
-                <ContentParagraph>
+              <S.AboutListContent key={el.title}>
+                <S.ContentTitle>{el.title}</S.ContentTitle>
+                <S.ContentParagraph>
                   {el.contents}
                   {el.extra && <span> {el.extra}</span>}
-                </ContentParagraph>
-              </AboutListContent>
+                </S.ContentParagraph>
+              </S.AboutListContent>
             )
           )}
-        </AboutList>
-        <AboutFootTitle>
+        </S.AboutList>
+        <S.AboutFootTitle>
           Have a question? Well, we’ve got some answers.
-        </AboutFootTitle>
-        <AboutFootButton>Go to Help Center</AboutFootButton>
-      </About>
-      <Subscribe>
-        <SubscribeTitle>
+        </S.AboutFootTitle>
+        <S.AboutFootButton>Go to Help Center</S.AboutFootButton>
+      </S.About>
+      <S.Subscribe>
+        <S.SubscribeTitle>
           Yes! Send me exclusive offers, unique gift ideas, and personalized
           tips for shopping and selling on Etsy.
-        </SubscribeTitle>
-        <SubscribeForm>
-          <Input type="email" placeholder="Enter your email" />
-          <SubscribeButton>Subscribe</SubscribeButton>
-        </SubscribeForm>
-        <SubscribeFooter>
-          <SubscribeFooterInfo>
+        </S.SubscribeTitle>
+        <S.SubscribeForm>
+          <S.Input type="email" placeholder="Enter your email" />
+          <S.SubscribeButton>Subscribe</S.SubscribeButton>
+        </S.SubscribeForm>
+        <S.SubscribeFooter>
+          <S.SubscribeFooterInfo>
             Etsy is powered by 100% renewable electricity.
-          </SubscribeFooterInfo>
-        </SubscribeFooter>
-      </Subscribe>
-      <Guides>
-        <GuidesWrapper>
+          </S.SubscribeFooterInfo>
+        </S.SubscribeFooter>
+      </S.Subscribe>
+      <S.Guides>
+        <S.GuidesWrapper>
           {guideList.map(
             (
               el: {
@@ -84,43 +52,43 @@ function Footer() {
               },
               index: number
             ) => (
-              <GuidesBox key={el.title}>
-                <GuidesBoxTitle>{el.title}</GuidesBoxTitle>
-                <GuidesBoxContents>
+              <S.GuidesBox key={el.title}>
+                <S.GuidesBoxTitle>{el.title}</S.GuidesBoxTitle>
+                <S.GuidesBoxContents>
                   {el.list.map((li: string) => (
-                    <Guide key={li}>{li}</Guide>
+                    <S.Guide key={li}>{li}</S.Guide>
                   ))}
-                </GuidesBoxContents>
+                </S.GuidesBoxContents>
                 {index === guideList.length - 1 && (
-                  <HelpBox>
-                    <DownloadButton>Download the Etsy App</DownloadButton>
-                    <IconsBox>icons</IconsBox>
-                  </HelpBox>
+                  <S.HelpBox>
+                    <S.DownloadButton>Download the Etsy App</S.DownloadButton>
+                    <S.IconsBox>icons</S.IconsBox>
+                  </S.HelpBox>
                 )}
-              </GuidesBox>
+              </S.GuidesBox>
             )
           )}
-        </GuidesWrapper>
-      </Guides>
-      <FooterWrap>
-        <FooterBox>
-          <LocaleInfo>
+        </S.GuidesWrapper>
+      </S.Guides>
+      <S.FooterWrap>
+        <S.FooterBox>
+          <S.LocaleInfo>
             {location} | {language} | $ ({currency})
-          </LocaleInfo>
-          <Policies>
+          </S.LocaleInfo>
+          <S.Policies>
             <span>2022 Etsy, Inc.</span>
-            <PolicyList>
+            <S.PolicyList>
               {Array.from(
                 ['Terms of use', 'Privacy', 'Interest-based ads'],
                 li => (
                   <li>{li}</li>
                 )
               )}
-            </PolicyList>
-          </Policies>
-        </FooterBox>
-      </FooterWrap>
-    </FooterContainer>
+            </S.PolicyList>
+          </S.Policies>
+        </S.FooterBox>
+      </S.FooterWrap>
+    </S.FooterContainer>
   );
 }
 

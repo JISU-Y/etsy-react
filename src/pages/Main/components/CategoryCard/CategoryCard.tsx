@@ -1,17 +1,13 @@
 import React from 'react';
 import { CardDefaultProps } from '../../../../types';
-import {
-  CardContainer,
-  CategoryImg,
-  CategoryTitle,
-} from './CategoryCard.style';
+import * as S from './CategoryCard.style';
 
 function CategoryCard({ image, title }: CardDefaultProps) {
   return (
-    <CardContainer>
-      <CategoryImg src={image} alt="category" />
-      <CategoryTitle>{title}</CategoryTitle>
-    </CardContainer>
+    <S.CardContainer>
+      <S.CategoryImg src={image} alt="category" />
+      <S.CategoryTitle>{title}</S.CategoryTitle>
+    </S.CardContainer>
   );
 }
 

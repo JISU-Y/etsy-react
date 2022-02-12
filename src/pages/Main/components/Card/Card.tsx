@@ -4,16 +4,7 @@ import { currency } from '../../../../constants/localeSetting';
 import { padCentsDigits } from '../../../../utils/convertDigit';
 import { ImageCardProps } from '../ImageCard/ImageCard';
 import StarIcon from '../../../../icons/StarIcon';
-import {
-  CardContainer,
-  CardWrap,
-  FavoriteWrap,
-  InfoP,
-  ItemInfo,
-  ProductImg,
-  ReviewCount,
-  ReviewStars,
-} from './Card.style';
+import * as S from './Card.style';
 
 interface CardProps extends ImageCardProps {
   title: string;
@@ -22,28 +13,28 @@ interface CardProps extends ImageCardProps {
 
 function Card({ title, reviewCount, price, image, ...props }: CardProps) {
   return (
-    <CardContainer>
-      <CardWrap>
-        <ProductImg src={image} alt="item" {...props} />
-        <ItemInfo>
-          <InfoP>
+    <S.CardContainer>
+      <S.CardWrap>
+        <S.ProductImg src={image} alt="item" {...props} />
+        <S.ItemInfo>
+          <S.InfoP>
             {title.length > 60 ? `${title.slice(0, 59)}...` : title}
-          </InfoP>
-          <ReviewStars>
+          </S.InfoP>
+          <S.ReviewStars>
             {Array.from([1, 2, 3, 4, 5], el => (
               <StarIcon key={el} width={12} height={12} color="black" />
             ))}
-            <ReviewCount>({reviewCount.toLocaleString()})</ReviewCount>
-          </ReviewStars>
-          <InfoP>
+            <S.ReviewCount>({reviewCount.toLocaleString()})</S.ReviewCount>
+          </S.ReviewStars>
+          <S.InfoP>
             {currency} {padCentsDigits(price)}
-          </InfoP>
-        </ItemInfo>
-      </CardWrap>
-      <FavoriteWrap>
+          </S.InfoP>
+        </S.ItemInfo>
+      </S.CardWrap>
+      <S.FavoriteWrap>
         <Favorite size="small" />
-      </FavoriteWrap>
-    </CardContainer>
+      </S.FavoriteWrap>
+    </S.CardContainer>
   );
 }
 
