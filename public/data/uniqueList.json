@@ -1,0 +1,178 @@
+{
+  "menu": [
+    "Home improvement ideas",
+    "Modern farmhouse",
+    "Health & Wellness",
+    "Personalized gifts"
+  ],
+  "data": [
+    {
+      "category": "Home improvement ideas",
+      "imageUrl": "https://i.etsystatic.com/9961441/r/il/53fd10/1042039956/il_680x540.1042039956_9tuk.jpg",
+      "price": 19.14,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Home improvement ideas",
+      "imageUrl": "https://i.etsystatic.com/9884888/c/2140/1701/0/914/il/276d4d/2458751350/il_340x270.2458751350_gane.jpg",
+      "price": 11.99,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Home improvement ideas",
+      "imageUrl": "https://i.etsystatic.com/13591671/c/1735/1378/51/284/il/c4a93f/1315313206/il_340x270.1315313206_3j6t.jpg",
+      "price": 72.25,
+      "discount": 0,
+      "quickDelivery": true
+    },
+    {
+      "category": "Home improvement ideas",
+      "imageUrl": "https://i.etsystatic.com/8164491/c/1788/1421/596/366/il/b5655d/2168207680/il_680x540.2168207680_3rfx.jpg",
+      "price": 134,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Home improvement ideas",
+      "imageUrl": "https://i.etsystatic.com/18909736/r/il/e0147b/2016098778/il_340x270.2016098778_a5p6.jpg",
+      "price": 20.5,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Home improvement ideas",
+      "imageUrl": "https://i.etsystatic.com/14433424/r/il/00223c/1758928199/il_340x270.1758928199_ncni.jpg",
+      "price": 37.08,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Modern farmhouse",
+      "imageUrl": "https://i.etsystatic.com/7420957/r/il/22dbbe/1225560313/il_680x540.1225560313_74ez.jpg",
+      "price": 76,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Modern farmhouse",
+      "imageUrl": "https://i.etsystatic.com/7385585/c/883/701/363/137/il/a4ac55/1722256994/il_340x270.1722256994_nmbd.jpg",
+      "price": 46.35,
+      "discount": 10,
+      "quickDelivery": false
+    },
+    {
+      "category": "Modern farmhouse",
+      "imageUrl": "https://i.etsystatic.com/10745498/r/il/48235d/1118761057/il_340x270.1118761057_iqb2.jpg",
+      "price": 65,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Modern farmhouse",
+      "imageUrl": "https://i.etsystatic.com/9089295/r/il/31ceb1/686266185/il_680x540.686266185_mmmf.jpg",
+      "price": 65,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Modern farmhouse",
+      "imageUrl": "https://i.etsystatic.com/6734380/r/il/813bac/1105220681/il_340x270.1105220681_7c92.jpg",
+      "price": 118,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Modern farmhouse",
+      "imageUrl": "https://i.etsystatic.com/12412346/r/il/59bec8/1125797982/il_340x270.1125797982_mucd.jpg",
+      "price": 119,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Health & Wellness",
+      "imageUrl": "https://i.etsystatic.com/13908568/r/il/9ba83e/1067127194/il_680x540.1067127194_llrj.jpg",
+      "price": 22,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Health & Wellness",
+      "imageUrl": "https://i.etsystatic.com/5564938/c/700/556/0/146/il/843e73/995641060/il_340x270.995641060_ghn6.jpg",
+      "price": 34.95,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Health & Wellness",
+      "imageUrl": "https://i.etsystatic.com/9732980/r/il/4731d1/1896907105/il_340x270.1896907105_sats.jpg",
+      "price": 19.77,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Health & Wellness",
+      "imageUrl": "https://i.etsystatic.com/6891172/r/il/cf3bdf/596758373/il_680x540.596758373_gu9r.jpg",
+      "price": 26.1,
+      "discount": 10,
+      "quickDelivery": false
+    },
+    {
+      "category": "Health & Wellness",
+      "imageUrl": "https://i.etsystatic.com/13974859/r/il/5f1a0a/1110083758/il_340x270.1110083758_27rg.jpg",
+      "price": 54,
+      "discount": 0,
+      "quickDelivery": true
+    },
+    {
+      "category": "Health & Wellness",
+      "imageUrl": "https://i.etsystatic.com/5768074/r/il/5252b0/1219015931/il_340x270.1219015931_i6u3.jpg",
+      "price": 83,
+      "discount": 0,
+      "quickDelivery": true
+    },
+    {
+      "category": "Personalized gifts",
+      "imageUrl": "https://i.etsystatic.com/5950429/c/2000/1589/0/153/il/e2bb04/2069707738/il_680x540.2069707738_3wg4.jpg",
+      "price": 22.5,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Personalized gifts",
+      "imageUrl": "https://i.etsystatic.com/14835601/r/il/34d72d/1946100955/il_340x270.1946100955_fuf3.jpg",
+      "price": 39.95,
+      "discount": 0,
+      "quickDelivery": true
+    },
+    {
+      "category": "Personalized gifts",
+      "imageUrl": "https://i.etsystatic.com/6627720/r/il/9d73bb/1123196302/il_340x270.1123196302_qeko.jpg",
+      "price": 45.95,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Personalized gifts",
+      "imageUrl": "https://i.etsystatic.com/12589262/r/il/d42547/1149555232/il_680x540.1149555232_ey2r.jpg",
+      "price": 45.95,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Personalized gifts",
+      "imageUrl": "https://i.etsystatic.com/15136420/r/il/7b020b/1320869082/il_340x270.1320869082_xajr.jpg",
+      "price": 65,
+      "discount": 0,
+      "quickDelivery": false
+    },
+    {
+      "category": "Personalized gifts",
+      "imageUrl": "https://i.etsystatic.com/6138903/r/il/e05f7d/1017414797/il_340x270.1017414797_mvg4.jpg",
+      "price": 89,
+      "discount": 0,
+      "quickDelivery": false
+    }
+  ]
+}
