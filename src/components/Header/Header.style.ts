@@ -35,16 +35,17 @@ export const SignInButton = styled.button`
 
 export const CartButton = styled.button`
   width: 45px;
-  height: 45px;
+  height: 36px;
   font-size: 20px;
   line-height: 20px;
   border: none;
   position: relative;
   background: transparent;
+  cursor: pointer;
   &::after {
     content: '';
-    width: 45px;
-    height: 45px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -54,6 +55,19 @@ export const CartButton = styled.button`
     opacity: 0;
     transition: transform 0.1s ease-in-out;
   }
+  &:hover .tooltip {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const ToolTipWrapper = styled.div`
+  display: inline-block;
+`;
+
+export const CartToolTipSpan = styled.span`
+  font-size: 13px;
 `;
 
 export const SearchContainer = styled.div`
@@ -64,17 +78,24 @@ export const SearchContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 12px 36px;
-  span {
-    font-size: 30px;
-    width: 86px;
-    margin-right: 6px;
-  }
-  ${SignInButton}:hover::after, ${CartButton}:hover::after {
+  ${SignInButton}:hover::after {
     content: '';
     transform: scale(1);
     opacity: 1;
     background: rgba(34, 34, 34, 0.1);
   }
+  ${CartButton}:hover::after {
+    content: '';
+    transform: scale(1.2);
+    opacity: 1;
+    background: rgba(34, 34, 34, 0.1);
+  }
+`;
+
+export const LogoWrapper = styled.span`
+  font-size: 30px;
+  width: 86px;
+  margin-right: 6px;
 `;
 
 export const SearchForm = styled.form`

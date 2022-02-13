@@ -1,10 +1,15 @@
 import React from 'react';
-import { aboutList, guideList } from '../../constants/footerLists';
+import {
+  aboutList,
+  guideList,
+  aboutDescriptions,
+} from '../../constants/footerLists';
 import { currency, language, location } from '../../constants/localeSetting';
 import BeigeLine from '../../icons/BeigeLine';
 import BlueLine from '../../icons/BlueLine';
 import DarkBlueLine from '../../icons/DarkBlueLine';
 import Eco from '../../icons/Eco';
+import ToolTipTemplate from '../ToolTipTemplate';
 import * as S from './Footer.style';
 
 function Footer() {
@@ -23,7 +28,22 @@ function Footer() {
                 <S.ContentTitle>{title}</S.ContentTitle>
                 <S.ContentParagraph>
                   {contents}
-                  {extra && <span> {extra}</span>}
+                  {extra && (
+                    <>
+                      <S.ContentMoreSpan> {extra}</S.ContentMoreSpan>
+                      <ToolTipTemplate
+                        bgColor="#fff"
+                        color="#000"
+                        element={
+                          <S.ToolTipUl>
+                            {aboutDescriptions.map(li => (
+                              <S.ToolTipLi key={li}>{li}</S.ToolTipLi>
+                            ))}
+                          </S.ToolTipUl>
+                        }
+                      />
+                    </>
+                  )}
                 </S.ContentParagraph>
               </S.AboutListContent>
             ))}

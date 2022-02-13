@@ -75,13 +75,30 @@ export const ContentTitle = styled.h2`
   line-height: 36px;
 `;
 
-export const ContentParagraph = styled.p`
+export const ContentParagraph = styled.div`
   font-size: 16px;
   line-height: 28px;
-  span {
-    cursor: help;
-    border-bottom: 2px dashed black;
+`;
+
+export const ContentMoreSpan = styled.span`
+  cursor: help;
+  border-bottom: 2px dashed black;
+  &:hover ~ .tooltip {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
   }
+`;
+
+export const ToolTipUl = styled.ul`
+  padding: 9px;
+  padding-left: 18px;
+`;
+
+export const ToolTipLi = styled.li`
+  list-style: disc;
+  font-size: 14px;
 `;
 
 export const AboutFootTitle = styled.h3`

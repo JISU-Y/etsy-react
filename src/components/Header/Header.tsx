@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CartIcon from '../../icons/CartIcon';
 import Logo from '../../icons/Logo';
+import ToolTipTemplate from '../ToolTipTemplate';
 import * as S from './Header.style';
 
 const menu = [
@@ -20,9 +21,9 @@ function Header() {
   return (
     <S.HeaderContainer>
       <S.SearchContainer>
-        <span>
+        <S.LogoWrapper>
           <Logo width={80} height={40} color="orange" />
-        </span>
+        </S.LogoWrapper>
         <S.SearchForm>
           <S.Input type="text" placeholder="Search for anything" />
           <S.SearchButton>검색</S.SearchButton>
@@ -30,6 +31,13 @@ function Header() {
         <S.SignInButton>Sign in</S.SignInButton>
         <S.CartButton>
           <CartIcon width={24} height={24} color="black" />
+          <ToolTipTemplate
+            bgColor="#222"
+            color="#fff"
+            bottom={-45}
+            left={0}
+            element={<S.CartToolTipSpan>Cart</S.CartToolTipSpan>}
+          />
         </S.CartButton>
       </S.SearchContainer>
       <S.MenuContainer>
