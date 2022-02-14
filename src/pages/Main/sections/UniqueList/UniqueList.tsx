@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import TabMenu from '../../../../components/TabMenu';
 import ImageCard from '../../components/ImageCard';
 import useUniqueList from '../../hooks/useUniqueList';
-import { tabProductListProps } from '../../types';
+import { TabProductList } from '../../types';
 import * as S from './Unique.style';
 
 function UniqueList() {
-  const data = useUniqueList();
+  const { data, menu } = useUniqueList();
   const [currentTab, setCurrentTab] = useState(0);
   const [tabProductList, setTabProductList] = useState<
-    tabProductListProps[] | undefined
+    TabProductList[] | undefined
   >([]);
-  console.log(data);
 
   useEffect(() => {
     setTabProductList(
-      data?.data?.filter(({ category }) => category === data?.menu[currentTab])
+      data?.filter(({ category }) => category === menu!![currentTab])
     );
   }, [data, currentTab]);
 
@@ -23,7 +22,7 @@ function UniqueList() {
     <S.UniqueContainer>
       <S.SectionTitle>Discover unique hand-picked items</S.SectionTitle>
       <TabMenu
-        list={data?.menu}
+        list={menu}
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       />

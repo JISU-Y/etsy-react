@@ -1,8 +1,8 @@
 import { useRequest } from '../../../hooks/useRequest';
-import { SelectionsListProps } from '../sections/SelectionList/SelectionList';
+import { SelectionsList } from '../types';
 
 function useSelectionList() {
-  const data = useRequest<SelectionsListProps>('selectionsCategory.json');
+  const { data } = useRequest<SelectionsList[]>('selectionsCategory.json');
 
   return data;
 }

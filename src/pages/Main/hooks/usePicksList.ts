@@ -1,8 +1,8 @@
 import { useRequest } from '../../../hooks/useRequest';
-import { OurPicksProps } from '../sections/OurPicksList/OurPicksList';
+import { OurPicks } from '../types';
 
 function usePicksList() {
-  const data = useRequest<OurPicksProps>('picksList.json');
+  const { data } = useRequest<OurPicks[]>('picksList.json');
 
   return data;
 }

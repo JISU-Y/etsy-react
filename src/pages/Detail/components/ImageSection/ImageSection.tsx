@@ -9,12 +9,12 @@ import 'swiper/css/effect-fade';
 import SwiperCore from 'swiper';
 
 import Favorite from '../../../../components/Favorite';
-import { DetailsProps } from '../../Detail';
 import { IconWrap, ImageContainer } from './ImageSection.style';
 import { mainSwiperSettings, thumbSwiperSettings } from './ImageSection.data';
+import { Details } from '../../types/model';
 
 interface Props {
-  images: DetailsProps['images'] | undefined;
+  images: Details['images'] | undefined;
 }
 
 function ImageSection({ images }: Props) {

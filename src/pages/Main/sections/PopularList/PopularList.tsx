@@ -14,7 +14,7 @@ function PopularList({ sectionTitle }: Props) {
     <S.PopularContainer>
       <S.SectionTitle>{sectionTitle}</S.SectionTitle>
       <S.PopularBox>
-        {data?.data.map(({ title, contentsUrl, price, reviews }) => (
+        {data?.map(({ title, contentsUrl, price, reviews }) => (
           <Card
             key={title}
             width={250}

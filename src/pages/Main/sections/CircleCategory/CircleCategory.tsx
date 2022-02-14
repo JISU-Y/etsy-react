@@ -1,14 +1,8 @@
-import React from 'react';
 import CircleCard from '../../components/CircleCard';
+import { CategoryList } from '../../types';
 import * as S from './CircleCategory.style';
-
-export interface List {
-  imageUrl: string;
-  title: string;
-}
-
 interface IProps {
-  categoryList: List[] | undefined;
+  categoryList: CategoryList[] | undefined;
   title: string;
   bgColor: 'white' | 'mint';
 }

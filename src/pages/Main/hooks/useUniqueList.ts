@@ -1,10 +1,10 @@
 import { useRequest } from '../../../hooks/useRequest';
-import { tabProductListProps } from '../types';
+import { TabProductList } from '../types';
 
 function useUniqueList() {
-  const data = useRequest<tabProductListProps>('uniqueList.json');
+  const { data, menu } = useRequest<TabProductList[]>('uniqueList.json');
 
-  return data;
+  return { data, menu };
 }
 
 export default useUniqueList;

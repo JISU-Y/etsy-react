@@ -1,8 +1,8 @@
 import { useRequest } from '../../../hooks/useRequest';
-import { DetailsProps } from '../Detail';
+import { Details } from '../types/model';
 
 function useProductDetails() {
-  const data = useRequest<DetailsProps>('productDetails.json');
+  const data = useRequest<Details[]>('productDetails.json');
 
   return data;
 }

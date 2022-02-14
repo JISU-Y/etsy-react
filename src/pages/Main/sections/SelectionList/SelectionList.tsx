@@ -3,11 +3,6 @@ import ArrowRight from '../../../../icons/ArrowRight';
 import CategoryCard from '../../components/CategoryCard';
 import useSelectionList from '../../hooks/useSelectionList';
 import * as S from './SelectionList.style';
-
-export interface SelectionsListProps {
-  imageUrl: string;
-  title: string;
-}
 interface Props {
   sectionTitle: string;
 }
@@ -27,7 +22,7 @@ function SelectionList({ sectionTitle }: Props) {
         Curated collections hand-picked by Etsy editors
       </S.SectionDesc>
       <S.SelectionsWrap>
-        {data?.data.map(({ imageUrl, title }) => (
+        {data?.map(({ imageUrl, title }) => (
           <CategoryCard key={imageUrl} image={imageUrl} title={title} />
         ))}
       </S.SelectionsWrap>

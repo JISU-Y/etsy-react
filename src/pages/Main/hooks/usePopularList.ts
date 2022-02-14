@@ -1,8 +1,8 @@
 import { useRequest } from '../../../hooks/useRequest';
-import { popularListProps } from '../types';
+import { PopularList } from '../types';
 
 function usePopularList() {
-  const data = useRequest<popularListProps>('popularList.json');
+  const { data } = useRequest<PopularList[]>('popularList.json');
 
   return data;
 }
