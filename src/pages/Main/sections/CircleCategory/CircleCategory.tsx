@@ -2,11 +2,13 @@ import React from 'react';
 import CircleCard from '../../components/CircleCard';
 import * as S from './CircleCategory.style';
 
+export interface List {
+  imageUrl: string;
+  title: string;
+}
+
 interface IProps {
-  list: {
-    imageUrl: string;
-    title: string;
-  }[];
+  list: List[];
   title: string;
   bgColor: 'white' | 'mint';
 }

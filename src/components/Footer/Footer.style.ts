@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import zIndex from '../../styles/zIndex';
 
 export const FooterContainer = styled.div`
   max-width: 1400px;
@@ -133,7 +134,7 @@ export const SubscribeButton = styled.button`
     transition: transform 0.1s ease-in-out;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    z-index: 5;
+    z-index: ${zIndex.base};
   }
   &::before {
     content: '';
@@ -145,7 +146,7 @@ export const SubscribeButton = styled.button`
     top: 0;
     left: 0;
     color: #fff;
-    z-index: 6;
+    z-index: ${zIndex.base + 1};
   }
   &:hover::after {
     transform: scale(1);

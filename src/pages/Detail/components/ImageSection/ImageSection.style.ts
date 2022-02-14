@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import zIndex from '../../../../styles/zIndex';
 
 export const ImageContainer = styled.div`
   display: flex;
@@ -59,5 +60,5 @@ export const IconWrap = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 2;
+  z-index: ${zIndex.base};
 `;

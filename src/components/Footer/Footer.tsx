@@ -1,5 +1,5 @@
 import React from 'react';
-import { aboutList, guideList } from '../../constants/footerLists';
+import { aboutList, guideList } from './Footer.data';
 import { currency, language, location } from '../../constants/localeSetting';
 import * as S from './Footer.style';
 
