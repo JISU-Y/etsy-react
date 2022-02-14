@@ -1,16 +1,15 @@
 import React from 'react';
 import ImageCard from '../../components/ImageCard';
+import usePicksList from '../../hooks/usePicksList';
 import * as S from './OurPicksList.style';
 
-interface Props {
-  list: { imageUrl: string; price: number; discount: number }[];
-}
+function OurPicksList() {
+  const data = usePicksList();
 
-function OurPicksList({ list }: Props) {
   return (
     <S.PicksContainer>
       <S.PicksWrapper>
-        {list?.map(({ imageUrl, price, discount }, index: number) => (
+        {data?.map(({ imageUrl, price, discount }, index) => (
           <S.ImageCardWrapper key={imageUrl} index={index}>
             <ImageCard
               width={250}

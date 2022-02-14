@@ -11,13 +11,15 @@ interface CardProps extends ImageCardProps {
   reviewCount: number;
 }
 
-function Card({ title, reviewCount, price, image, ...props }: CardProps) {
+function Card({ title, reviewCount, price, image, width, height }: CardProps) {
   const infoTitle = title.length > 60 ? `${title.slice(0, 59)}...` : title;
 
   return (
     <S.CardContainer>
       <S.CardWrap>
-        <S.ProductImg src={image} alt="item" {...props} />
+        <S.ProductImgBox width={width} height={height}>
+          <S.ProductImg src={image} alt="item" />
+        </S.ProductImgBox>
         <S.ItemInfo>
           <S.InfoP>{infoTitle}</S.InfoP>
           <S.ReviewStars>

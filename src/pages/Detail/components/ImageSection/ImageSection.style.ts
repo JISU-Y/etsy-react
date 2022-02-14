@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import zIndex from '../../../../styles/zIndex';
 
 export const ImageContainer = styled.div`
   display: flex;
@@ -18,8 +20,8 @@ export const ImageContainer = styled.div`
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background-color: #fff;
-      color: black;
+      background-color: ${COLORS.white};
+      color: ${COLORS.mainFont};
     }
     .swiper-button-prev::after,
     .swiper-button-next::after {
@@ -59,5 +61,5 @@ export const IconWrap = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 2;
+  z-index: ${zIndex.base};
 `;

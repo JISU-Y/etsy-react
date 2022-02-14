@@ -2,17 +2,7 @@ import React, { useState } from 'react';
 import CartIcon from '../../icons/CartIcon';
 import Logo from '../../icons/Logo';
 import * as S from './Header.style';
-
-const menu = [
-  'Jewelry & Acessories',
-  'Clothing & Shoes',
-  'Home & Living',
-  'Wedding & Party',
-  'Toys & Enertainment',
-  'Art & Cellectibles',
-  'Craft Supplies & Tools',
-  'Vintage',
-];
+import { menu } from './Header.data';
 
 function Header() {
   const [lineIndex, setLineIndex] = useState(0);

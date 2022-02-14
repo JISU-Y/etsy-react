@@ -14,7 +14,9 @@ export interface ImageCardProps {
 function ImageCard({ image, price, width, height, onClick }: ImageCardProps) {
   return (
     <S.ImgContainer onClick={onClick}>
-      <S.CardImg src={image} alt="item" width={width} height={height} />
+      <S.CardImgBox width={width} height={height}>
+        <S.CardImg src={image} alt="item" />
+      </S.CardImgBox>
       <S.FavoriteWrap>
         <Favorite size="small" />
       </S.FavoriteWrap>

@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuContainer, TabButton } from './TabMenu.style';
 
 interface ITabMenu {
-  list: string[];
+  list: string[] | undefined;
   currentTab: number;
   setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
 }

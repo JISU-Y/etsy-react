@@ -1,23 +1,19 @@
-import React from 'react';
 import CircleCard from '../../components/CircleCard';
+import { CategoryList } from '../../types';
 import * as S from './CircleCategory.style';
-
 interface IProps {
-  list: {
-    imageUrl: string;
-    title: string;
-  }[];
+  categoryList: CategoryList[] | undefined;
   title: string;
   bgColor: 'white' | 'mint';
 }
 
-function CircleCategory({ title, list, bgColor }: IProps) {
+function CircleCategory({ title, bgColor, categoryList }: IProps) {
   return (
     <S.CircleCategoryContainer bgColor={bgColor}>
       <S.CircleCategoryWrap>
         <S.TopTitle>{title}</S.TopTitle>
         <S.CircleCardBox>
-          {list?.map(({ imageUrl, title }) => (
+          {categoryList?.map(({ imageUrl, title }) => (
             <CircleCard key={title} title={title} image={imageUrl} />
           ))}
         </S.CircleCardBox>

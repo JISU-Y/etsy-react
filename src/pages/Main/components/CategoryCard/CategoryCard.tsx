@@ -5,7 +5,9 @@ import * as S from './CategoryCard.style';
 function CategoryCard({ image, title }: CardDefaultProps) {
   return (
     <S.CardContainer>
-      <S.CategoryImg src={image} alt="category" />
+      <S.CategoryImgBox>
+        <S.CategoryImg src={image} alt="category" />
+      </S.CategoryImgBox>
       <S.CategoryTitle>{title}</S.CategoryTitle>
     </S.CardContainer>
   );

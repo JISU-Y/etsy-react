@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import COLORS from '../../styles/colors';
+import TRANSITION from '../../styles/transition';
+import zIndex from '../../styles/zIndex';
 
 export const FooterContainer = styled.div`
   max-width: 1400px;
@@ -23,10 +26,10 @@ export const AboutLink = styled.p`
   text-align: center;
   cursor: pointer;
   margin-top: 10px;
-  color: black;
-  transition: color 0.2s ease-in-out;
+  color: ${COLORS.mainFont};
+  transition: ${TRANSITION.normal};
   &:hover {
-    color: gray;
+    color: ${COLORS.subFont};
   }
 `;
 
@@ -73,7 +76,7 @@ export const AboutFootButton = styled.button`
   background: transparent;
   cursor: pointer;
   transform: scale(1);
-  transition: transform 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   &:hover {
     transform: scale(1.02);
   }
@@ -100,18 +103,18 @@ export const SubscribeForm = styled.form`
   height: 48px;
   max-width: 480px;
   border-radius: 50px;
-  border: 1px solid lightgray;
+  border: 1px solid ${COLORS.border};
   overflow: hidden;
-  box-shadow: 1px 2px 4px 0 rgba(34, 34, 34, 0.1) inset;
+  box-shadow: 1px 2px 4px 0 ${COLORS.shadowGray} inset;
   margin-bottom: 50px;
-  transition: border 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   &:hover {
-    border: 1px solid gray;
+    border: 1px solid ${COLORS.subFont};
   }
 `;
 
 export const SubscribeButton = styled.button`
-  background: rgba(34, 34, 34, 0.05);
+  background: ${COLORS.backgroundGray};
   width: fit-content;
   padding: 0 15px;
   border: none;
@@ -119,7 +122,7 @@ export const SubscribeButton = styled.button`
   font-size: 16px;
   font-weight: bold;
   position: relative;
-  color: #222;
+  color: ${COLORS.mainFont};
   &::after {
     content: '';
     font-size: 16px;
@@ -130,10 +133,10 @@ export const SubscribeButton = styled.button`
     top: 0;
     left: 0;
     transform: scale(0.85);
-    transition: transform 0.1s ease-in-out;
+    transition: ${TRANSITION.quick};
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    z-index: 5;
+    z-index: ${zIndex.base};
   }
   &::before {
     content: '';
@@ -144,22 +147,22 @@ export const SubscribeButton = styled.button`
     position: absolute;
     top: 0;
     left: 0;
-    color: #fff;
-    z-index: 6;
+    color: ${COLORS.white};
+    z-index: ${zIndex.base + 1};
   }
   &:hover::after {
     transform: scale(1);
-    background: #222;
-    color: #fff;
+    background-color: ${COLORS.darkGray};
+    color: ${COLORS.white};
   }
   &:hover::before {
     content: 'Subscribe';
-    color: #fff;
+    color: ${COLORS.white};
   }
 `;
 
 export const Input = styled.input`
-  background: rgba(34, 34, 34, 0.05);
+  background: ${COLORS.backgroundGray};
   padding: 10px 0 10px 20px;
   width: 100%;
   border: none;
@@ -167,12 +170,12 @@ export const Input = styled.input`
   font-size: 16px;
   &:focus ~ ${SubscribeButton}::after {
     transform: scale(1);
-    background: #222;
-    color: #fff;
+    background-color: ${COLORS.darkGray};
+    color: ${COLORS.white};
   }
   &:focus ~ ${SubscribeButton}::before {
     content: 'Subscribe';
-    color: #fff;
+    color: ${COLORS.white};
   }
 `;
 
@@ -188,8 +191,8 @@ export const SubscribeFooterInfo = styled.p`
 export const Guides = styled.div`
   display: flex;
   padding: 36px 24px;
-  background-color: #2f466c;
-  color: #fff;
+  background-color: ${COLORS.blue};
+  color: ${COLORS.white};
 `;
 
 export const GuidesWrapper = styled.div`
@@ -236,7 +239,7 @@ export const DownloadButton = styled.button`
   cursor: pointer;
   background: transparent;
   position: relative;
-  color: #fff;
+  color: ${COLORS.white};
   &::after {
     content: '';
     width: 100%;
@@ -247,7 +250,7 @@ export const DownloadButton = styled.button`
     transform: translate(-50%, -50%) scale(1);
     border-radius: 36px;
     border: 2px solid #fff;
-    transition: transform 0.2s ease-in-out;
+    transition: ${TRANSITION.normal};
   }
   &:hover::after {
     transform: translate(-50%, -50%) scale(1.05);
@@ -261,7 +264,7 @@ export const IconsBox = styled.div`
 
 export const FooterWrap = styled.div`
   padding: 18px 24px;
-  background-color: #232347;
+  background-color: ${COLORS.darkBlue};
 `;
 
 export const FooterBox = styled.div`
@@ -269,7 +272,7 @@ export const FooterBox = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  color: #fff;
+  color: ${COLORS.white};
   width: 100%;
   max-width: 1400px;
 `;
@@ -283,10 +286,10 @@ export const LocaleInfo = styled.div`
   padding: 9px 15px;
   border-radius: 36px;
   background-color: transparent;
-  transition: all 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   cursor: pointer;
   &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: ${COLORS.hoverWhite};
   }
 `;
 

@@ -1,21 +1,29 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import TRANSITION from '../../../../styles/transition';
 
 export const CardContainer = styled.div`
   display: inline-block;
-  width: 250px;
+  width: 220px;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid lightgray;
+  border: 1px solid ${COLORS.border};
   cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   &:hover {
-    box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+    box-shadow: 0 4px 20px ${COLORS.shadowGray};
   }
 `;
 
-export const CategoryImg = styled.img`
-  width: 250px;
+export const CategoryImgBox = styled.div`
   height: 200px;
+  overflow: hidden;
+`;
+
+export const CategoryImg = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const CategoryTitle = styled.p`

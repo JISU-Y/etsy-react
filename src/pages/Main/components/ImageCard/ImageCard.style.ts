@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import TRANSITION from '../../../../styles/transition';
 
 export const FavoriteWrap = styled.div`
   position: absolute;
@@ -6,7 +8,7 @@ export const FavoriteWrap = styled.div`
   right: 6px;
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
 `;
 
 export const ImgContainer = styled.div`
@@ -15,9 +17,9 @@ export const ImgContainer = styled.div`
   overflow: hidden;
   border-radius: 5px;
   cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   &:hover {
-    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px 0 ${COLORS.shadowGray};
   }
   &:hover > ${FavoriteWrap} {
     opacity: 1;
@@ -25,13 +27,17 @@ export const ImgContainer = styled.div`
   }
 `;
 
-export const CardImg = styled.img<{ width: number; height: number }>`
+export const CardImgBox = styled.div<{ width: number; height: number }>`
   ${({ width, height }) => css`
-    img {
-      width: ${width}px;
-      height: ${height}px;
-    }
+    width: ${width}px;
+    height: ${height}px;
   `}
+`;
+
+export const CardImg = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const PriceTag = styled.div`
@@ -39,7 +45,7 @@ export const PriceTag = styled.div`
   bottom: 8px;
   left: 6px;
   padding: 6px 9px;
-  background-color: white;
+  background-color: ${COLORS.white};
   border-radius: 15px;
   border: 1px solid #c4c4c4;
   font-size: 13px;

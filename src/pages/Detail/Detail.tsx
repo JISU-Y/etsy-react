@@ -2,43 +2,22 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { useLocation } from 'react-router-dom';
-import useSWR from 'swr';
-import { getData } from '../../utils/axios';
 import ImageSection from './components/ImageSection';
-
-export interface DetailsProps {
-  id: number;
-  images: string[];
-  title: string;
-  sold: number;
-  provider: string;
-  etsyPick: boolean;
-  price: number;
-  discount: number;
-  finishOptions: string[];
-  lengthOptions: number[];
-  personalization: string;
-  details: string[];
-  quickDelivery: boolean;
-}
+import useProductDetails from './hooks/useProductDetails';
 
 export default function Detail() {
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<string[] | undefined>([]);
+
+  const { data } = useProductDetails();
 
   const {
-    state: { id },
+    state: { id: _id },
   } = useLocation<{ id: number }>();
 
-  const { data } = useSWR('productDetails.json', url => getData(url));
-
   useEffect(() => {
-    setImages(
-      data?.data.data.filter(({ id: _id }: { id: number }) => _id === id)[0]
-        .images
-    );
-  }, [data?.data.data, id]);
-
-  if (!data) return <div>...loading</div>;
+    if (!data) return;
+    setImages(data.filter(({ id }) => id === _id)[0].images);
+  }, [data, _id]);
 
   return (
     <Container>

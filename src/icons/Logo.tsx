@@ -1,17 +1,14 @@
 import React from 'react';
+import COLORS from '../styles/colors';
 import { IconProps } from '../types';
 
-const Logo: React.FC<IconProps> = ({
-  width = 80,
-  height = 40,
-  color = 'orange',
-}) => {
+const Logo: React.FC<IconProps> = ({ width = 80, height = 40 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      fill={color}
+      fill={COLORS.primary}
       viewBox="0 0 48 24"
       aria-hidden="true"
     >

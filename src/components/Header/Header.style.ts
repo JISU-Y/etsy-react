@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import COLORS from '../../styles/colors';
+import TRANSITION from '../../styles/transition';
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -27,9 +29,9 @@ export const SignInButton = styled.button`
     left: 0;
     border-radius: 30px;
     transform: scale(0.8);
-    background: rgba(34, 34, 34, 0.1);
+    background: ${COLORS.hoverGray};
     opacity: 0;
-    transition: transform 0.1s ease-in-out;
+    transition: ${TRANSITION.quick};
   }
 `;
 
@@ -50,9 +52,9 @@ export const CartButton = styled.button`
     left: 0;
     border-radius: 50%;
     transform: scale(0.8);
-    background: rgba(34, 34, 34, 0.1);
+    background: ${COLORS.hoverGray};
     opacity: 0;
-    transition: transform 0.1s ease-in-out;
+    transition: ${TRANSITION.quick};
   }
 `;
 
@@ -73,7 +75,7 @@ export const SearchContainer = styled.div`
     content: '';
     transform: scale(1);
     opacity: 1;
-    background: rgba(34, 34, 34, 0.1);
+    background: ${COLORS.hoverGray};
   }
 `;
 
@@ -87,7 +89,7 @@ export const SearchForm = styled.form`
 `;
 
 export const Input = styled.input`
-  background: rgba(34, 34, 34, 0.05);
+  background: ${COLORS.backgroundGray};
   padding: 10px 0 10px 20px;
   width: 100%;
   border: none;
@@ -95,13 +97,13 @@ export const Input = styled.input`
 `;
 
 export const SearchButton = styled.button`
-  background: rgba(34, 34, 34, 0.05);
+  background: ${COLORS.backgroundGray};
   width: 60px;
   border: none;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   &:hover {
-    background: rgba(34, 34, 34, 0.1);
+    background: ${COLORS.hoverGray};
   }
 `;
 
@@ -122,7 +124,7 @@ export const IndicatorLine = styled.div`
   bottom: -2px;
   transform: translateX(-50%);
   border-bottom: 2px solid black;
-  transition: all 0.3s ease-in-out;
+  transition: ${TRANSITION.slow};
 `;
 
 export const MenuList = styled.ul`
@@ -164,5 +166,5 @@ export const BorderLine = styled.div`
   position: absolute;
   bottom: -2px;
   left: 0;
-  border-bottom: 2px solid rgba(34, 34, 34, 0.15);
+  border-bottom: 2px solid ${COLORS.shadowGray};
 `;

@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import TRANSITION from '../../../../styles/transition';
 
 export const FavoriteWrap = styled.div`
   position: absolute;
@@ -6,7 +8,7 @@ export const FavoriteWrap = styled.div`
   right: 18px;
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
 `;
 
 export const CardContainer = styled.div`
@@ -22,20 +24,27 @@ export const CardWrap = styled.div`
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow ${TRANSITION.slow};
   padding: 9px;
+  border-radius: 5px;
   &:hover {
-    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
-    background-color: white;
+    box-shadow: 0 2px 18px ${COLORS.shadowGray};
+    background-color: ${COLORS.white};
   }
 `;
 
-export const ProductImg = styled.img<{ width: number; height: number }>`
-  border-radius: 5px;
+export const ProductImgBox = styled.div<{ width: number; height: number }>`
   ${({ width, height }) => css`
     width: ${width}px;
     height: ${height}px;
   `}
+`;
+
+export const ProductImg = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 `;
 
 export const InfoP = styled.p``;
@@ -53,6 +62,6 @@ export const ReviewStars = styled.div`
 export const ReviewCount = styled.span`
   font-size: 13px;
   font-weight: normal;
-  color: gray;
+  color: ${COLORS.subFont};
   margin-left: 3px;
 `;

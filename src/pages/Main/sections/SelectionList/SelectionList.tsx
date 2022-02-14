@@ -1,14 +1,15 @@
 import React from 'react';
 import ArrowRight from '../../../../icons/ArrowRight';
 import CategoryCard from '../../components/CategoryCard';
+import useSelectionList from '../../hooks/useSelectionList';
 import * as S from './SelectionList.style';
-
 interface Props {
-  list: { imageUrl: string; title: string }[];
   sectionTitle: string;
 }
 
-function SelectionList({ sectionTitle, list }: Props) {
+function SelectionList({ sectionTitle }: Props) {
+  const data = useSelectionList();
+
   return (
     <S.SelectionsContainer>
       <S.TitleWrapper>
@@ -21,7 +22,7 @@ function SelectionList({ sectionTitle, list }: Props) {
         Curated collections hand-picked by Etsy editors
       </S.SectionDesc>
       <S.SelectionsWrap>
-        {list?.map(({ imageUrl, title }) => (
+        {data?.map(({ imageUrl, title }) => (
           <CategoryCard key={imageUrl} image={imageUrl} title={title} />
         ))}
       </S.SelectionsWrap>

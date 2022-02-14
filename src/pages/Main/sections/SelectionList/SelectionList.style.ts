@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import TRANSITION from '../../../../styles/transition';
 
 export const SectionTitle = styled.h2`
   font-size: 28px;
@@ -9,7 +11,7 @@ export const SectionTitle = styled.h2`
 export const SVGWrapper = styled.div`
   display: inline-block;
   transform: translateX(10px);
-  transition: all 0.3s ease-in;
+  transition: ${TRANSITION.slow};
   margin-top: 5px;
 `;
 
@@ -37,7 +39,7 @@ export const SelectionsContainer = styled.div`
 
 export const SectionDesc = styled.p`
   font-size: 16px;
-  color: gray;
+  color: ${COLORS.subFont};
   margin-bottom: 18px;
 `;
 
