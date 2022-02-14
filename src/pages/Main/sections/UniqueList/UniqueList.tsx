@@ -1,16 +1,12 @@
-import { AxiosResponse } from 'axios';
 import React, { useEffect, useState } from 'react';
 import TabMenu from '../../../../components/TabMenu';
 import { tabProductListProps } from '../../../../types';
 import ImageCard from '../../components/ImageCard';
+import useUniqueList from '../../hooks/useUniqueList';
 import * as S from './Unique.style';
 
-interface Props {
-  tabMenuList: string[];
-  list: AxiosResponse<any, any> | undefined;
-}
-
-function UniqueList({ tabMenuList, list }: Props) {
+function UniqueList() {
+  const { result } = useUniqueList();
   const [currentTab, setCurrentTab] = useState(0);
   const [tabProductList, setTabProductList] = useState<tabProductListProps[]>(
     []
@@ -18,18 +14,18 @@ function UniqueList({ tabMenuList, list }: Props) {
 
   useEffect(() => {
     setTabProductList(
-      list?.data.data.filter(
+      result?.data.data.filter(
         (el: { category: string }) =>
-          el.category === list?.data.menu[currentTab]
+          el.category === result?.data.menu[currentTab]
       )
     );
-  }, [list, currentTab]);
+  }, [result, currentTab]);
 
   return (
     <S.UniqueContainer>
       <S.SectionTitle>Discover unique hand-picked items</S.SectionTitle>
       <TabMenu
-        list={tabMenuList}
+        list={result?.data.menu}
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
       />
