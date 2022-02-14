@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import TRANSITION from '../../../../styles/transition';
 
 export const CardImgBox = styled.div`
   width: 114px;
@@ -6,8 +8,8 @@ export const CardImgBox = styled.div`
   border-radius: 50%;
   margin: 12px 0;
   transform: scale(1);
-  transition: transform 0.2s;
-  box-shadow: 0 4px 18px rgba(34, 34, 34, 0.2);
+  transition: ${TRANSITION.normal};
+  box-shadow: 0 4px 18px ${COLORS.shadowGray};
   overflow: hidden;
 `;
 
@@ -37,7 +39,7 @@ export const CardContainer = styled.div`
     transform: scale(1.08);
   }
   &:hover ${CardTitle} {
-    color: gray;
-    border-bottom: solid 2px gray;
+    color: ${COLORS.subFont};
+    border-bottom: solid 2px ${COLORS.subFont};
   }
 `;

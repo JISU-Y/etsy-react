@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import HeartIcon from '../../icons/HeartIcon';
+import COLORS from '../../styles/colors';
+import TRANSITION from '../../styles/transition';
 
 interface IFavorite {
   size: 'small' | 'large';
@@ -21,12 +23,12 @@ const Heart = styled.div<{ size: 'small' | 'large' }>`
     width: ${size === 'small' ? '30px' : '42px'};
     height: ${size === 'small' ? '30px' : '42px'};
   `};
-  background-color: white;
+  background-color: ${COLORS.white};
   border-radius: 50%;
   text-align: center;
-  border: 1px solid #c4c4c4;
+  border: 1px solid ${COLORS.border};
   transform: scale(1);
-  transition: all 0.2s linear;
+  transition: ${TRANSITION.normal};
   display: flex;
   cursor: pointer;
   &:hover {

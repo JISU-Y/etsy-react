@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
 
 export const RecentListWrap = styled.div`
   display: flex;
@@ -23,5 +24,5 @@ export const RecentLeft = styled.p`
 
 export const RecentRight = styled.span`
   font-size: 13px;
-  color: gray;
+  color: ${COLORS.subFont};
 `;

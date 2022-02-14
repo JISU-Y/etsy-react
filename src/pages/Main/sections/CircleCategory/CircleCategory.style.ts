@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
 
 export const TopTitle = styled.h1`
   font-size: 40px;
@@ -10,7 +11,8 @@ export const CircleCategoryContainer = styled.div<{
   bgColor: 'white' | 'mint';
 }>`
   width: 100%;
-  background-color: ${props => (props.bgColor === 'mint' ? '#ddebe3' : '#fff')};
+  background-color: ${props =>
+    props.bgColor === 'mint' ? COLORS.mint : COLORS.white};
   display: flex;
   height: 200px;
   margin-bottom: 150px;

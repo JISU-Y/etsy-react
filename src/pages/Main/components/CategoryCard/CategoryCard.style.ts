@@ -1,15 +1,17 @@
 import styled from 'styled-components';
+import COLORS from '../../../../styles/colors';
+import TRANSITION from '../../../../styles/transition';
 
 export const CardContainer = styled.div`
   display: inline-block;
   width: 220px;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid lightgray;
+  border: 1px solid ${COLORS.border};
   cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: ${TRANSITION.normal};
   &:hover {
-    box-shadow: 0 4px 20px rgba(34, 34, 34, 0.15);
+    box-shadow: 0 4px 20px ${COLORS.shadowGray};
   }
 `;
 
