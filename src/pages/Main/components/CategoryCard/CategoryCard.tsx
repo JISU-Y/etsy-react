@@ -7,7 +7,9 @@ function CategoryCard({ image, title }: CardDefaultProps) {
   return (
     <S.CardContainer>
       <LazyLoad once>
-        <S.CategoryImg src={image} alt="category" />
+        <S.CategoryImgBox>
+          <S.CategoryImg src={image} alt="category" />
+        </S.CategoryImgBox>
       </LazyLoad>
       <S.CategoryTitle>{title}</S.CategoryTitle>
     </S.CardContainer>

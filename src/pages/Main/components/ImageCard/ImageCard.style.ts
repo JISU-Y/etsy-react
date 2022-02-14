@@ -25,13 +25,17 @@ export const ImgContainer = styled.div`
   }
 `;
 
-export const CardImg = styled.img<{ width: number; height: number }>`
+export const CardImgBox = styled.div<{ width: number; height: number }>`
   ${({ width, height }) => css`
-    img {
-      width: ${width}px;
-      height: ${height}px;
-    }
+    width: ${width}px;
+    height: ${height}px;
   `}
+`;
+
+export const CardImg = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const PriceTag = styled.div`

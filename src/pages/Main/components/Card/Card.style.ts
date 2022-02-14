@@ -24,18 +24,25 @@ export const CardWrap = styled.div`
   cursor: pointer;
   transition: box-shadow 0.3s ease-in-out;
   padding: 9px;
+  border-radius: 5px;
   &:hover {
     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
     background-color: white;
   }
 `;
 
-export const ProductImg = styled.img<{ width: number; height: number }>`
-  border-radius: 5px;
+export const ProductImgBox = styled.div<{ width: number; height: number }>`
   ${({ width, height }) => css`
     width: ${width}px;
     height: ${height}px;
   `}
+`;
+
+export const ProductImg = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
 `;
 
 export const InfoP = styled.p``;

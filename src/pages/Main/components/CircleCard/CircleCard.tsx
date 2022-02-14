@@ -7,7 +7,9 @@ function CircleCard({ image, title }: CardDefaultProps) {
   return (
     <S.CardContainer>
       <LazyLoad once>
-        <S.CardImg src={image} alt="circle-card" />
+        <S.CardImgBox>
+          <S.CardImg src={image} alt="circle-card" />
+        </S.CardImgBox>
       </LazyLoad>
       <S.CardTitle>{title}</S.CardTitle>
     </S.CardContainer>
