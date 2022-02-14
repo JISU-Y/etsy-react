@@ -20,13 +20,13 @@ function Main() {
       <Header />
       <CircleCategory
         title={`Find things you'll love. Support independent sellers. Only on Etsy.`}
-        categoryList={topCategoryData?.data.data}
+        categoryList={topCategoryData?.data}
         bgColor="mint"
       />
       <RecentList />
       <CircleCategory
         title={`Our picks for you`}
-        categoryList={pickCategoryData?.data.data}
+        categoryList={pickCategoryData?.data}
         bgColor="white"
       />
       <OurPicksList />

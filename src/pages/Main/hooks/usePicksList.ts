@@ -1,9 +1,10 @@
 import { useRequest } from '../../../hooks/useRequest';
+import { OurPicksProps } from '../sections/OurPicksList/OurPicksList';
 
 function usePicksList() {
-  const { result } = useRequest('picksList.json');
+  const data = useRequest<OurPicksProps>('picksList.json');
 
-  return { result };
+  return data;
 }
 
 export default usePicksList;

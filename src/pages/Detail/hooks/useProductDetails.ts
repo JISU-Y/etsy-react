@@ -1,9 +1,10 @@
 import { useRequest } from '../../../hooks/useRequest';
+import { DetailsProps } from '../Detail';
 
 function useProductDetails() {
-  const { result } = useRequest('productDetails.json');
+  const data = useRequest<DetailsProps>('productDetails.json');
 
-  return { result };
+  return data;
 }
 
 export default useProductDetails;

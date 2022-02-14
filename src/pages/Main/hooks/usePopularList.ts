@@ -1,9 +1,10 @@
 import { useRequest } from '../../../hooks/useRequest';
+import { popularListProps } from '../types';
 
 function usePopularList() {
-  const { result } = useRequest('popularList.json');
+  const data = useRequest<popularListProps>('popularList.json');
 
-  return { result };
+  return data;
 }
 
 export default usePopularList;

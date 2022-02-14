@@ -1,10 +1,10 @@
 import useSWR from 'swr';
 
 interface DataResponse<T> {
-  data: { data: T[]; menu: string[] };
+  data: { data: T[] };
 }
 
-export function useRequest<T>(url: string) {
+export function useRequestTest<T>(url: string) {
   const { data, error } = useSWR<DataResponse<T>, any>(url);
 
   // error 예외처리
@@ -15,5 +15,5 @@ export function useRequest<T>(url: string) {
     console.log('no data response');
   }
 
-  return data?.data;
+  return data?.data?.data;
 }

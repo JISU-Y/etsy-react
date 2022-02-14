@@ -22,19 +22,17 @@ export interface DetailsProps {
 }
 
 export default function Detail() {
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<string[] | undefined>([]);
 
-  const { result } = useProductDetails();
+  const data = useProductDetails();
 
   const {
     state: { id: _id },
   } = useLocation<{ id: number }>();
 
   useEffect(() => {
-    setImages(
-      result?.data.data.filter(({ id }: DetailsProps) => id === _id)[0].images
-    );
-  }, [result?.data.data, _id]);
+    setImages(data?.data.filter(({ id }) => id === _id)[0].images);
+  }, [data?.data, _id]);
 
   return (
     <Container>

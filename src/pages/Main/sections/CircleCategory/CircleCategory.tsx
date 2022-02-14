@@ -8,15 +8,12 @@ export interface List {
 }
 
 interface IProps {
-  categoryList: List[];
+  categoryList: List[] | undefined;
   title: string;
   bgColor: 'white' | 'mint';
 }
 
 function CircleCategory({ title, bgColor, categoryList }: IProps) {
-  // result 안에 data 안에 data(List 타입)가 있는 구조인데,
-  // 제니릭으로 하면 result 자체가 List[] 타입을 갖게 됨
-  // 그래서 return에서 props에 type 지정하도록 해놨는데 괜찮은지?
   return (
     <S.CircleCategoryContainer bgColor={bgColor}>
       <S.CircleCategoryWrap>

@@ -14,7 +14,7 @@ import { IconWrap, ImageContainer } from './ImageSection.style';
 import { mainSwiperSettings, thumbSwiperSettings } from './ImageSection.data';
 
 interface Props {
-  images: DetailsProps['images'];
+  images: DetailsProps['images'] | undefined;
 }
 
 function ImageSection({ images }: Props) {

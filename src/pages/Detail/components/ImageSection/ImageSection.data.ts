@@ -12,6 +12,7 @@ export const thumbSwiperSettings = {
   watchSlidesProgress: true,
   modules: [Navigation, Thumbs],
   direction: swiperSettingType.direction,
+  initialSlide: 0,
 };
 
 export const mainSwiperSettings = {

@@ -1,0 +1,25 @@
+export interface productListProps {
+  discout: number;
+  imageUrl: string;
+  price: number;
+  quickDelivery: boolean;
+  viewed: boolean;
+  id: number;
+}
+
+export interface popularListProps {
+  contentsUrl: string;
+  price: number;
+  discount: number;
+  freeShipping: boolean;
+  title: string;
+  reviews: number;
+}
+
+export interface tabProductListProps {
+  category: string;
+  imageUrl: string;
+  price: number;
+  discount: boolean;
+  quickDelivery: boolean;
+}

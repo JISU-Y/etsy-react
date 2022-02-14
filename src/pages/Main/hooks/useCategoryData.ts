@@ -1,8 +1,9 @@
 import { useRequest } from '../../../hooks/useRequest';
+import { List } from '../sections/CircleCategory/CircleCategory';
 
 function useCategoryData() {
-  const { result: topCategoryData } = useRequest('searchBubbles.json');
-  const { result: pickCategoryData } = useRequest('picksCategories.json');
+  const topCategoryData = useRequest<List>('searchBubbles.json');
+  const pickCategoryData = useRequest<List>('picksCategories.json');
 
   return {
     topCategoryData,

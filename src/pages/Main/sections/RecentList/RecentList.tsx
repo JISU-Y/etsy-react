@@ -3,11 +3,11 @@ import ImageCard from '../../components/ImageCard';
 import useRecentView from '../../hooks/useRecentView';
 import * as S from './RecentList.style';
 
-export interface RecentViewProps {
-  id: number;
-  price: number;
-  imageUrl: string;
-}
+// export interface RecentViewProps {
+//   id: number;
+//   price: number;
+//   imageUrl: string;
+// }
 
 function RecentList() {
   const { recentViewsData } = useRecentView();

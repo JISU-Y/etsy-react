@@ -10,12 +10,12 @@ export interface OurPicksProps {
 }
 
 function OurPicksList() {
-  const { result } = usePicksList();
+  const data = usePicksList();
 
   return (
     <S.PicksContainer>
       <S.PicksWrapper>
-        {result?.data.data.map(
+        {data?.data.map(
           ({ imageUrl, price, discount }: OurPicksProps, index: number) => (
             <S.ImageCardWrapper key={imageUrl} index={index}>
               <ImageCard

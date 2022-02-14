@@ -4,7 +4,7 @@ import CategoryCard from '../../components/CategoryCard';
 import useSelectionList from '../../hooks/useSelectionList';
 import * as S from './SelectionList.style';
 
-interface SelectionsListProps {
+export interface SelectionsListProps {
   imageUrl: string;
   title: string;
 }
@@ -13,7 +13,7 @@ interface Props {
 }
 
 function SelectionList({ sectionTitle }: Props) {
-  const { result } = useSelectionList();
+  const data = useSelectionList();
 
   return (
     <S.SelectionsContainer>
@@ -27,7 +27,7 @@ function SelectionList({ sectionTitle }: Props) {
         Curated collections hand-picked by Etsy editors
       </S.SectionDesc>
       <S.SelectionsWrap>
-        {result?.data.data.map(({ imageUrl, title }: SelectionsListProps) => (
+        {data?.data.map(({ imageUrl, title }) => (
           <CategoryCard key={imageUrl} image={imageUrl} title={title} />
         ))}
       </S.SelectionsWrap>

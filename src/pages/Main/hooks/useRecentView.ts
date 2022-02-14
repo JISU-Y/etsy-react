@@ -1,16 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useRequest } from '../../../hooks/useRequest';
-import { RecentViewProps } from '../sections/RecentList/RecentList';
+import { productListProps } from '../types';
 
 function useRecentView() {
-  const { result } = useRequest('productList.json');
-  const [recentViewsData, setRecentViewsData] = useState<RecentViewProps[]>();
+  const data = useRequest<productListProps>('productList.json');
+  const [recentViewsData, setRecentViewsData] = useState<productListProps[]>();
 
   useEffect(() => {
-    setRecentViewsData(
-      result?.data.data.filter((el: { viewed: boolean }) => el.viewed)
-    );
-  }, [result?.data.data]);
+    setRecentViewsData(data?.data.filter(({ viewed }) => viewed));
+  }, [data]);
 
   return { recentViewsData };
 }
