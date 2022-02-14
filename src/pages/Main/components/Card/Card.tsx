@@ -5,6 +5,7 @@ import { padCentsDigits } from '../../../../utils/convertDigit';
 import { ImageCardProps } from '../ImageCard/ImageCard';
 import StarIcon from '../../../../icons/StarIcon';
 import * as S from './Card.style';
+import LazyLoad from 'react-lazyload';
 
 interface CardProps extends ImageCardProps {
   title: string;
@@ -17,7 +18,9 @@ function Card({ title, reviewCount, price, image, ...props }: CardProps) {
   return (
     <S.CardContainer>
       <S.CardWrap>
-        <S.ProductImg src={image} alt="item" {...props} />
+        <LazyLoad once>
+          <S.ProductImg src={image} alt="item" {...props} />
+        </LazyLoad>
         <S.ItemInfo>
           <S.InfoP>{infoTitle}</S.InfoP>
           <S.ReviewStars>

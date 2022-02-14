@@ -6,9 +6,9 @@ export function useRequest(url: string) {
   // error 예외처리
   if (error) console.error(error);
 
-  // result 예외처리
+  // result 예외처리 (fetching 중)
   if (!result) {
-    console.error('no data response');
+    console.log('no data response');
   }
 
   return { result };
