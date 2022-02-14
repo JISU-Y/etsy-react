@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { useLocation } from 'react-router-dom';
-import useSWR from 'swr';
-import { getData } from '../../utils/axios';
 import ImageSection from './components/ImageSection';
+import useProductDetails from './hooks/useProductDetails';
 
 export interface DetailsProps {
   id: number;
@@ -25,20 +24,17 @@ export interface DetailsProps {
 export default function Detail() {
   const [images, setImages] = useState<string[]>([]);
 
-  const {
-    state: { id },
-  } = useLocation<{ id: number }>();
+  const { result } = useProductDetails();
 
-  const { data } = useSWR('productDetails.json', url => getData(url));
+  const {
+    state: { id: _id },
+  } = useLocation<{ id: number }>();
 
   useEffect(() => {
     setImages(
-      data?.data.data.filter(({ id: _id }: { id: number }) => _id === id)[0]
-        .images
+      result?.data.data.filter(({ id }: DetailsProps) => id === _id)[0].images
     );
-  }, [data?.data.data, id]);
-
-  if (!data) return <div>...loading</div>;
+  }, [result?.data.data, _id]);
 
   return (
     <Container>
