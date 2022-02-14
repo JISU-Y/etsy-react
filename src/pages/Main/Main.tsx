@@ -11,8 +11,6 @@ import LazyLoad from 'react-lazyload';
 import useCategoryData from './hooks/useCategoryData';
 
 function Main() {
-  // CircleCategory는 두번 쓰이는데, 안에 listing 되는 내용 말고는 완전히 같아서
-  // main에서 한꺼번에 받아서 각 컴포넌트에 전달하려고 하는데 괜찮을지?
   const { topCategoryData, pickCategoryData } = useCategoryData();
 
   return (
@@ -30,8 +28,8 @@ function Main() {
         bgColor="white"
       />
       <OurPicksList />
-      <PopularList sectionTitle="Popular gifts right now" />
       <LazyLoad>
+        <PopularList sectionTitle="Popular gifts right now" />
         <UniqueList />
         <SelectionList sectionTitle="Shop our selections" />
       </LazyLoad>
