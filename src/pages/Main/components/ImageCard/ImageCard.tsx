@@ -5,8 +5,8 @@ import { padCentsDigits } from '../../../../utils/convertDigit';
 import * as S from './ImageCard.style';
 export interface ImageCardProps {
   image: string;
-  width: number;
-  height: number;
+  width: number | '100%';
+  height: number | '100%';
   price: number;
   onClick?: () => void;
 }

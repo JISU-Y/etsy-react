@@ -27,10 +27,13 @@ export const ImgContainer = styled.div`
   }
 `;
 
-export const CardImgBox = styled.div<{ width: number; height: number }>`
+export const CardImgBox = styled.div<{
+  width: number | '100%';
+  height: number | '100%';
+}>`
   ${({ width, height }) => css`
-    width: ${width}px;
-    height: ${height}px;
+    width: ${width === '100%' ? width : `${width}px`};
+    height: ${height === '100%' ? height : `${height}px`};
   `}
 `;
 

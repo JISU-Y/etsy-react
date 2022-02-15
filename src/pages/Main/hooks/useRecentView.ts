@@ -8,7 +8,7 @@ function useRecentView() {
 
   useEffect(() => {
     setRecentViewsData(data?.filter(({ viewed }) => viewed));
-  }, []);
+  }, [data]);
 
   return { recentViewsData };
 }

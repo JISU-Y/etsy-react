@@ -33,10 +33,13 @@ export const CardWrap = styled.div`
   }
 `;
 
-export const ProductImgBox = styled.div<{ width: number; height: number }>`
+export const ProductImgBox = styled.div<{
+  width: number | '100%';
+  height: number | '100%';
+}>`
   ${({ width, height }) => css`
-    width: ${width}px;
-    height: ${height}px;
+    width: ${width === '100%' ? width : `${width}px`};
+    height: ${height === '100%' ? height : `${height}px`};
   `}
 `;
 

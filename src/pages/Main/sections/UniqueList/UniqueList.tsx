@@ -27,14 +27,19 @@ function UniqueList() {
         setCurrentTab={setCurrentTab}
       />
       <S.TabContents>
-        {tabProductList?.map(({ imageUrl, price }) => (
-          <ImageCard
+        {tabProductList?.map(({ imageUrl, price }, index) => (
+          <S.ImageCardWrapper
             key={imageUrl}
-            width={250}
-            height={167}
-            price={price}
-            image={imageUrl}
-          />
+            index={index}
+            className={S.gridIndex[index]}
+          >
+            <ImageCard
+              width="100%"
+              height="100%"
+              price={price}
+              image={imageUrl}
+            />
+          </S.ImageCardWrapper>
         ))}
       </S.TabContents>
     </S.UniqueContainer>

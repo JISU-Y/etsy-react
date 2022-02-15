@@ -12,13 +12,8 @@ function OurPicksList() {
         {data?.map(({ imageUrl, price, discount }, index) => (
           <S.ImageCardWrapper key={imageUrl} index={index}>
             <ImageCard
-              width={250}
-              height={
-                100 *
-                (index === 0 || index === 2 || index === 5 || index === 7
-                  ? 2
-                  : 3)
-              }
+              width="100%"
+              height="100%"
               price={price}
               image={imageUrl}
             />

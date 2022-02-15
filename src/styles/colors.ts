@@ -6,6 +6,8 @@ const COLORS = {
   subFont: 'gray',
   darkGray: '#222',
   mint: '#ddebe3',
+  beige: '#fdebd2',
+  lightBlue: '#d7e6f5',
   blue: '#2f466c',
   darkBlue: '#232347',
   backgroundGray: 'rgba(34, 34, 34, 0.05)',
