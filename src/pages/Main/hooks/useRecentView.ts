@@ -7,7 +7,8 @@ function useRecentView() {
   const [recentViewsData, setRecentViewsData] = useState<ProductList[]>();
 
   useEffect(() => {
-    setRecentViewsData(data?.filter(({ viewed }) => viewed));
+    if (!data) return;
+    setRecentViewsData(data.filter(({ viewed }) => viewed));
   }, [data]);
 
   return { recentViewsData };

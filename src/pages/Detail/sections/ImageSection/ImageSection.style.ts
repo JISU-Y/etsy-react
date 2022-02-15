@@ -4,11 +4,9 @@ import zIndex from '../../../../styles/zIndex';
 
 export const ImageContainer = styled.div`
   display: flex;
-  width: 700px;
-  height: 540px;
   position: relative;
   .mySwiper2 {
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 10px;
     img {
@@ -29,9 +27,8 @@ export const ImageContainer = styled.div`
     }
   }
   .mySwiper {
-    width: 10%;
+    width: 9%;
     height: 100%;
-    margin: 0 5px;
     img {
       width: 60px;
       height: 60px;
@@ -61,5 +58,5 @@ export const IconWrap = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: ${zIndex.base};
+  z-index: ${zIndex.floating};
 `;

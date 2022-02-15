@@ -8,14 +8,17 @@ export const MenuContainer = styled.div`
   border-bottom: 2px solid ${COLORS.border};
 `;
 
-export const TabButton = styled.button<{ list: string[]; currentTab: number }>`
-  width: ${props => 100 / props.list?.length ?? 1}%;
+export const TabButton = styled.button<{
+  list: string[];
+  currentTab: number;
+  fontSize?: number;
+}>`
+  min-width: 220px;
   flex: 1;
   text-align: center;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 20px;
   position: relative;
   margin: 0 18px;
   padding: 10px 0;
@@ -39,7 +42,9 @@ export const TabButton = styled.button<{ list: string[]; currentTab: number }>`
   &:hover::after {
     width: 100%;
   }
-  ${({ currentTab }) => css`
+  ${({ list, currentTab, fontSize }) => css`
+    width: ${100 / list?.length ?? 1}%;
+    font-size: ${fontSize ?? 20}px;
     &:nth-child(${currentTab + 1}) {
       color: ${COLORS.mainFont};
     }
@@ -48,4 +53,13 @@ export const TabButton = styled.button<{ list: string[]; currentTab: number }>`
       border-bottom: 2px solid ${COLORS.mainFont};
     }
   `}
+`;
+
+export const TagNumber = styled.span`
+  background-color: ${COLORS.hoverGray};
+  border-radius: 15px;
+  margin-left: 12px;
+  font-size: 13px;
+  padding: 6px 9px;
+  min-width: 25px;
 `;

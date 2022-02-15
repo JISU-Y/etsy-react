@@ -28,7 +28,27 @@
         "Can be personalized",
         "Made to Order"
       ],
-      "quickDelivery": false
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
     },
     {
       "id": 4,
@@ -56,7 +76,27 @@
         "Can be personalized",
         "Made to Order"
       ],
-      "quickDelivery": false
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
     }
   ]
 }
