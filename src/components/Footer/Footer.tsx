@@ -8,6 +8,8 @@ import Eco from '../../icons/Eco';
 import ToolTipTemplate from '../ToolTipTemplate';
 import * as S from './Footer.style';
 import COLORS from '../../styles/colors';
+import BgAnimatedButton from '../BgAnimatedButton';
+import SizeAnimatedButton from '../SizeAnimatedButton';
 
 function Footer() {
   return (
@@ -48,7 +50,12 @@ function Footer() {
           <S.AboutFootTitle>
             Have a question? Well, we’ve got some answers.
           </S.AboutFootTitle>
-          <S.AboutFootButton>Go to Help Center</S.AboutFootButton>
+          <SizeAnimatedButton
+            buttonLabel="Go to Help Center"
+            bgColor="transparent"
+            borderAttr="2px solid black"
+            widthFit
+          />
         </S.About>
       </S.AboutWrapper>
       <S.Subscribe>
@@ -97,9 +104,11 @@ function Footer() {
       </S.Guides>
       <S.FooterWrap>
         <S.FooterBox>
-          <S.LocaleInfo>
-            {location} | {language} | $ ({currency})
-          </S.LocaleInfo>
+          <BgAnimatedButton
+            buttonLabel={`${location} | ${language} | $ (${currency})`}
+            textColor={COLORS.white}
+            bgColor={COLORS.hoverWhite}
+          />
           <S.Policies>
             <span>2022 Etsy, Inc.</span>
             <S.PolicyList>

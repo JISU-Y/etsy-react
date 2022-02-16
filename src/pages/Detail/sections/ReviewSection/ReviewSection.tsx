@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FiveStars from '../../../../components/FiveStars/FiveStars';
+import FiveStars from '../../../../components/FiveStars';
 import TabMenu from '../../../../components/TabMenu';
 import COLORS from '../../../../styles/colors';
 import * as S from './ReviewSection.style';

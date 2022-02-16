@@ -4,7 +4,7 @@ import { currency } from '../../../../constants/localeSetting';
 import { padCentsDigits } from '../../../../utils/convertDigit';
 import { ImageCardProps } from '../ImageCard/ImageCard';
 import * as S from './Card.style';
-import FiveStars from '../../../../components/FiveStars/FiveStars';
+import FiveStars from '../../../../components/FiveStars';
 
 interface CardProps extends ImageCardProps {
   title: string;

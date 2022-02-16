@@ -107,23 +107,7 @@ export const ToolTipLi = styled.li`
 export const AboutFootTitle = styled.h3`
   font-size: 21px;
   font-weight: bold;
-`;
-
-export const AboutFootButton = styled.button`
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 1.5;
-  padding: 10px 15px;
-  border-radius: 30px;
-  border: 2px solid black;
-  margin-top: 20px;
-  background: transparent;
-  cursor: pointer;
-  transform: scale(1);
-  transition: ${TRANSITION.normal};
-  &:hover {
-    transform: scale(1.02);
-  }
+  margin-bottom: 20px;
 `;
 
 export const Subscribe = styled.div`
@@ -338,22 +322,6 @@ export const FooterBox = styled.div`
   font-size: 13px;
   color: ${COLORS.white};
   width: 100%;
-`;
-
-export const LocaleInfo = styled.div`
-  display: inline-block;
-  font-weight: 500;
-  line-height: 1.4;
-  min-height: 36px;
-  min-width: 36px;
-  padding: 9px 15px;
-  border-radius: 36px;
-  background-color: transparent;
-  transition: ${TRANSITION.normal};
-  cursor: pointer;
-  &:hover {
-    background-color: ${COLORS.hoverWhite};
-  }
 `;
 
 export const Policies = styled.div`

@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import COLORS from '../../../../styles/colors';
 import TRANSITION from '../../../../styles/transition';
-import zIndex from '../../../../styles/zIndex';
 
 export const SideInfoContainer = styled.div``;
 
@@ -93,6 +92,9 @@ export const Select = styled.select`
     border: 1px solid ${COLORS.border};
     box-shadow: 0 1px 12px 0 ${COLORS.hoverGray};
   }
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Option = styled.option`
@@ -100,35 +102,64 @@ export const Option = styled.option`
   padding: 5px 0;
 `;
 
-export const CartButton = styled.button`
-  color: ${COLORS.white};
+export const PersonalizationBox = styled.div<{ shouldShow: boolean }>`
+  max-height: ${({ shouldShow }) => (shouldShow ? '500px' : 0)};
+  height: fit-content;
+  transition: ${TRANSITION.slow};
+  overflow: hidden;
+`;
+
+export const PersonalizationGuide = styled.p`
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 6px;
+`;
+
+export const PersonalizationText = styled.textarea<{ isOverLimit: boolean }>`
   width: 100%;
-  min-width: 48px;
-  min-height: 48px;
-  border: none;
-  outline: none;
   font-size: 16px;
-  font-weight: bold;
-  padding: 12px 18px;
-  text-align: center;
-  background-color: transparent;
-  position: relative;
-  cursor: pointer;
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${COLORS.mainFont};
-    transform: scale(1);
-    transition: ${TRANSITION.normal};
-    border-radius: 24px;
-    z-index: ${zIndex.hide};
+  line-height: 28px;
+  height: 48px;
+  outline: none;
+  padding: 9px 12px;
+  box-shadow: 0 1px 4px 0 ${COLORS.hoverGray} inset;
+  border: 1px solid ${COLORS.hoverGray};
+  border-radius: 6px;
+  color: ${COLORS.darkGray};
+  display: block;
+  transition: ${TRANSITION.normal};
+  &:hover {
+    border: 1px solid ${COLORS.border};
   }
-  &:hover::after {
-    transform: scale(1.01);
-    background-color: ${COLORS.darkGray};
+  &::-webkit-scrollbar {
+    display: none;
   }
+
+  ${({ isOverLimit }) =>
+    isOverLimit &&
+    css`
+      height: auto;
+      background-color: ${COLORS.warning};
+      border-color: rgba(166, 26, 46, 0.35);
+      &:hover {
+        border: 1px solid ${COLORS.error};
+      }
+    `}
+`;
+
+export const TextRemaining = styled.p`
+  font-size: 13px;
+  line-height: 18px;
+  text-align: right;
+`;
+export const LimitError = styled.p`
+  color: ${COLORS.error};
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 28px;
+`;
+
+export const ButtonSpacer = styled.div`
+  width: 100%;
+  height: 20px;
 `;

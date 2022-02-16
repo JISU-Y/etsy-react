@@ -11,52 +11,11 @@ export const HeaderContainer = styled.div`
   position: relative;
 `;
 
-export const SignInButton = styled.button`
-  width: 100px;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 12px 15px;
-  background: none;
-  margin-right: 6px;
-  position: relative;
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 30px;
-    transform: scale(0.8);
-    background: ${COLORS.hoverGray};
-    opacity: 0;
-    transition: ${TRANSITION.quick};
-  }
-`;
-
-export const CartButton = styled.button`
-  width: 45px;
-  height: 36px;
-  font-size: 20px;
-  line-height: 20px;
+export const CartButtonWrapper = styled.div`
   border: none;
   position: relative;
   background: transparent;
   cursor: pointer;
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    transform: scale(0.8);
-    background: ${COLORS.hoverGray};
-    opacity: 0;
-    transition: ${TRANSITION.quick};
-  }
   &:hover .tooltip {
     display: inline-block;
     opacity: 1;
@@ -80,18 +39,6 @@ export const SearchContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 12px 36px;
-  ${SignInButton}:hover::after {
-    content: '';
-    transform: scale(1);
-    opacity: 1;
-    background: ${COLORS.hoverGray};
-  }
-  ${CartButton}:hover::after {
-    content: '';
-    transform: scale(1.2);
-    opacity: 1;
-    background: ${COLORS.hoverGray};
-  }
 `;
 
 export const LogoWrapper = styled.span`

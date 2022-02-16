@@ -1,5 +1,7 @@
 const COLORS = {
   primary: '#F1641E',
+  warning: '#FDDCD8',
+  error: '#A61A2E',
   white: '#fff',
   border: '#c4c4c4',
   mainFont: '#000',

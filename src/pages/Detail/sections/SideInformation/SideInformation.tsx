@@ -1,5 +1,7 @@
-import React from 'react';
-import FiveStars from '../../../../components/FiveStars/FiveStars';
+import React, { useEffect, useState } from 'react';
+import BgAnimatedButton from '../../../../components/BgAnimatedButton';
+import FiveStars from '../../../../components/FiveStars';
+import SizeAnimatedButton from '../../../../components/SizeAnimatedButton';
 import ToolTipTemplate from '../../../../components/ToolTipTemplate';
 import { currency } from '../../../../constants/localeSetting';
 import COLORS from '../../../../styles/colors';
@@ -24,6 +26,14 @@ function SideInformation({
   finishOptions,
   lengthOptions,
 }: Props) {
+  const [shouldShow, setShouldShow] = useState(false);
+  const [personalization, setPersonalization] = useState('');
+  const [isOverLimit, setIsOverLimit] = useState(false);
+
+  useEffect(() => {
+    setIsOverLimit(personalization.length >= 1024 ? true : false);
+  }, [personalization]);
+
   return (
     <S.SideInfoContainer>
       <S.SellerContainer>
@@ -74,7 +84,33 @@ function SideInformation({
           </S.Select>
         </S.SelectWrapper>
       </S.ProductSelector>
-      <S.CartButton>Add to Cart</S.CartButton>
+      <BgAnimatedButton
+        buttonLabel="Add your personalization (optional)"
+        useToggle
+        shouldShow={shouldShow}
+        setShouldShow={setShouldShow}
+      />
+      <S.PersonalizationBox shouldShow={shouldShow}>
+        <S.PersonalizationGuide>
+          Please send us the Image/Pdf file you’d like us to use through the
+          Contact Shop Owner button.
+        </S.PersonalizationGuide>
+        <S.PersonalizationText
+          id="personalization"
+          maxLength={1024}
+          onChange={e => setPersonalization(e.target.value)}
+          value={personalization}
+          isOverLimit={isOverLimit}
+        />
+        <S.TextRemaining>{1024 - personalization.length}</S.TextRemaining>
+        {isOverLimit && (
+          <S.LimitError>
+            You’ve reached the limit! Use 1024 characters or less.
+          </S.LimitError>
+        )}
+      </S.PersonalizationBox>
+      <S.ButtonSpacer />
+      <SizeAnimatedButton buttonLabel="Add to Cart" textColor={COLORS.white} />
     </S.SideInfoContainer>
   );
 }
