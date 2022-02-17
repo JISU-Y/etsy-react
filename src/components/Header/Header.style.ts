@@ -3,21 +3,32 @@ import COLORS from '../../styles/colors';
 import TRANSITION from '../../styles/transition';
 
 export const HeaderContainer = styled.div`
+  /* Positioning */
+  position: relative;
+
+  /* Display & Box Model */
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
   align-items: center;
-  position: relative;
+  width: 100%;
 `;
 
 export const CartButtonWrapper = styled.div`
-  border: none;
+  /* Positioning */
   position: relative;
+
+  /* Display & Box Model */
   background: transparent;
+  border: none;
+
+  /* Other */
   cursor: pointer;
   &:hover .tooltip {
+    /* Display & Box Model */
     display: inline-block;
+
+    /* Other */
     opacity: 1;
     transform: translateY(0);
   }
@@ -32,42 +43,57 @@ export const CartToolTipSpan = styled.span`
 `;
 
 export const SearchContainer = styled.div`
+  /* Display & Box Model */
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 100%;
   max-width: 1400px;
-  justify-content: space-between;
-  align-items: center;
   padding: 12px 36px;
 `;
 
 export const LogoWrapper = styled.span`
-  font-size: 30px;
+  /* Display & Box Model */
   width: 86px;
   margin-right: 6px;
+
+  /* Text */
+  font-size: 30px;
 `;
 
 export const SearchForm = styled.form`
+  /* Positioning */
   display: flex;
   width: 100%;
-  border: 2px solid black;
-  border-radius: 50px;
-  overflow: hidden;
   margin-right: 18px;
+  border-radius: 50px;
+  border: 2px solid black;
+
+  /* Other */
+  overflow: hidden;
 `;
 
 export const Input = styled.input`
-  background: ${COLORS.backgroundGray};
-  padding: 10px 0 10px 20px;
+  /* Display & Box Model */
   width: 100%;
+  padding: 10px 0 10px 20px;
   border: none;
   outline: none;
+
+  /* Color */
+  background: ${COLORS.backgroundGray};
 `;
 
 export const SearchButton = styled.button`
-  background: ${COLORS.backgroundGray};
+  /* Display & Box Model */
   width: 60px;
   border: none;
+
+  /* Color */
+  background: ${COLORS.backgroundGray};
+
+  /* Other */
   cursor: pointer;
   transition: ${TRANSITION.normal};
   &:hover {
@@ -76,63 +102,89 @@ export const SearchButton = styled.button`
 `;
 
 export const MenuContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  /* Positioning */
   position: relative;
+
+  /* Display & Box Model */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
   padding: 0 36px;
 `;
 
 export const IndicatorLine = styled.div`
-  width: 0;
+  /* Positioning */
   position: absolute;
   bottom: -2px;
-  transform: translateX(-50%);
+
+  /* Display & Box Model */
+  width: 0;
   border-bottom: 2px solid black;
+
+  /* Other */
+  transform: translateX(-50%);
   transition: ${TRANSITION.slow};
 `;
 
 export const MenuList = styled.ul`
-  width: 100%;
+  /* Positioning */
+  position: relative;
+
+  /* Display & Box Model */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
   max-width: 1400px;
-  position: relative;
 `;
 
 export const Menu = styled.li<{ index: number }>`
+  /* Positioning */
+  position: relative;
+
+  /* Display & Box Model */
   width: 100%;
   height: 100%;
-  cursor: pointer;
+  padding: 6px;
+
+  /* Text */
   font-size: 14px;
   line-height: 18px;
-  padding: 6px;
-  position: relative;
   text-align: center;
+
+  /* Other */
+  cursor: pointer;
+
   &:first-child,
   &:last-child {
     margin: 0;
   }
   ${({ index }) => css`
     & ~ ${IndicatorLine} {
-      width: 0;
+      /* Positioning */
       left: ${index * 12.5 + 12.5 / 2}%;
+      /* Display & Box Model */
+      width: 0;
     }
     &:hover ~ ${IndicatorLine} {
-      width: 12.5%;
+      /* Positioning */
       left: ${index * 12.5 + 12.5 / 2}%;
+      /* Display & Box Model */
+      width: 12.5%;
     }
   `}
 `;
 
 export const BorderLine = styled.div`
-  width: 100%;
+  /* Positioning */
   position: absolute;
   bottom: -2px;
   left: 0;
+
+  /* Display & Box Model */
+  width: 100%;
   border-bottom: 2px solid ${COLORS.shadowGray};
 `;

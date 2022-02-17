@@ -8,7 +8,10 @@ export const Container = styled.div`
 `;
 
 export const TopTitle = styled.h1`
+  /* Display & Box Model */
+  margin: 30px 0 18px;
+
+  /* Text */
   font-size: 40px;
   text-align: center;
-  margin: 30px 0 18px;
 `;

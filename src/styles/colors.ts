@@ -10,6 +10,7 @@ const COLORS = {
   mint: '#ddebe3',
   beige: '#fdebd2',
   lightBlue: '#d7e6f5',
+  mediumBlue: '#4d6bc6',
   blue: '#2f466c',
   darkBlue: '#232347',
   backgroundGray: 'rgba(34, 34, 34, 0.05)',

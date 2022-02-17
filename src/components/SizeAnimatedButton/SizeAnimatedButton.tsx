@@ -38,38 +38,58 @@ const Button = styled.button<{
   widthFit?: boolean;
 }>`
   ${({ textColor, bgColor, borderAttr, widthFit }) => css`
-    color: ${textColor};
+    /* Positioning */
+    position: relative;
+
+    /* Display & Box Model */
     width: ${widthFit ? 'fit-content' : '100%'};
     min-width: 48px;
     min-height: 48px;
     border: none;
     outline: none;
+    padding: 12px 18px;
+
+    /* Color */
+    background-color: transparent;
+    color: ${textColor};
+
+    /* Text */
     font-size: 16px;
     font-weight: bold;
-    padding: 12px 18px;
     text-align: center;
-    background-color: transparent;
-    position: relative;
+
+    /* Other */
     cursor: pointer;
+
     &::after {
       content: '';
+      /* Positioning */
       position: absolute;
       top: 0;
       left: 0;
+
+      /* Display & Box Model */
       width: 100%;
       height: 100%;
       box-sizing: border-box;
-      background-color: ${bgColor ?? COLORS.mainFont};
       border: ${borderAttr ?? 'none'};
-      color: ${textColor ?? COLORS.mainFont};
-      transform: scale(1);
-      transition: ${TRANSITION.normal};
       border-radius: 24px;
+
+      /* Color */
+      background-color: ${bgColor ?? COLORS.mainFont};
+      color: ${textColor ?? COLORS.mainFont};
+
+      /* Other */
+      transition: ${TRANSITION.normal};
+      transform: scale(1);
       z-index: ${borderAttr ? zIndex.base : zIndex.hide};
     }
     &:hover::after {
-      transform: scale(1.02);
+      /* Color */
       background-color: ${bgColor ?? COLORS.darkGray};
+
+      /* Other */
+      transform: scale(1.02);
     }
   `}
 `;

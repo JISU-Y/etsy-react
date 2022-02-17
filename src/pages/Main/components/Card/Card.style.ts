@@ -3,17 +3,24 @@ import COLORS from '../../../../styles/colors';
 import TRANSITION from '../../../../styles/transition';
 
 export const FavoriteWrap = styled.div`
+  /* Positioning */
   position: absolute;
   top: 15px;
   right: 18px;
+
+  /* Other */
   opacity: 0;
   transform: translateY(10px);
   transition: ${TRANSITION.normal};
 `;
 
 export const CardContainer = styled.div`
-  width: 270px;
+  /* Positioning */
   position: relative;
+
+  /* Display & Box Model */
+  width: 270px;
+
   &:hover ${FavoriteWrap} {
     opacity: 1;
     transform: translateY(0);
@@ -21,12 +28,17 @@ export const CardContainer = styled.div`
 `;
 
 export const CardWrap = styled.div`
+  /* Display & Box Model */
+  padding: 9px;
   border-radius: 10px;
+
+  /* Color */
   background-color: transparent;
+
+  /* Other */
   cursor: pointer;
   transition: box-shadow ${TRANSITION.slow};
-  padding: 9px;
-  border-radius: 5px;
+
   &:hover {
     box-shadow: 0 2px 18px ${COLORS.shadowGray};
     background-color: ${COLORS.white};
@@ -44,6 +56,7 @@ export const ProductImgBox = styled.div<{
 `;
 
 export const ProductImg = styled.img`
+  /* Display & Box Model */
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -53,9 +66,12 @@ export const ProductImg = styled.img`
 export const InfoP = styled.p``;
 
 export const ItemInfo = styled.div`
+  /* Display & Box Model */
+  margin-top: 5px;
+
+  /* Text */
   font-size: 16px;
   font-weight: bold;
-  margin-top: 5px;
 `;
 
 export const ReviewStars = styled.div`
@@ -63,8 +79,13 @@ export const ReviewStars = styled.div`
 `;
 
 export const ReviewCount = styled.span`
+  /* Display & Box Model */
+  margin-left: 3px;
+
+  /* Color */
+  color: ${COLORS.subFont};
+
+  /* Text */
   font-size: 13px;
   font-weight: normal;
-  color: ${COLORS.subFont};
-  margin-left: 3px;
 `;

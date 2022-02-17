@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import COLORS from '../../../../styles/colors';
 
 export const RecentListWrap = styled.div`
+  /* Display & Box Model */
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   width: 1400px;
   gap: 18px;
   margin-bottom: 30px;

@@ -23,14 +23,22 @@ const Heart = styled.div<{ size: 'small' | 'large' }>`
     width: ${size === 'small' ? '30px' : '42px'};
     height: ${size === 'small' ? '30px' : '42px'};
   `};
-  background-color: ${COLORS.white};
+  /* Display & Box Model */
+  display: flex;
   border-radius: 50%;
-  text-align: center;
   border: 1px solid ${COLORS.border};
+
+  /* Color */
+  background-color: ${COLORS.white};
+
+  /* Text */
+  text-align: center;
+
+  /* Other */
   transform: scale(1);
   transition: ${TRANSITION.normal};
-  display: flex;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.04);
   }

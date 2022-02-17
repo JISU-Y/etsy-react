@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
 
 export const PicksContainer = styled.div`
-  margin: -30px auto 0;
-  max-width: 1400px;
   width: 100%;
+  max-width: 1400px;
+  margin: -30px auto 0;
 `;
 
 export const PicksWrapper = styled.div`
+  /* Display & Box Model */
   display: grid;
   grid-template-rows: repeat(6, 100px);
   grid-template-columns: repeat(4, 1fr);
@@ -17,10 +18,12 @@ export const PicksWrapper = styled.div`
 `;
 
 export const ImageCardWrapper = styled.div<{ index: number }>`
+  /* Display & Box Model */
   display: block;
-  min-width: 230px;
   width: 100%;
   height: 100%;
+  min-width: 230px;
+
   & > div {
     width: 100%;
     height: 100%;

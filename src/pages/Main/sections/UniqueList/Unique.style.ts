@@ -8,13 +8,16 @@ export const UniqueContainer = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 28px;
+  /* Display & Box Model */
   margin-bottom: 18px;
+
+  /* Text */
+  font-size: 28px;
   font-weight: 500;
 `;
 
 export const TabContents = styled.div`
-  margin-top: 18px;
+  /* Display & Box Model */
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(6, 1fr);
@@ -22,6 +25,9 @@ export const TabContents = styled.div`
     'one one two four four five'
     'one one three four four six';
   gap: 18px;
+  margin-top: 18px;
+
+  /* Other */
   transform: translateX(-10px);
   transition: all 0.2s ease-in-out;
 `;

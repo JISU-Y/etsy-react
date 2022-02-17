@@ -45,43 +45,62 @@ const Button = styled.button<{
   bgColor?: string;
 }>`
   ${({ textColor, bgColor }) => css`
-    font-size: 13px;
-    font-weight: 500;
-    background: none;
-    border: none;
-    width: fit-content;
-    padding: 12px 15px;
+    /* Positioning */
     position: relative;
+
+    /* Display & Box Model */
     display: flex;
     align-items: center;
-    white-space: nowrap;
+    width: fit-content;
+    padding: 12px 15px;
+    border: none;
+
+    /* Color */
+    background: none;
     color: ${textColor ?? COLORS.mainFont};
+
+    /* Text */
+    font-size: 13px;
+    font-weight: 500;
+
+    /* Other */
+    white-space: nowrap;
     cursor: pointer;
+
     &::after {
       content: '';
-      width: 100%;
-      height: 100%;
+      /* Positioning */
       position: absolute;
       top: 0;
       left: 0;
+
+      /* Display & Box Model */
+      width: 100%;
+      height: 100%;
       border-radius: 30px;
-      transform: scale(0.8);
+
+      /* Color */
       background: ${bgColor ? bgColor : COLORS.hoverGray};
+
+      /* Other */
       opacity: 0;
+      transform: scale(0.8);
       transition: ${TRANSITION.quick};
     }
     &:hover::after {
-      transform: scale(1);
       opacity: 1;
+      transform: scale(1);
     }
   `}
 `;
 
 const SVGWrapper = styled.div<{ rotated: boolean }>`
+  /* Positioning */
   width: 25px;
   height: 25px;
+
+  /* Other */
   transition: ${TRANSITION.normal};
-  transform: rotate(0);
   transform: ${({ rotated }) => (rotated ? 'rotate(-180deg)' : 'rotate(0)')};
 `;
 

@@ -3,9 +3,11 @@ import COLORS from '../../../../styles/colors';
 import zIndex from '../../../../styles/zIndex';
 
 export const ImageContainer = styled.div`
+  /* Positioning */
   display: flex;
   position: relative;
   .mySwiper2 {
+    /* Display & Box Model */
     width: 95%;
     height: 100%;
     border-radius: 10px;
@@ -15,9 +17,12 @@ export const ImageContainer = styled.div`
     }
     .swiper-button-prev,
     .swiper-button-next {
+      /* Display & Box Model */
       width: 48px;
       height: 48px;
       border-radius: 50%;
+
+      /* Color */
       background-color: ${COLORS.white};
       color: ${COLORS.mainFont};
     }
@@ -27,12 +32,16 @@ export const ImageContainer = styled.div`
     }
   }
   .mySwiper {
+    /* Display & Box Model */
     width: 9%;
     height: 100%;
     img {
+      /* Display & Box Model */
       width: 60px;
       height: 60px;
       border-radius: 10px;
+
+      /* Other */
       cursor: pointer;
     }
     .swiper-wrapper {
@@ -55,8 +64,11 @@ export const ImageContainer = styled.div`
 `;
 
 export const IconWrap = styled.div`
+  /* Positioning */
   position: absolute;
   top: 10px;
   right: 10px;
+
+  /* Other */
   z-index: ${zIndex.floating};
 `;

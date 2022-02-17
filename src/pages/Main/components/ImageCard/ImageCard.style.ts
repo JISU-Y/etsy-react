@@ -3,21 +3,30 @@ import COLORS from '../../../../styles/colors';
 import TRANSITION from '../../../../styles/transition';
 
 export const FavoriteWrap = styled.div`
+  /* Positioning */
   position: absolute;
   top: 6px;
   right: 6px;
+
+  /* Other */
   opacity: 0;
   transform: translateY(10px);
   transition: ${TRANSITION.normal};
 `;
 
 export const ImgContainer = styled.div`
-  display: inline-block;
+  /* Positioning */
   position: relative;
-  overflow: hidden;
+
+  /* Display & Box Model */
+  display: inline-block;
   border-radius: 5px;
+
+  /* Other */
   cursor: pointer;
+  overflow: hidden;
   transition: ${TRANSITION.normal};
+
   &:hover {
     box-shadow: 0 0 8px 0 ${COLORS.shadowGray};
   }
@@ -44,13 +53,20 @@ export const CardImg = styled.img`
 `;
 
 export const PriceTag = styled.div`
+  /* Positioning */
   position: absolute;
   bottom: 8px;
   left: 6px;
+
+  /* Display & Box Model */
   padding: 6px 9px;
-  background-color: ${COLORS.white};
-  border-radius: 15px;
   border: 1px solid #c4c4c4;
+  border-radius: 15px;
+
+  /* Color */
+  background-color: ${COLORS.white};
+
+  /* Text */
   font-size: 13px;
   font-weight: 500;
 `;

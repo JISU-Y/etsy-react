@@ -20,6 +20,7 @@ function FiveStars({ width, height, color, gap }: Props) {
 }
 
 const Container = styled.div<{ gap: number }>`
+  /* Display & Box Model */
   display: flex;
   gap: ${({ gap }) => gap}px;
 `;
