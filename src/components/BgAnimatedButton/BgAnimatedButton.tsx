@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import Bracket from '../../icons/Bracket';
 import COLORS from '../../styles/colors';
@@ -7,29 +7,32 @@ import TRANSITION from '../../styles/transition';
 interface Props {
   buttonLabel: string | React.SVGProps<SVGSVGElement>;
   useToggle?: boolean;
-  shouldShow?: boolean;
-  setShouldShow?: React.Dispatch<React.SetStateAction<boolean>>;
   textColor?: string;
   bgColor?: string;
+  toggleShow?: (toggle: boolean) => void;
 }
 
 function BgAnimatedButton({
   buttonLabel,
   useToggle,
-  shouldShow,
-  setShouldShow,
   textColor,
   bgColor,
+  toggleShow,
 }: Props) {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => setToggle(prev => !prev);
+
+  useEffect(() => {
+    if (!toggleShow) return;
+    toggleShow(toggle);
+  }, [toggleShow, toggle]);
+
   return (
-    <Button
-      textColor={textColor}
-      bgColor={bgColor}
-      onClick={() => (setShouldShow ? setShouldShow(prev => !prev) : null)}
-    >
+    <Button textColor={textColor} bgColor={bgColor} onClick={handleToggle}>
       {buttonLabel}
       {useToggle && (
-        <SVGWrapper rotated={shouldShow ?? false}>
+        <SVGWrapper rotated={toggle}>
           <Bracket width={25} height={25} color={COLORS.mainFont} />
         </SVGWrapper>
       )}

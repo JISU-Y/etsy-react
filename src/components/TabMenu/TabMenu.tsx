@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './TabMenu.style';
 
 interface ITabMenu {
   list: string[] | undefined;
-  currentTab: number;
-  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
+  handleTab?: (tab: number) => void;
   fontSize?: number;
   tagNumber?: number[];
 }
 
-function TabMenu({
-  list,
-  currentTab,
-  setCurrentTab,
-  fontSize,
-  tagNumber,
-}: ITabMenu) {
+function TabMenu({ list, fontSize, tagNumber, handleTab }: ITabMenu) {
+  const [tab, setTab] = useState(0);
+
+  useEffect(() => {
+    if (!handleTab) return;
+    handleTab(tab);
+  }, [handleTab, tab]);
+
   return (
     <S.MenuContainer>
       {list?.map((menu, index) => (
         <S.TabButton
           key={menu}
-          onClick={() => setCurrentTab(index)}
+          onClick={() => setTab(index)}
           list={list}
-          currentTab={currentTab}
+          currentTab={tab}
           fontSize={fontSize}
         >
           {menu}

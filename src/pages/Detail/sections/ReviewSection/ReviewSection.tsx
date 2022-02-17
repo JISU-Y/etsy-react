@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FiveStars from '../../../../components/FiveStars';
 import TabMenu from '../../../../components/TabMenu';
 import COLORS from '../../../../styles/colors';
 import * as S from './ReviewSection.style';
 
 function ReviewSection({ reviewCount }: { reviewCount: number }) {
-  const [currentTab, setCurrentTab] = useState(0);
-
   return (
     <S.ReviewContainer>
       <S.ReviewCountBox>
@@ -21,8 +19,6 @@ function ReviewSection({ reviewCount }: { reviewCount: number }) {
         <S.TabMenuBox>
           <TabMenu
             list={['Reviews for this item', 'Reviews for this shop']}
-            currentTab={currentTab}
-            setCurrentTab={setCurrentTab}
             fontSize={16}
             tagNumber={[163, 5549]}
           />

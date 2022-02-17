@@ -34,6 +34,8 @@ function SideInformation({
     setIsOverLimit(personalization.length >= 1024 ? true : false);
   }, [personalization]);
 
+  const handlePersonalizationShow = (toggle: boolean) => setShouldShow(toggle);
+
   return (
     <S.SideInfoContainer>
       <S.SellerContainer>
@@ -87,8 +89,7 @@ function SideInformation({
       <BgAnimatedButton
         buttonLabel="Add your personalization (optional)"
         useToggle
-        shouldShow={shouldShow}
-        setShouldShow={setShouldShow}
+        toggleShow={handlePersonalizationShow}
       />
       <S.PersonalizationBox shouldShow={shouldShow}>
         <S.PersonalizationGuide>

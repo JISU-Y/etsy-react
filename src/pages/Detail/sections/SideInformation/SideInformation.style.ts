@@ -138,7 +138,6 @@ export const PersonalizationText = styled.textarea<{ isOverLimit: boolean }>`
   ${({ isOverLimit }) =>
     isOverLimit &&
     css`
-      height: auto;
       background-color: ${COLORS.warning};
       border-color: rgba(166, 26, 46, 0.35);
       &:hover {

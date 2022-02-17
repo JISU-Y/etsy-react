@@ -18,14 +18,12 @@ function UniqueList() {
     );
   }, [data, currentTab]);
 
+  const handleCurrentTab = (tab: number) => setCurrentTab(tab);
+
   return (
     <S.UniqueContainer>
       <S.SectionTitle>Discover unique hand-picked items</S.SectionTitle>
-      <TabMenu
-        list={menu}
-        currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
-      />
+      <TabMenu list={menu} handleTab={handleCurrentTab} />
       <S.TabContents>
         {tabProductList?.map(({ imageUrl, price }, index) => (
           <S.ImageCardWrapper
