@@ -2,6 +2,7 @@ import React from 'react';
 import BgAnimatedButton from '../../components/BgAnimatedButton';
 import Header from '../../components/Header';
 import * as S from './Cart.style';
+import PaymentSection from './sections/PaymentSection';
 import ProductsSection from './sections/ProductsSection';
 
 function Cart() {
@@ -15,7 +16,10 @@ function Cart() {
             <BgAnimatedButton buttonLabel={<S.Span>Keep shopping</S.Span>} />
           </S.ButtonWrapper>
         </S.CartHeader>
-        <ProductsSection />
+        <S.CartWrapper>
+          <ProductsSection />
+          <PaymentSection />
+        </S.CartWrapper>
       </S.CartContainer>
     </>
   );

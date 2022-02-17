@@ -35,3 +35,8 @@ export const Span = styled.span`
   font-size: 16px;
   font-weight: bold;
 `;
+
+export const CartWrapper = styled.div`
+  /* Display & Box Model */
+  display: flex;
+`;
