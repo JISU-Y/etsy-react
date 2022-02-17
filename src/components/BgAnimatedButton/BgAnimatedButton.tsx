@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import Bracket from '../../icons/Bracket';
 import COLORS from '../../styles/colors';
@@ -9,6 +9,7 @@ interface Props {
   useToggle?: boolean;
   textColor?: string;
   bgColor?: string;
+  toggleValue?: boolean;
   toggleShow?: (toggle: boolean) => void;
 }
 
@@ -17,16 +18,15 @@ function BgAnimatedButton({
   useToggle,
   textColor,
   bgColor,
+  toggleValue,
   toggleShow,
 }: Props) {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(!toggleValue ?? false);
 
-  const handleToggle = () => setToggle(prev => !prev);
-
-  useEffect(() => {
-    if (!toggleShow) return;
-    toggleShow(toggle);
-  }, [toggleShow, toggle]);
+  const handleToggle = () => {
+    setToggle(!toggle);
+    toggleShow!!(toggle);
+  };
 
   return (
     <Button textColor={textColor} bgColor={bgColor} onClick={handleToggle}>

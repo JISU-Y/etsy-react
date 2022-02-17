@@ -23,7 +23,11 @@ function UniqueList() {
   return (
     <S.UniqueContainer>
       <S.SectionTitle>Discover unique hand-picked items</S.SectionTitle>
-      <TabMenu list={menu} handleTab={handleCurrentTab} />
+      <TabMenu
+        list={menu}
+        currentTab={currentTab}
+        handleTab={handleCurrentTab}
+      />
       <S.TabContents>
         {tabProductList?.map(({ imageUrl, price }, index) => (
           <S.ImageCardWrapper

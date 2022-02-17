@@ -89,6 +89,7 @@ function SideInformation({
       <BgAnimatedButton
         buttonLabel="Add your personalization (optional)"
         useToggle
+        toggleValue={shouldShow}
         toggleShow={handlePersonalizationShow}
       />
       <S.PersonalizationBox shouldShow={shouldShow}>
