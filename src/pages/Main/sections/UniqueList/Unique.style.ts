@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-export const gridIndex = ['one', 'two', 'three', 'four', 'five', 'six'];
 
 export const UniqueContainer = styled.div`
   width: 100%;
@@ -18,12 +17,7 @@ export const SectionTitle = styled.h2`
 
 export const TabContents = styled.div`
   /* Display & Box Model */
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-areas:
-    'one one two four four five'
-    'one one three four four six';
+  display: flex;
   gap: 18px;
   margin-top: 18px;
 
@@ -32,17 +26,24 @@ export const TabContents = styled.div`
   transition: all 0.2s ease-in-out;
 `;
 
-export const ImageCardWrapper = styled.div<{ index: number }>`
-  display: block;
+export const ImageCardWrapper = styled.div`
+  /* Display & Box Model */
+  display: flex;
   width: 100%;
   height: 100%;
   & > div {
     width: 100%;
     height: 100%;
   }
-  ${({ index }) => css`
-    &.${gridIndex[index]} {
-      grid-area: ${gridIndex[index]};
-    }
-  `}
+`;
+
+export const Left = styled.div`
+  display: flex;
+`;
+
+export const LeftInLeft = styled.div``;
+
+export const RightInLeft = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

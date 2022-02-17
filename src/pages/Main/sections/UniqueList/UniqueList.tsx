@@ -29,12 +29,8 @@ function UniqueList() {
         handleTab={handleCurrentTab}
       />
       <S.TabContents>
-        {tabProductList?.map(({ imageUrl, price }, index) => (
-          <S.ImageCardWrapper
-            key={imageUrl}
-            index={index}
-            className={S.gridIndex[index]}
-          >
+        {/* {tabProductList?.map(({ imageUrl, price }) => (
+          <S.ImageCardWrapper key={imageUrl}>
             <ImageCard
               width="100%"
               height="100%"
@@ -42,7 +38,36 @@ function UniqueList() {
               image={imageUrl}
             />
           </S.ImageCardWrapper>
-        ))}
+        ))} */}
+
+        <S.Left>
+          <S.ImageCardWrapper>
+            <ImageCard
+              width="100%"
+              height="100%"
+              price={tabProductList!![0].price}
+              image={tabProductList!![0].imageUrl}
+            />
+          </S.ImageCardWrapper>
+          <S.RightInLeft>
+            <S.ImageCardWrapper>
+              <ImageCard
+                width="100%"
+                height="100%"
+                price={tabProductList!![1].price}
+                image={tabProductList!![1].imageUrl}
+              />
+            </S.ImageCardWrapper>
+            <S.ImageCardWrapper>
+              <ImageCard
+                width="100%"
+                height="100%"
+                price={tabProductList!![2].price}
+                image={tabProductList!![2].imageUrl}
+              />
+            </S.ImageCardWrapper>
+          </S.RightInLeft>
+        </S.Left>
       </S.TabContents>
     </S.UniqueContainer>
   );
