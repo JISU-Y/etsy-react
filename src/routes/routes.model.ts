@@ -1,3 +1,4 @@
+import Cart from '../pages/Cart';
 import Detail from '../pages/Detail';
 import Main from '../pages/Main';
 
@@ -16,6 +17,11 @@ export const appRoutes: PathItem[] = [
   {
     path: '/detail/:id',
     component: Detail,
+    exact: true,
+  },
+  {
+    path: '/cart',
+    component: Cart,
     exact: true,
   },
 ];

@@ -6,9 +6,14 @@ import * as S from './Header.style';
 import { menu } from './Header.data';
 import COLORS from '../../styles/colors';
 import BgAnimatedButton from '../BgAnimatedButton';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
   const [lineIndex, setLineIndex] = useState(0);
+
+  const history = useHistory();
+
+  const gotoCart = () => history.push('/cart');
 
   return (
     <S.HeaderContainer>
@@ -21,7 +26,7 @@ function Header() {
           <S.SearchButton>검색</S.SearchButton>
         </S.SearchForm>
         <BgAnimatedButton buttonLabel="Sign in" />
-        <S.CartButtonWrapper>
+        <S.CartButtonWrapper onClick={gotoCart}>
           <BgAnimatedButton
             buttonLabel={<CartIcon width={24} height={24} color="black" />}
           />
