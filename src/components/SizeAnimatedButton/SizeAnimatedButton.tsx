@@ -10,6 +10,7 @@ interface Props {
   bgColor?: string;
   borderAttr?: string;
   widthFit?: boolean;
+  onClick?: () => void;
 }
 
 function SizeAnimatedButton({
@@ -18,6 +19,7 @@ function SizeAnimatedButton({
   bgColor,
   borderAttr,
   widthFit,
+  onClick,
 }: Props) {
   return (
     <Button
@@ -25,6 +27,7 @@ function SizeAnimatedButton({
       bgColor={bgColor}
       borderAttr={borderAttr}
       widthFit={widthFit}
+      onClick={onClick}
     >
       {buttonLabel}
     </Button>

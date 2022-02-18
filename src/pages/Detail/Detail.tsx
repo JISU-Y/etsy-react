@@ -31,6 +31,9 @@ export default function Detail() {
               price={data.price}
               finishOptions={data.finishOptions}
               lengthOptions={data.lengthOptions}
+              image={data.images[0]}
+              discount={data.discount}
+              id={id}
             />
           )}
         </S.DetailRight>

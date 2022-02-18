@@ -1,50 +1,93 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import BgAnimatedButton from '../../../../components/BgAnimatedButton';
 import { currency } from '../../../../constants/localeSetting';
+import { CartContext } from '../../../../contexts/CartContext';
+import { CartItemProps } from '../../../../types';
+import { padCentsDigits } from '../../../../utils/convertDigit';
 import * as S from './ProductsSection.style';
 
 function ProductsSection() {
+  const { cartItems, changeQuantities, removeItemFromCart } =
+    useContext(CartContext);
+  const history = useHistory();
+
+  const gotoDetail = (id: number) => {
+    history.push(`detail/${id}`, { id });
+  };
+
   return (
     <S.Container>
-      <S.CartProduct>
-        <S.SellerInfo>
-          <S.SellerName>ivoryMR</S.SellerName>
-          <S.SellerContact>Contact shop</S.SellerContact>
-        </S.SellerInfo>
-        <S.ProductInfo>
-          <S.ProductImgWrapper>
-            <S.ProductImg src="https://i.etsystatic.com/10953576/c/1500/1146/0/0/il/353f28/1050514883/il_170x135.1050514883_54k2.jpg" />
-          </S.ProductImgWrapper>
-          <S.ProductDetailBox>
-            <S.Title>
-              Actual Handwriting Necklace - Signature Necklace - Memorial
-              Necklace - Personalized Jewelry - Memorial Gift - Gift For Mom
-            </S.Title>
-            <S.OptionsBox>
-              <S.OptionList>Color: Sterling Silver</S.OptionList>
-              <S.OptionList>Length: 15 Inches</S.OptionList>
-              <S.EditButton>Edit</S.EditButton>
-              <S.OptionList>
-                Personalization: Not requested on this item.
-              </S.OptionList>
-            </S.OptionsBox>
-            <S.ButtonBox>
-              <BgAnimatedButton buttonLabel={<S.Span>Save for later</S.Span>} />
-              <BgAnimatedButton buttonLabel={<S.Span>Remove</S.Span>} />
-            </S.ButtonBox>
-          </S.ProductDetailBox>
-          <S.QuantitySelect>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </S.QuantitySelect>
-          <S.PriceInfo>
-            <S.CurrentPrice>{currency} 30.80</S.CurrentPrice>
-            <S.OriginalPrice>{currency} 44.00</S.OriginalPrice>
-            <S.SaleNoti>Sale: 30% off</S.SaleNoti>
-          </S.PriceInfo>
-        </S.ProductInfo>
-      </S.CartProduct>
+      {cartItems?.map(
+        ({
+          id,
+          seller,
+          image,
+          name,
+          options,
+          price,
+          originalPrice,
+          discount,
+          quantity,
+        }: CartItemProps) => (
+          <S.CartProduct key={id}>
+            <S.SellerInfo>
+              <S.SellerName>{seller}</S.SellerName>
+              <S.SellerContact>Contact shop</S.SellerContact>
+            </S.SellerInfo>
+            <S.ProductInfo>
+              <S.ProductImgWrapper>
+                <S.ProductImg src={image} />
+              </S.ProductImgWrapper>
+              <S.ProductDetailBox>
+                <S.Title onClick={() => gotoDetail(id)}>{name}</S.Title>
+                <S.OptionsBox>
+                  <S.OptionList>Color: {options.color}</S.OptionList>
+                  <S.OptionList>Length: {options.length} Inches</S.OptionList>
+                  <S.EditButton>Edit</S.EditButton>
+                  <S.OptionList>
+                    Personalization:{' '}
+                    {options.personalization !== ''
+                      ? options.personalization
+                      : 'Not requested on this item.'}
+                  </S.OptionList>
+                </S.OptionsBox>
+                <S.ButtonBox>
+                  <BgAnimatedButton
+                    buttonLabel={<S.Span>Save for later</S.Span>}
+                  />
+                  <S.BgButtonWrapper onClick={() => removeItemFromCart?.(id)}>
+                    <BgAnimatedButton buttonLabel={<S.Span>Remove</S.Span>} />
+                  </S.BgButtonWrapper>
+                </S.ButtonBox>
+              </S.ProductDetailBox>
+              <S.QuantitySelect
+                onChange={e => changeQuantities?.(id, parseInt(e.target.value))}
+                value={quantity}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </S.QuantitySelect>
+              <S.PriceInfo>
+                <S.CurrentPrice>
+                  {currency} {padCentsDigits(price)}
+                </S.CurrentPrice>
+                <S.OriginalPrice>
+                  {discount
+                    ? `${currency} ${padCentsDigits(originalPrice ?? 0)}`
+                    : null}
+                </S.OriginalPrice>
+                <S.SaleNoti>
+                  {discount ? `Sale: ${discount}% off` : null}
+                </S.SaleNoti>
+              </S.PriceInfo>
+            </S.ProductInfo>
+          </S.CartProduct>
+        )
+      )}
     </S.Container>
   );
 }

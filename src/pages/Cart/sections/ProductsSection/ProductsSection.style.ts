@@ -54,7 +54,7 @@ export const ProductInfo = styled.div`
 
 export const ProductImgWrapper = styled.div`
   /* Display & Box Model */
-  min-width: 190px;
+  max-width: 190px;
   max-height: 162px;
   border-radius: 10px;
 
@@ -134,6 +134,8 @@ export const ButtonBox = styled.div`
   margin-left: -15px;
   margin-top: 10px;
 `;
+
+export const BgButtonWrapper = styled.div``;
 
 export const Span = styled.span`
   font-size: 13px;

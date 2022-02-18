@@ -10,6 +10,7 @@ export const Container = styled.div`
   min-width: 280px;
   flex-basis: calc(100% / 3);
   padding: 18px;
+  margin-top: 20px;
   margin-left: 24px;
   border-radius: 18px;
   box-shadow: 0 4px 20px ${COLORS.shadowGray};
@@ -84,13 +85,13 @@ export const RadioCheckMark = styled.label`
     content: '';
     /* Positioning */
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 7px;
+    left: 7px;
 
     /* Display & Box Model */
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
 
     /* Color */
@@ -98,7 +99,6 @@ export const RadioCheckMark = styled.label`
 
     /* Other */
     z-index: 2;
-    transform: translate(-50%, -50%);
   }
 `;
 
@@ -116,7 +116,7 @@ export const Radio = styled.input`
 
   &:checked ~ ${RadioCheckMark} {
     border: none;
-    background-color: ${COLORS.mainFont};
+    background-color: ${COLORS.darkGray};
   }
 `;
 

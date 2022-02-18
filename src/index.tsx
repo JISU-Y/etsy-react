@@ -4,15 +4,17 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 import fetcher from './config/swrConfig';
-// swr global config fetcher
+import CartContextProvider from './contexts/CartContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SWRConfig value={{ fetcher }}>
-      <Router>
-        <App />
-      </Router>
-    </SWRConfig>
+    <CartContextProvider>
+      <SWRConfig value={{ fetcher }}>
+        <Router>
+          <App />
+        </Router>
+      </SWRConfig>
+    </CartContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
