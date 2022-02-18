@@ -18,7 +18,12 @@ function Cart() {
       <Header />
       <S.CartContainer>
         <S.CartHeader>
-          <S.CartCounts>{cartItems.length} item in your cart</S.CartCounts>
+          <S.CartCounts>
+            {cartItems.length < 2
+              ? `${cartItems.length} item`
+              : `${cartItems.length} items`}{' '}
+            in your cart
+          </S.CartCounts>
           <S.ButtonWrapper onClick={gotoMain}>
             <BgAnimatedButton buttonLabel={<S.Span>Keep shopping</S.Span>} />
           </S.ButtonWrapper>

@@ -75,7 +75,7 @@ function PaymentSection() {
         <S.ContentsText>
           {currency}{' '}
           {padCentsDigits(
-            totalPrice - cartItems.length ? initialValue.discount : 0
+            totalPrice - (cartItems.length ? initialValue.discount : 0)
           )}
         </S.ContentsText>
       </S.LineDiv>
@@ -95,9 +95,10 @@ function PaymentSection() {
         <S.SectionTitle>
           {currency}{' '}
           {padCentsDigits(
-            totalPrice - cartItems.length
-              ? initialValue.discount + initialValue.shipping
-              : 0
+            totalPrice -
+              (cartItems.length
+                ? initialValue.discount - initialValue.shipping
+                : 0)
           )}
         </S.SectionTitle>
       </S.LineDiv>

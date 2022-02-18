@@ -84,6 +84,9 @@ export const LogoWrapper = styled.span`
 
   /* Text */
   font-size: 30px;
+
+  /* Other */
+  cursor: pointer;
 `;
 
 export const SearchForm = styled.form`

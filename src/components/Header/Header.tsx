@@ -16,11 +16,12 @@ function Header() {
   const history = useHistory();
 
   const gotoCart = () => history.push('/cart');
+  const gotoMain = () => history.push('/main');
 
   return (
     <S.HeaderContainer>
       <S.SearchContainer>
-        <S.LogoWrapper>
+        <S.LogoWrapper onClick={gotoMain}>
           <Logo width={80} height={40} color="orange" />
         </S.LogoWrapper>
         <S.SearchForm>

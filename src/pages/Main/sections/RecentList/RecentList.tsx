@@ -12,7 +12,9 @@ function RecentList() {
   return (
     <S.RecentListWrap>
       <S.RecentTitle>
-        <S.RecentLeft>Recently viewed & more</S.RecentLeft>
+        <S.RecentLeft>
+          Recently viewed & more (요소 클릭 시 디테일 페이지로 이동)
+        </S.RecentLeft>
         <S.RecentRight>Show more from the ivoryMR shop</S.RecentRight>
       </S.RecentTitle>
       {recentViewsData?.map(({ id, price, imageUrl }) => (
