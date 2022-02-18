@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import CartIcon from '../../icons/CartIcon';
 import Logo from '../../icons/Logo';
 import ToolTipTemplate from '../ToolTipTemplate';
@@ -7,8 +7,10 @@ import { menu } from './Header.data';
 import COLORS from '../../styles/colors';
 import BgAnimatedButton from '../BgAnimatedButton';
 import { useHistory } from 'react-router-dom';
+import { CartContext } from '../../contexts/CartContext';
 
 function Header() {
+  const { cartItems } = useContext(CartContext);
   const [lineIndex, setLineIndex] = useState(0);
 
   const history = useHistory();
@@ -27,6 +29,9 @@ function Header() {
         </S.SearchForm>
         <BgAnimatedButton buttonLabel="Sign in" />
         <S.CartButtonWrapper onClick={gotoCart}>
+          {cartItems.length ? (
+            <S.CartCount>{cartItems.length}</S.CartCount>
+          ) : null}
           <BgAnimatedButton
             buttonLabel={<CartIcon width={24} height={24} color="black" />}
           />
