@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import COLORS from '../../../../styles/colors';
 import TRANSITION from '../../../../styles/transition';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: calc((100% / 3) * 2);
+  flex-basis: calc((100% / 3) * 2);
+`;
 
 export const CartProduct = styled.div`
   width: 100%;
