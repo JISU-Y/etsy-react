@@ -25,7 +25,7 @@ function BgAnimatedButton({
 
   const handleToggle = () => {
     setToggle(!toggle);
-    toggleShow!!(toggle);
+    toggleShow?.(toggle);
   };
 
   return (

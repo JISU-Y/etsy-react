@@ -20,7 +20,7 @@ function TabMenu({
 
   const onTabClicked = (tabIndex: number) => {
     setTab(tabIndex);
-    handleTab!!(tabIndex);
+    handleTab?.(tabIndex);
   };
 
   return (
