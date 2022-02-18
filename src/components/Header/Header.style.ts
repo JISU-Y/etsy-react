@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import COLORS from '../../styles/colors';
 import TRANSITION from '../../styles/transition';
+import zIndex from '../../styles/zIndex';
 
 export const HeaderContainer = styled.div`
   /* Positioning */
@@ -34,6 +35,29 @@ export const CartButtonWrapper = styled.div`
   }
 `;
 
+export const CartCount = styled.span`
+  /* Positioning */
+  position: absolute;
+  top: 2px;
+  right: 2px;
+
+  /* Display & Box Model */
+  padding: 3px 6px;
+  border: 2px solid ${COLORS.white};
+  border-radius: 50%;
+
+  /* Color */
+  background-color: ${COLORS.hotPink};
+
+  /* Text */
+  font-size: 11px;
+  font-weight: bold;
+
+  /* Other */
+  pointer-events: none;
+  z-index: ${zIndex.base};
+`;
+
 export const ToolTipWrapper = styled.div`
   display: inline-block;
 `;
@@ -60,6 +84,9 @@ export const LogoWrapper = styled.span`
 
   /* Text */
   font-size: 30px;
+
+  /* Other */
+  cursor: pointer;
 `;
 
 export const SearchForm = styled.form`

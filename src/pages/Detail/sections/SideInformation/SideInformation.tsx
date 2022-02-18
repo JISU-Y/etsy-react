@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import BgAnimatedButton from '../../../../components/BgAnimatedButton';
 import FiveStars from '../../../../components/FiveStars';
 import SizeAnimatedButton from '../../../../components/SizeAnimatedButton';
 import ToolTipTemplate from '../../../../components/ToolTipTemplate';
 import { currency } from '../../../../constants/localeSetting';
+import { CartContext } from '../../../../contexts/CartContext';
 import COLORS from '../../../../styles/colors';
 import { padCentsDigits } from '../../../../utils/convertDigit';
 import { Details } from '../../types/model';
@@ -16,6 +18,9 @@ interface Props {
   price: Details['price'];
   finishOptions: Details['finishOptions'];
   lengthOptions: Details['lengthOptions'];
+  image: string;
+  discount: Details['discount'];
+  id: Details['id'];
 }
 
 function SideInformation({
@@ -25,16 +30,61 @@ function SideInformation({
   price,
   finishOptions,
   lengthOptions,
+  image,
+  discount,
+  id,
 }: Props) {
+  const { addItemtoCart } = useContext(CartContext);
   const [shouldShow, setShouldShow] = useState(false);
-  const [personalization, setPersonalization] = useState('');
   const [isOverLimit, setIsOverLimit] = useState(false);
+  const [formData, setFormData] = useState({
+    color: '',
+    length: '',
+    personalization: '',
+  });
+  const [itemData, setItemData] = useState({
+    seller: provider,
+    image: image,
+    name: title,
+    options: formData,
+    price: price,
+    originalPrice: 0,
+    discount: discount,
+    shipping: 20,
+    quantity: 1,
+    id: id,
+  });
+  const history = useHistory();
 
   useEffect(() => {
-    setIsOverLimit(personalization.length >= 1024 ? true : false);
-  }, [personalization]);
+    setIsOverLimit(formData.personalization.length >= 1024 ? true : false);
+  }, [formData.personalization]);
 
   const handlePersonalizationShow = (toggle: boolean) => setShouldShow(toggle);
+
+  const handelChange = (
+    e:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    if (!e.target.value) return;
+
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  useEffect(() => {
+    setItemData(prev => ({ ...prev, options: formData }));
+  }, [formData]);
+
+  const addToCart = () => {
+    if (formData.color === '' || formData.length === '') return;
+
+    addItemtoCart?.(itemData);
+    history.push('/cart');
+  };
 
   return (
     <S.SideInfoContainer>
@@ -65,7 +115,7 @@ function SideInformation({
       <S.ProductSelector>
         <S.SelectWrapper>
           <S.NormalName>Color</S.NormalName>
-          <S.Select id="finishOptions">
+          <S.Select id="color" onChange={handelChange}>
             <S.Option value="">select an option</S.Option>
             {finishOptions.map(option => (
               <S.Option key={option} value={option}>
@@ -76,7 +126,7 @@ function SideInformation({
         </S.SelectWrapper>
         <S.SelectWrapper>
           <S.NormalName>Length</S.NormalName>
-          <S.Select id="lengthOptions">
+          <S.Select id="length" onChange={handelChange}>
             <S.Option value="">select an option</S.Option>
             {lengthOptions.map(option => (
               <S.Option key={option} value={option}>
@@ -100,11 +150,13 @@ function SideInformation({
         <S.PersonalizationText
           id="personalization"
           maxLength={1024}
-          onChange={e => setPersonalization(e.target.value)}
-          value={personalization}
+          onChange={handelChange}
+          value={formData.personalization}
           isOverLimit={isOverLimit}
         />
-        <S.TextRemaining>{1024 - personalization.length}</S.TextRemaining>
+        <S.TextRemaining>
+          {1024 - formData.personalization.length}
+        </S.TextRemaining>
         {isOverLimit && (
           <S.LimitError>
             You’ve reached the limit! Use 1024 characters or less.
@@ -112,7 +164,11 @@ function SideInformation({
         )}
       </S.PersonalizationBox>
       <S.ButtonSpacer />
-      <SizeAnimatedButton buttonLabel="Add to Cart" textColor={COLORS.white} />
+      <SizeAnimatedButton
+        buttonLabel="Add to Cart"
+        textColor={COLORS.white}
+        onClick={addToCart}
+      />
     </S.SideInfoContainer>
   );
 }

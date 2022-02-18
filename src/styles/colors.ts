@@ -1,5 +1,6 @@
 const COLORS = {
   primary: '#F1641E',
+  hotPink: '#FAA077',
   warning: '#FDDCD8',
   error: '#A61A2E',
   white: '#fff',
