@@ -94,7 +94,9 @@ export const ProductTax = styled.p`
   font-size: 13px;
 `;
 
-export const ProductSelector = styled.div``;
+// Refactor: SideInformation(Cart page)에서 이 div아래에 있는 데이터를 formData라고 표현하고있으니까, div태그보다는 form태그를 써주는 게 더 나아보여요.
+
+export const ProductSelector = styled.form``;
 
 export const SelectWrapper = styled.div`
   margin-bottom: 10px;

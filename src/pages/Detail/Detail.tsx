@@ -1,4 +1,3 @@
-import React from 'react';
 import * as S from './Detail.style';
 import { useLocation } from 'react-router-dom';
 import ImageSection from './sections/ImageSection';
@@ -23,19 +22,7 @@ export default function Detail() {
           {data && <ReviewSection reviewCount={data.itemReviews.length} />}
         </S.DetailLeft>
         <S.DetailRight>
-          {data && (
-            <SideInformation
-              provider={data.provider}
-              title={data.title}
-              sold={data.sold}
-              price={data.price}
-              finishOptions={data.finishOptions}
-              lengthOptions={data.lengthOptions}
-              image={data.images[0]}
-              discount={data.discount}
-              id={id}
-            />
-          )}
+          {data && <SideInformation details={data} image={data.images[0]} />}
         </S.DetailRight>
       </S.DetailWrapper>
     </S.Container>

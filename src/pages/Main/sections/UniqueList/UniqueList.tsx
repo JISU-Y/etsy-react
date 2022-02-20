@@ -8,14 +8,14 @@ import * as S from './Unique.style';
 function UniqueList() {
   const { data, menu } = useUniqueList();
   const [currentTab, setCurrentTab] = useState(0);
-  const [tabProductList, setTabProductList] = useState<
-    TabProductList[] | undefined
-  >([]);
+  const [tabProductList, setTabProductList] = useState<TabProductList[]>([]);
 
   useEffect(() => {
-    setTabProductList(
-      data?.filter(({ category }) => category === menu!![currentTab])
-    );
+    // Refactor: 조금 더 명시적인 네이밍을 써주면 좋을 것 같아요.
+    const currentTabMenu =
+      data?.filter(({ category }) => category === menu!![currentTab]) || [];
+
+    setTabProductList(currentTabMenu);
   }, [data, currentTab]);
 
   const handleCurrentTab = (tab: number) => setCurrentTab(tab);

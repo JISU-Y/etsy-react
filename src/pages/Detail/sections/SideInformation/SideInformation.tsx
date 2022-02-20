@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import BgAnimatedButton from '../../../../components/BgAnimatedButton';
 import FiveStars from '../../../../components/FiveStars';
@@ -10,77 +10,116 @@ import COLORS from '../../../../styles/colors';
 import { padCentsDigits } from '../../../../utils/convertDigit';
 import { Details } from '../../types/model';
 import * as S from './SideInformation.style';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { FormData } from './types';
 
 interface Props {
-  provider: Details['provider'];
-  title: Details['title'];
-  sold: Details['sold'];
-  price: Details['price'];
-  finishOptions: Details['finishOptions'];
-  lengthOptions: Details['lengthOptions'];
+  details: Details;
   image: string;
-  discount: Details['discount'];
-  id: Details['id'];
 }
 
-function SideInformation({
-  provider,
-  title,
-  sold,
-  price,
-  finishOptions,
-  lengthOptions,
-  image,
-  discount,
-  id,
-}: Props) {
+function SideInformation({ details, image }: Props) {
+  // Refactor: 이런식으로 하나만 받고, destruction
+  const {
+    id,
+    provider,
+    title,
+    price,
+    discount,
+    sold,
+    finishOptions,
+    lengthOptions,
+  } = details;
+
   const { addItemtoCart } = useContext(CartContext);
   const [shouldShow, setShouldShow] = useState(false);
   const [isOverLimit, setIsOverLimit] = useState(false);
-  const [formData, setFormData] = useState({
-    color: '',
-    length: '',
-    personalization: '',
-  });
-  const [itemData, setItemData] = useState({
-    seller: provider,
-    image: image,
-    name: title,
-    options: formData,
-    price: price,
-    originalPrice: 0,
-    discount: discount,
-    shipping: 20,
-    quantity: 1,
-    id: id,
-  });
+
+  // const [formData, setFormData] = useState({
+  //   color: '',
+  //   length: '',
+  //   personalization: '',
+  // });
+
   const history = useHistory();
 
+  // 사실 여기에 있는 form-data는 양이 많아질수록 일일히 state관리하기가 힘들어서 form-control 라이브러리를 사용하는 편이예요. ex. formik, react-hook-form
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const onSubmit: SubmitHandler<FormData> = data => {
+    console.log(data);
+  };
+
+  // const formData = getValues();
+  const formData = watch();
+  const { color, length, personalization } = formData;
+
   useEffect(() => {
-    setIsOverLimit(formData.personalization.length >= 1024 ? true : false);
-  }, [formData.personalization]);
+    setIsOverLimit(personalization?.length >= 1024 ? true : false);
+  }, [personalization]);
 
   const handlePersonalizationShow = (toggle: boolean) => setShouldShow(toggle);
 
-  const handelChange = (
-    e:
-      | React.ChangeEvent<HTMLSelectElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    if (!e.target.value) return;
+  // const handleChange = (
+  //   e:
+  //     | React.ChangeEvent<HTMLSelectElement>
+  //     | React.ChangeEvent<HTMLTextAreaElement>
+  // ) => {
+  //   if (!e.target.value) return;
 
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
-    });
-  };
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.id]: e.target.value,
+  //   });
+  // };
 
-  useEffect(() => {
-    setItemData(prev => ({ ...prev, options: formData }));
-  }, [formData]);
+  // Refactor: state만들어두시는 것도 쓰는 라인 바로 위에 묶어서 위치했으면 좋겠어요.
+
+  // const [itemData, setItemData] = useState<CartItemProps>({
+  //   seller: provider,
+  //   image: image,
+  //   name: title,
+  //   options: formData,
+  //   price: price,
+  //   originalPrice: 0,
+  //   discount: discount,
+  //   shipping: 20,
+  //   quantity: 1,
+  //   id: id,
+  // });
+
+  // useEffect(() => {
+  //   setItemData(prev => ({
+  //     ...prev,
+  //     options: { ...formData },
+  //   }));
+  // }, [formData]);
+
+  const [hasError, setHasError] = useState(false);
 
   const addToCart = () => {
-    if (formData.color === '' || formData.length === '') return;
+    if (color === '' || length === '') {
+      setHasError(true);
+    }
+
+    const itemData = {
+      seller: provider,
+      image: image,
+      name: title,
+      options: formData,
+      price: price,
+      originalPrice: 0,
+      discount: discount,
+      shipping: 20,
+      quantity: 1,
+      id: id,
+    };
 
     addItemtoCart?.(itemData);
     history.push('/cart');
@@ -112,10 +151,14 @@ function SideInformation({
         </S.ProductPrice>
         <S.ProductTax>Local taxes included (where applicable)</S.ProductTax>
       </S.ProductInfoContainer>
-      <S.ProductSelector>
+      <S.ProductSelector onSubmit={handleSubmit(onSubmit)}>
         <S.SelectWrapper>
           <S.NormalName>Color</S.NormalName>
-          <S.Select id="color" onChange={handelChange}>
+          <S.Select
+            // id="color"
+            // onChange={handleChange}
+            {...register('color', { required: true })}
+          >
             <S.Option value="">select an option</S.Option>
             {finishOptions.map(option => (
               <S.Option key={option} value={option}>
@@ -126,7 +169,7 @@ function SideInformation({
         </S.SelectWrapper>
         <S.SelectWrapper>
           <S.NormalName>Length</S.NormalName>
-          <S.Select id="length" onChange={handelChange}>
+          <S.Select id="length" {...register('length', { required: true })}>
             <S.Option value="">select an option</S.Option>
             {lengthOptions.map(option => (
               <S.Option key={option} value={option}>
@@ -150,13 +193,11 @@ function SideInformation({
         <S.PersonalizationText
           id="personalization"
           maxLength={1024}
-          onChange={handelChange}
-          value={formData.personalization}
+          value={personalization}
           isOverLimit={isOverLimit}
+          {...register('personalization')}
         />
-        <S.TextRemaining>
-          {1024 - formData.personalization.length}
-        </S.TextRemaining>
+        <S.TextRemaining>{1024 - personalization?.length}</S.TextRemaining>
         {isOverLimit && (
           <S.LimitError>
             You’ve reached the limit! Use 1024 characters or less.

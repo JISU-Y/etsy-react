@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import { createContext, ReactNode, useState } from 'react';
 import { CartItemProps } from '../types';
 
 export const CartContext = createContext<{
@@ -9,7 +9,8 @@ export const CartContext = createContext<{
 }>({ cartItems: [] });
 
 interface Props {
-  children: JSX.Element | JSX.Element[];
+  // children은 ReactNode 타입
+  children: ReactNode;
 }
 
 const CartContextProvider = ({ children }: Props): JSX.Element => {
