@@ -4,7 +4,6 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 import fetcher from './config/swrConfig';
-// swr global config fetcher
 
 ReactDOM.render(
   <React.StrictMode>

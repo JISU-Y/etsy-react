@@ -1,3 +1,9 @@
+export interface ItemReviews {
+  userName: string;
+  color: string;
+  length: number;
+  review: string;
+}
 export interface Details {
   id: number;
   images: string[];
@@ -12,4 +18,5 @@ export interface Details {
   personalization: string;
   details: string[];
   quickDelivery: boolean;
+  itemReviews: ItemReviews[];
 }

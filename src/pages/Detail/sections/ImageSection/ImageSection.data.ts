@@ -12,12 +12,12 @@ export const thumbSwiperSettings = {
   watchSlidesProgress: true,
   modules: [Navigation, Thumbs],
   direction: swiperSettingType.direction,
-  initialSlide: 0,
 };
 
 export const mainSwiperSettings = {
   loop: true,
   spaceBetween: 5,
+  slidesPerView: swiperSettingType.slidesPerView,
   modules: [FreeMode, Navigation, Thumbs, EffectFade],
   navigation: true,
   effect: swiperSettingType.effectType,

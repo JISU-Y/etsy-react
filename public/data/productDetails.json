@@ -1,6 +1,103 @@
 {
   "data": [
     {
+      "id": 1,
+      "images": [
+        "https://i.etsystatic.com/25031203/r/il/bf807c/2514352834/il_1588xN.2514352834_t45s.jpg",
+        "https://i.etsystatic.com/25031203/r/il/e4f581/2562018775/il_75x75.2562018775_1m6w.jpg",
+        "https://i.etsystatic.com/25031203/r/il/e3abb2/2689526188/il_75x75.2689526188_pvge.jpg",
+        "https://i.etsystatic.com/25031203/r/il/90211f/2562019619/il_75x75.2562019619_cvq1.jpg",
+        "https://i.etsystatic.com/25031203/r/il/0cba01/2689527092/il_75x75.2689527092_16dm.jpg"
+      ],
+      "title": "Handmade Linen Face Masks w/ 5 Extra Filters - 3D Origami Mask w/ Nose Wire, Washable, Filter Pocket, Adjustable Ear Loops, Handmade in USA",
+      "sold": 11031,
+      "provider": "craneandflower",
+      "etsyPick": true,
+      "price": 16.95,
+      "discount": 0,
+      "finishOptions": ["STERLING SILVER", "18K GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Your Name & Font Number ♡\n(Our Featured Font: Font 91)\nFeel free to email us for a Font Mock-up ♡",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "images": [
+        "https://i.etsystatic.com/10953576/r/il/353f28/1050514883/il_794xN.1050514883_54k2.jpg",
+        "https://i.etsystatic.com/10953576/r/il/e056e2/1047234641/il_75x75.1047234641_f3av.jpg",
+        "https://i.etsystatic.com/10953576/r/il/51b449/1003983746/il_75x75.1003983746_payv.jpg",
+        "https://i.etsystatic.com/10953576/r/il/43e5ef/790742876/il_75x75.790742876_q5ag.jpg",
+        "https://i.etsystatic.com/10953576/r/il/e1e534/2611168507/il_75x75.2611168507_l4j6.jpg",
+        "https://i.etsystatic.com/10953576/r/il/371fda/2563520674/il_75x75.2563520674_2tin.jpg"
+      ],
+      "title": "Actual Handwriting Necklace - Signature Necklace - Memorial Necklace - Personalized Jewelry - Memorial Gift - Gift For Mom",
+      "sold": 31075,
+      "provider": "ivoryMR",
+      "etsyPick": true,
+      "price": 30.8,
+      "discount": 30,
+      "finishOptions": ["STERLING SILVER", "18K GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Your Name & Font Number ♡\n(Our Featured Font: Font 91)\nFeel free to email us for a Font Mock-up ♡",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
       "id": 3,
       "images": [
         "https://i.etsystatic.com/10204022/r/il/ebecb4/2981833988/il_794xN.2981833988_6sg5.jpg",
@@ -28,22 +125,90 @@
         "Can be personalized",
         "Made to Order"
       ],
-      "quickDelivery": false
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
     },
     {
       "id": 4,
       "images": [
-        "https://i.etsystatic.com/10204022/r/il/ebecb4/2981833988/il_794xN.2981833988_6sg5.jpg",
-        "https://i.etsystatic.com/10204022/r/il/58febd/2977468676/il_794xN.2977468676_lp5f.jpg",
-        "https://i.etsystatic.com/10204022/r/il/886d7f/2977468438/il_794xN.2977468438_on9m.jpg",
-        "https://i.etsystatic.com/10204022/r/il/d2557b/2977469026/il_794xN.2977469026_hagw.jpg",
-        "https://i.etsystatic.com/10204022/r/il/83170e/3211959589/il_794xN.3211959589_p4yd.jpg"
+        "https://i.etsystatic.com/32094682/r/il/d47b05/3421788688/il_1588xN.3421788688_4qwn.jpg",
+        "https://i.etsystatic.com/32094682/r/il/92fb76/3449250576/il_75x75.3449250576_5h15.jpg",
+        "https://i.etsystatic.com/32094682/r/il/11fea4/3496914823/il_75x75.3496914823_m92m.jpg",
+        "https://i.etsystatic.com/32094682/r/il/53093a/3496914825/il_75x75.3496914825_7pz3.jpg",
+        "https://i.etsystatic.com/32094682/r/il/011aa5/3421748802/il_75x75.3421748802_able.jpg"
       ],
-      "title": "Personalized Name Necklace by CaitlynMinimalist • Gold Name Necklace with Box Chain • Perfect Gift for Her • Personalized Gift • NM81F91",
-      "sold": 1503796,
+      "title": "Personalized Name Necklace with Birth Flower, 925 sterling Silver, Rose Gold Flower Name Necklace, Gold Flower Name Necklace, Gift for Her",
+      "sold": 14937,
+      "provider": "CBKSilverAndGold",
+      "etsyPick": true,
+      "price": 27.0,
+      "discount": 0,
+      "finishOptions": ["SILVER", "GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Your Name & Font Number ♡\n(Our Featured Font: Font 91)\nFeel free to email us for a Font Mock-up ♡",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "images": [
+        "https://i.etsystatic.com/10204022/r/il/547e38/1043035043/il_1588xN.1043035043_nvxb.jpg",
+        "https://i.etsystatic.com/10204022/r/il/694da6/1067436187/il_75x75.1067436187_k852.jpg",
+        "https://i.etsystatic.com/10204022/r/il/9fa6f9/1234557601/il_75x75.1234557601_rjk8.jpg",
+        "https://i.etsystatic.com/10204022/r/il/dd1534/1187342856/il_75x75.1187342856_h3p3.jpg",
+        "https://i.etsystatic.com/10204022/r/il/b8009b/1187341320/il_75x75.1187341320_6a0g.jpg"
+      ],
+      "title": "Custom Handwriting Jewelry • Handwriting Necklace • Personalized Signature Keepsake GIFT • Memorial Meaningful Gift • Mother's Gift • NH01",
+      "sold": 1513280,
       "provider": "CaitlynMinimalist",
       "etsyPick": true,
-      "price": 30.6,
+      "price": 25.28,
       "discount": 0,
       "finishOptions": ["STERLING SILVER", "18K GOLD", "ROSE GOLD"],
       "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
@@ -56,7 +221,267 @@
         "Can be personalized",
         "Made to Order"
       ],
-      "quickDelivery": false
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "images": [
+        "https://i.etsystatic.com/10953576/r/il/d31d4f/1000698526/il_1588xN.1000698526_5yqz.jpg",
+        "https://i.etsystatic.com/10953576/c/1222/972/193/5/il/15d9ad/1000689988/il_75x75.1000689988_6e9w.jpg",
+        "https://i.etsystatic.com/10953576/r/il/2bc5b7/1000690168/il_75x75.1000690168_h67b.jpg",
+        "https://i.etsystatic.com/10953576/r/il/43e5ef/790742876/il_75x75.790742876_q5ag.jpg",
+        "https://i.etsystatic.com/10953576/r/il/1c9442/1000698508/il_75x75.1000698508_dwji.jpg"
+      ],
+      "title": "Signature Necklace - Actual Handwriting Necklace - Memorial Necklace - Personalized Jewelry - CHRISTMAS GIFTS",
+      "sold": 31076,
+      "provider": "ivoryMR",
+      "etsyPick": true,
+      "price": 30.8,
+      "discount": 30,
+      "finishOptions": ["STERLING SILVER", "WHITE GOLD", "GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Thank you for your business !\nYou can send us your image by using the CONTACT SHOP OWNER button. In the message to us, you’ll see an ATTACH IMAGE button below. Please attach an IMAGE or PDF file of the design you’d like on your jewelry.",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "images": [
+        "https://i.etsystatic.com/10953576/r/il/38026b/1084745637/il_1588xN.1084745637_3kav.jpg",
+        "https://i.etsystatic.com/10953576/r/il/a1279c/848806112/il_75x75.848806112_lpbk.jpg",
+        "https://i.etsystatic.com/10953576/r/il/fb1e04/1038194362/il_75x75.1038194362_frwf.jpg",
+        "https://i.etsystatic.com/10953576/r/il/002b42/1093605631/il_75x75.1093605631_8cam.jpg",
+        "https://i.etsystatic.com/10953576/r/il/43e5ef/790742876/il_75x75.790742876_q5ag.jpg"
+      ],
+      "title": "Signature Disc Necklace - Actual Handwriting Disc Necklace - Name Necklace - Memorial Disc Necklace - Sympathy Gift - Mom Gift",
+      "sold": 31076,
+      "provider": "ivoryMR",
+      "etsyPick": false,
+      "price": 30.8,
+      "discount": 30,
+      "finishOptions": ["STERLING SILVER", "WHITE GOLD", "GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Thank you for your business !\nYou can send us your image by using the CONTACT SHOP OWNER button. In the message to us, you’ll see an ATTACH IMAGE button below. Please attach an IMAGE or PDF file of the design you’d like on your jewelry.",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "images": [
+        "https://i.etsystatic.com/10953576/r/il/5ca3c9/1080321932/il_1588xN.1080321932_9290.jpg",
+        "https://i.etsystatic.com/10953576/r/il/bc8109/1080321964/il_75x75.1080321964_6f8d.jpg",
+        "https://i.etsystatic.com/10953576/r/il/b02065/2065232247/il_75x75.2065232247_cj9j.jpg",
+        "https://i.etsystatic.com/10953576/r/il/f85520/2065232321/il_75x75.2065232321_h0it.jpg",
+        "https://i.etsystatic.com/10953576/r/il/1121be/2563525066/il_75x75.2563525066_f5pj.jpg"
+      ],
+      "title": "Actual Handwriting Charm - Custom Bead - Signature Charm in Sterling Silver - Handwriting Jewelry - Personalized Gift",
+      "sold": 31076,
+      "provider": "ivoryMR",
+      "etsyPick": false,
+      "price": 23.1,
+      "discount": 30,
+      "finishOptions": ["STERLING SILVER", "18K GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Please send us the Image/Pdf file you’d like us to use through the Contact Shop Owner button.",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "images": [
+        "https://i.etsystatic.com/17802147/r/il/6b37c9/2275876149/il_1588xN.2275876149_i952.jpg",
+        "https://i.etsystatic.com/17802147/r/il/66e1ea/2228305474/il_75x75.2228305474_ehb1.jpg",
+        "https://i.etsystatic.com/17802147/r/il/cd8e58/2275875619/il_75x75.2275875619_4vzh.jpg",
+        "https://i.etsystatic.com/17802147/r/il/8b6afd/2166580068/il_75x75.2166580068_j85b.jpg",
+        "https://i.etsystatic.com/17802147/r/il/bb0d38/2228307668/il_75x75.2228307668_gce3.jpg"
+      ],
+      "title": "Handwriting Jewelry • Engraved Actual Handwriting Necklace • Keepsake Necklace • Custom Signature Jewelry • Personalized Gift for Her",
+      "sold": 26521,
+      "provider": "LuzJewelsCo",
+      "etsyPick": false,
+      "price": 28.6,
+      "discount": 20,
+      "finishOptions": ["STERLING SILVER", "18K GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Please send us the Image/Pdf file you’d like us to use through the Contact Shop Owner button.",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "images": [
+        "https://i.etsystatic.com/10953576/r/il/7b483c/1094318915/il_1588xN.1094318915_36zy.jpg",
+        "https://i.etsystatic.com/10953576/r/il/aa3c31/1094318909/il_794xN.1094318909_auds.jpg",
+        "https://i.etsystatic.com/10953576/r/il/4128af/848799064/il_75x75.848799064_kon5.jpg",
+        "https://i.etsystatic.com/10953576/r/il/a36ba4/849179510/il_75x75.849179510_4z4o.jpg",
+        "https://i.etsystatic.com/10953576/r/il/102850/2563522368/il_75x75.2563522368_mjk4.jpg"
+      ],
+      "title": "Custom Handwriting Bracelet - Actual Handwriting Jewelry - Memorial Engraved Bar Signature Bracelet - Handwriting Jewelry - Mothers Day Gift",
+      "sold": 31076,
+      "provider": "ivoryMR",
+      "etsyPick": false,
+      "price": 30.41,
+      "discount": 30,
+      "finishOptions": ["STERLING SILVER", "18K GOLD", "ROSE GOLD"],
+      "lengthOptions": [14, 15, 16, 17, 18, 19, 20, 21, 22],
+      "personalization": "Please send us the Image/Pdf file you’d like us to use through the Contact Shop Owner button.",
+      "details": [
+        "Handmade item",
+        "Materials: Gold, Rose gold, Silver",
+        "Chain style: Box",
+        "Style: Minimalist",
+        "Can be personalized",
+        "Made to Order"
+      ],
+      "quickDelivery": false,
+      "itemReviews": [
+        {
+          "userName": "Catherine Leclair",
+          "color": "STERLING SILVER",
+          "length": 18,
+          "review": "Had this made from a picture of my Mom's handwriting. She passed away in 2006. It is now what I wear daily. I love love love it!"
+        },
+        {
+          "userName": "Sandi Skrobiszewski",
+          "color": "STERLING SILVER",
+          "length": 22,
+          "review": "Absolutely 💯 %. Love this necklace. I bought this for my Mom. My Dad passed away 25 years ago--we still miss him everyday. This necklace says \" Love, Edward\"... in his hand writing from an old Birthday card I found. Can't wait to gift it to her. She is going to love it. She is 83 years old now and survived Covid. Life is crazy. This necklace makes things seem a bit brighter and happier. Thank you !"
+        },
+        {
+          "userName": "Maddy Bate",
+          "color": "18K GOLD",
+          "length": 14,
+          "review": "Thank you so much. I loved the necklace so much I had to order another one!! You’re so talented!"
+        }
+      ]
     }
   ]
 }

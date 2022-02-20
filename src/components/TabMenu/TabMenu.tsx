@@ -1,26 +1,45 @@
-import React from 'react';
-import { MenuContainer, TabButton } from './TabMenu.style';
+import React, { useState } from 'react';
+import * as S from './TabMenu.style';
 
 interface ITabMenu {
   list: string[] | undefined;
-  currentTab: number;
-  setCurrentTab: React.Dispatch<React.SetStateAction<number>>;
+  currentTab?: number;
+  handleTab?: (tab: number) => void;
+  fontSize?: number;
+  tagNumber?: number[];
 }
 
-function TabMenu({ list, currentTab, setCurrentTab }: ITabMenu) {
+function TabMenu({
+  list,
+  fontSize,
+  tagNumber,
+  currentTab,
+  handleTab,
+}: ITabMenu) {
+  const [tab, setTab] = useState(currentTab ?? 0);
+
+  const onTabClicked = (tabIndex: number) => {
+    setTab(tabIndex);
+    handleTab?.(tabIndex);
+  };
+
   return (
-    <MenuContainer>
+    <S.MenuContainer>
       {list?.map((menu, index) => (
-        <TabButton
+        <S.TabButton
           key={menu}
-          onClick={() => setCurrentTab(index)}
+          onClick={() => onTabClicked(index)}
           list={list}
-          currentTab={currentTab}
+          currentTab={tab}
+          fontSize={fontSize}
         >
           {menu}
-        </TabButton>
+          {tagNumber && (
+            <S.TagNumber>{tagNumber[index].toLocaleString()}</S.TagNumber>
+          )}
+        </S.TabButton>
       ))}
-    </MenuContainer>
+    </S.MenuContainer>
   );
 }
 

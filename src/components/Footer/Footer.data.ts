@@ -48,3 +48,9 @@ export const guideList = [
     list: ['Help Center', 'Trust and safety', 'Privacy settings'],
   },
 ];
+
+export const aboutDescriptions = [
+  'Your purchases on Etsy in 2020 generated nearly $4 billion in income for small businesses.',
+  'We advocate for policy—at the global and local level—that benefits creative entrepreneurs and helps small businesses grow and thrive.',
+  'We are deepening our commitment to a sustainable future and are working towards a new goal to reach net zero emissions by 2030.',
+];

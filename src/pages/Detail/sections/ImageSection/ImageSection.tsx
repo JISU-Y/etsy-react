@@ -41,6 +41,7 @@ function ImageSection({ images }: Props) {
         thumbs={{
           swiper: thumbsSwiper,
         }}
+        loopedSlides={images?.length ?? 1}
         className="mySwiper2"
       >
         {images?.map((imageUrl, index) => (

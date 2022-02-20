@@ -8,15 +8,16 @@ import * as S from './Unique.style';
 function UniqueList() {
   const { data, menu } = useUniqueList();
   const [currentTab, setCurrentTab] = useState(0);
-  const [tabProductList, setTabProductList] = useState<
-    TabProductList[] | undefined
-  >([]);
+  const [tabProductList, setTabProductList] = useState<TabProductList[]>([]);
 
   useEffect(() => {
-    setTabProductList(
-      data?.filter(({ category }) => category === menu!![currentTab])
-    );
+    const currentTabMenu =
+      data?.filter(({ category }) => category === menu!![currentTab]) || [];
+
+    setTabProductList(currentTabMenu);
   }, [data, currentTab]);
+
+  const handleCurrentTab = (tab: number) => setCurrentTab(tab);
 
   return (
     <S.UniqueContainer>
@@ -24,17 +25,22 @@ function UniqueList() {
       <TabMenu
         list={menu}
         currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
+        handleTab={handleCurrentTab}
       />
       <S.TabContents>
-        {tabProductList?.map(({ imageUrl, price }) => (
-          <ImageCard
+        {tabProductList?.map(({ imageUrl, price }, index) => (
+          <S.ImageCardWrapper
             key={imageUrl}
-            width={250}
-            height={167}
-            price={price}
-            image={imageUrl}
-          />
+            index={index}
+            className={S.gridIndex[index]}
+          >
+            <ImageCard
+              width="100%"
+              height="100%"
+              price={price}
+              image={imageUrl}
+            />
+          </S.ImageCardWrapper>
         ))}
       </S.TabContents>
     </S.UniqueContainer>

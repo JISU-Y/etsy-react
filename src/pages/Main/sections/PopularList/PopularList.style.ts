@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const SectionTitle = styled.h2`
-  font-size: 28px;
-  margin-bottom: 18px;
-  font-weight: 500;
+  /* Display & Box Model */
   padding: 0 9px;
+  margin-bottom: 18px;
+
+  /* Text */
+  font-size: 28px;
+  font-weight: 500;
 `;
 
 export const PopularContainer = styled.div`

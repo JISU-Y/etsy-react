@@ -8,18 +8,31 @@ export const MenuContainer = styled.div`
   border-bottom: 2px solid ${COLORS.border};
 `;
 
-export const TabButton = styled.button<{ list: string[]; currentTab: number }>`
-  width: ${props => 100 / props.list?.length ?? 1}%;
-  flex: 1;
-  text-align: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
+export const TabButton = styled.button<{
+  list: string[];
+  currentTab: number;
+  fontSize?: number;
+}>`
+  /* Positioning */
   position: relative;
+
+  /* Display & Box Model */
+  flex: 1;
+  min-width: 220px;
   margin: 0 18px;
   padding: 10px 0;
+  background: none;
+  border: none;
+
+  /* Color */
   color: ${COLORS.subFont};
+
+  /* Text */
+  text-align: center;
+
+  /* Other */
+  cursor: pointer;
+
   &:first-child {
     margin-left: 0;
   }
@@ -28,18 +41,29 @@ export const TabButton = styled.button<{ list: string[]; currentTab: number }>`
   }
   &::after {
     content: '';
+    /* Positioning */
     position: absolute;
     bottom: -2px;
     left: 50%;
-    transform: translateX(-50%);
+
+    /* Display & Box Model */
     width: 0;
     border-bottom: 2px solid ${COLORS.subFont};
+
+    /* Other */
     transition: ${TRANSITION.normal};
+    transform: translateX(-50%);
   }
   &:hover::after {
     width: 100%;
   }
-  ${({ currentTab }) => css`
+  ${({ list, currentTab, fontSize }) => css`
+    /* Display & Box Model */
+    width: ${100 / list?.length ?? 1}%;
+
+    /* Text */
+    font-size: ${fontSize ?? 20}px;
+
     &:nth-child(${currentTab + 1}) {
       color: ${COLORS.mainFont};
     }
@@ -48,4 +72,18 @@ export const TabButton = styled.button<{ list: string[]; currentTab: number }>`
       border-bottom: 2px solid ${COLORS.mainFont};
     }
   `}
+`;
+
+export const TagNumber = styled.span`
+  /* Display & Box Model */
+  min-width: 25px;
+  padding: 6px 9px;
+  margin-left: 12px;
+  border-radius: 15px;
+
+  /* Color */
+  background-color: ${COLORS.hoverGray};
+
+  /* Text */
+  font-size: 13px;
 `;

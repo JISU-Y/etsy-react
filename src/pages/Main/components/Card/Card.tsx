@@ -3,8 +3,8 @@ import Favorite from '../../../../components/Favorite';
 import { currency } from '../../../../constants/localeSetting';
 import { padCentsDigits } from '../../../../utils/convertDigit';
 import { ImageCardProps } from '../ImageCard/ImageCard';
-import StarIcon from '../../../../icons/StarIcon';
 import * as S from './Card.style';
+import FiveStars from '../../../../components/FiveStars';
 
 interface CardProps extends ImageCardProps {
   title: string;
@@ -23,9 +23,7 @@ function Card({ title, reviewCount, price, image, width, height }: CardProps) {
         <S.ItemInfo>
           <S.InfoP>{infoTitle}</S.InfoP>
           <S.ReviewStars>
-            {Array.from([1, 2, 3, 4, 5], el => (
-              <StarIcon key={el} width={12} height={12} color="black" />
-            ))}
+            <FiveStars width={12} height={12} color="black" gap={1} />
             <S.ReviewCount>({reviewCount.toLocaleString()})</S.ReviewCount>
           </S.ReviewStars>
           <S.InfoP>
