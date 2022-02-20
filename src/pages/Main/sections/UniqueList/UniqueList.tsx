@@ -11,7 +11,6 @@ function UniqueList() {
   const [tabProductList, setTabProductList] = useState<TabProductList[]>([]);
 
   useEffect(() => {
-    // Refactor: 조금 더 명시적인 네이밍을 써주면 좋을 것 같아요.
     const currentTabMenu =
       data?.filter(({ category }) => category === menu!![currentTab]) || [];
 
@@ -29,8 +28,12 @@ function UniqueList() {
         handleTab={handleCurrentTab}
       />
       <S.TabContents>
-        {tabProductList?.map(({ imageUrl, price }) => (
-          <S.ImageCardWrapper key={imageUrl}>
+        {tabProductList?.map(({ imageUrl, price }, index) => (
+          <S.ImageCardWrapper
+            key={imageUrl}
+            index={index}
+            className={S.gridIndex[index]}
+          >
             <ImageCard
               width="100%"
               height="100%"

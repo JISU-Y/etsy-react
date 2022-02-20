@@ -9,7 +9,6 @@ export const CartContext = createContext<{
 }>({ cartItems: [] });
 
 interface Props {
-  // children은 ReactNode 타입
   children: ReactNode;
 }
 
