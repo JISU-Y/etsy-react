@@ -49,7 +49,7 @@ function SideInformation({ details, image }: Props) {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { dirtyFields },
   } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = data => {
@@ -58,7 +58,7 @@ function SideInformation({ details, image }: Props) {
 
   // const formData = getValues();
   const formData = watch();
-  const { color, length, personalization } = formData;
+  const { personalization } = formData;
 
   useEffect(() => {
     setIsOverLimit(personalization?.length >= 1024 ? true : false);
@@ -104,8 +104,9 @@ function SideInformation({ details, image }: Props) {
   const [hasError, setHasError] = useState(false);
 
   const addToCart = () => {
-    if (color === '' || length === '') {
+    if (!dirtyFields.color || !dirtyFields.length) {
       setHasError(true);
+      return;
     }
 
     const itemData = {
@@ -157,7 +158,7 @@ function SideInformation({ details, image }: Props) {
           <S.Select
             // id="color"
             // onChange={handleChange}
-            {...register('color', { required: true })}
+            {...register('color', { required: 'required' })}
           >
             <S.Option value="">select an option</S.Option>
             {finishOptions.map(option => (
@@ -169,7 +170,10 @@ function SideInformation({ details, image }: Props) {
         </S.SelectWrapper>
         <S.SelectWrapper>
           <S.NormalName>Length</S.NormalName>
-          <S.Select id="length" {...register('length', { required: true })}>
+          <S.Select
+            id="length"
+            {...register('length', { required: 'required' })}
+          >
             <S.Option value="">select an option</S.Option>
             {lengthOptions.map(option => (
               <S.Option key={option} value={option}>
@@ -178,6 +182,7 @@ function SideInformation({ details, image }: Props) {
             ))}
           </S.Select>
         </S.SelectWrapper>
+        {hasError && <span>This is required</span>}
       </S.ProductSelector>
       <BgAnimatedButton
         buttonLabel="Add your personalization (optional)"
