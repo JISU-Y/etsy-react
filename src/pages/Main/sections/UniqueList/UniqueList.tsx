@@ -15,7 +15,7 @@ function UniqueList() {
       data?.filter(({ category }) => category === menu!![currentTab]) || [];
 
     setTabProductList(currentTabMenu);
-  }, [data, currentTab]);
+  }, [data, currentTab, menu]);
 
   const handleCurrentTab = (tab: number) => setCurrentTab(tab);
 
