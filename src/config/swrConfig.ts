@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:3000/data/',
+  baseURL: 'http://clonedetsy.s3-website.ap-northeast-2.amazonaws.com/data/',
   headers: {
     'content-type': 'application/json;charset=UTF-8',
     accept: 'application/json',
